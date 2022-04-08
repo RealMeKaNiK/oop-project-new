@@ -20,7 +20,7 @@ namespace WindowsForms.Forms
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
-        {
+        {            
             this.cbTeamType.Items.Add(TeamType.Men);
             this.cbTeamType.Items.Add(TeamType.Women);
             this.cbLanguage.Items.Add(Language.Croatian);
