@@ -17,11 +17,21 @@ namespace DataAccessLayer.Model
 
     public enum ResolutionType
     {
-        Fullscreen, Big, Normal
+        Normal, Big, Fullscreen
     }
 
     public class Config
     {
+        private const string WOMEN_API_RESULTS = "http://worldcup.sfg.io/teams/results";
+        private const string WOMEN_API_TEAM_RESULTS = "http://worldcup.sfg.io/teams/results?fifa_code=";
+        private const string WOMEN_API_ALL_MATCHES = "http://worldcup.sfg.io/matches";
+        private const string WOMEN_API_TEAM_MATCHES = "http://worldcup.sfg.io/matches/country?fifa_code=";
+
+        private const string MEN_API_RESULTS = "http://world-cup-json-2018.herokuapp.com/teams/results";
+        private const string MEN_API_TEAM_RESULTS = "http://world-cup-json-2018.herokuapp.com/teams/results?fifa_code=";
+        private const string MEN_API_ALL_MATCHES = "http://world-cup-json-2018.herokuapp.com/matches";
+        private const string MEN_API_TEAM_MATCHES = "http://world-cup-json-2018.herokuapp.com/matches/country?fifa_code=";
+
         private const char DEL = '|';
       
         public TeamType TeamType { get; set; }
@@ -37,17 +47,26 @@ namespace DataAccessLayer.Model
                 .Append(DEL)
                 .Append(Language)
                 .Append(DEL)
-                .Append(FavoriteTeam.Fifa_Code)
-                .Append(DEL)
+                //.Append(FavoriteTeam.Fifa_Code)
+                //.Append(DEL)
                 .Append(ResolutionType);
 
             return sb.ToString();
         }
 
+        public string GetURLFromConfig()
+        {
+            return MEN_API_RESULTS;
+        }
+
         public static Config ParseFromFile(string line)
         {
+            if (String.IsNullOrEmpty(line))
+            {
+                return new Config();
+            }
             string[] items = line.Split(DEL);
-
+          
             return new Config()
             {
                 TeamType = (TeamType)Enum.Parse(typeof(TeamType), items[0]),

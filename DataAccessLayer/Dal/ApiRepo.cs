@@ -11,15 +11,7 @@ namespace DataAccessLayer.Dal
 {
     public class ApiRepo : IGetable
     {
-        private const string WOMEN_API_RESULTS = "http://worldcup.sfg.io/teams/results";
-        private const string WOMEN_API_TEAM_RESULTS = "http://worldcup.sfg.io/teams/results?fifa_code=";
-        private const string WOMEN_API_ALL_MATCHES = "http://worldcup.sfg.io/matches";
-        private const string WOMEN_API_TEAM_MATCHES = "http://worldcup.sfg.io/matches/country?fifa_code=";
 
-        private const string MEN_API_RESULTS = "http://world-cup-json-2018.herokuapp.com/teams/results";
-        private const string MEN_API_TEAM_RESULTS = "http://world-cup-json-2018.herokuapp.com/teams/results?fifa_code=";
-        private const string MEN_API_ALL_MATCHES = "http://world-cup-json-2018.herokuapp.com/matches";
-        private const string MEN_API_TEAM_MATCHES = "http://world-cup-json-2018.herokuapp.com/matches/country?fifa_code=";
 
         private readonly HttpClient Client;
 
@@ -28,20 +20,9 @@ namespace DataAccessLayer.Dal
             Client = new HttpClient();
         }
 
-        public async Task<List<Match>> GetAllMatches(string url)
-        {
-            return JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync(url));
-        }
-
-        public async Task<List<Team>> GetAllResults(string url)
-        {
-            return JsonConvert.DeserializeObject<List<Team>>(await Client.GetStringAsync(url));
-        }
-
-        public async Task<List<Match>> GetTeamMatches(string url, string fifaCode)
-        {
-            return JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync(url + fifaCode));
-        }
+        public async Task<List<Match>> GetAllMatches(string url) => JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync(url)); 
+        public async Task<List<Team>> GetAllResults(string url) => JsonConvert.DeserializeObject<List<Team>>(await Client.GetStringAsync(url));        
+        public async Task<List<Match>> GetTeamMatches(string url, string fifaCode) => JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync(url + fifaCode));     
 
         public async Task<List<Player>> GetTeamPlayers(string url, string fifaCode)
         {
@@ -55,9 +36,6 @@ namespace DataAccessLayer.Dal
             return playerList;
         }
 
-        public async Task<Team> GetTeamResult(string url, string fifaCode)
-        {
-            return JsonConvert.DeserializeObject<Team>(await Client.GetStringAsync(url + fifaCode));
-        }
+        public async Task<Team> GetTeamResult(string url, string fifaCode) => JsonConvert.DeserializeObject<Team>(await Client.GetStringAsync(url + fifaCode));
     }
 }

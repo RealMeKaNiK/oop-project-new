@@ -10,6 +10,7 @@ namespace DataAccessLayer
 {
     public static class DataProvider
     {
+
         private static readonly IGetable ApiRepo = ApiRepoFactory.GetRepo();
         private static readonly IRepo FileRepo = FileRepoFactory.GetRepo();
         private static Config Config;
@@ -18,5 +19,17 @@ namespace DataAccessLayer
         {
             Config = FileRepo.GetConfig();
         }
+
+        public static void UpdateConfig(TeamType teamType, Language language)
+        {
+            if (Config == null)
+                Config = new Config();
+            Config.Language = language;
+            Config.TeamType = teamType;
+        }
+
+        public static void SaveConfig() => FileRepo.SaveConfig(Config);
+
+        public async static Task<List<Team>> GetTeams() => await ApiRepo.GetAllResults(Config.GetURLFromConfig());
     }
 }
