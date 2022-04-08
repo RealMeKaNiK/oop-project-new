@@ -23,7 +23,7 @@ namespace WindowsForms.Forms
 
         private void btnSaveFavoriteTeam_Click(object sender, EventArgs e)
         {
-            var test = this.cbAllTeams.SelectedValue;
+            Team test = this.cbAllTeams.SelectedValue as Team;
         }
     }
 }
