@@ -31,5 +31,7 @@ namespace DataAccessLayer
         public static void SaveConfig() => FileRepo.SaveConfig(Config);
 
         public async static Task<List<Team>> GetTeams() => await ApiRepo.GetAllResults(Config.GetURLFromConfig());
+
+        public static void SaveFavoriteTeam(Team team) => Config.FavoriteTeam = team;
     }
 }
