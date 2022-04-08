@@ -44,10 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dal\FileRepo.cs" />
+    <Compile Include="Dal\FileRepoFactory.cs" />
+    <Compile Include="Dal\IRepo.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Dal\ApiRepo.cs" />
     <Compile Include="Dal\ApiRepoFactory.cs" />
     <Compile Include="Dal\IGetable.cs" />
+    <Compile Include="Model\Config.cs" />
     <Compile Include="Model\Match.cs" />
     <Compile Include="Model\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
