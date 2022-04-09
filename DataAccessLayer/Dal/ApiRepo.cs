@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Model;
+using DataAccessLayer.Utils;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,8 @@ namespace DataAccessLayer.Dal
             List<Player> playerList = new List<Player>();
             startingElevens.ForEach(x => playerList.Add(x));
             substitutes.ForEach(x => playerList.Add(x));
-            return playerList;
+            List<Player> finalResult = Utilities.CalculatePlayerStatistics(matches, playerList, fifaCode);
+            return finalResult;
         }
 
         public async Task<Team> GetTeamResult(string url, string fifaCode) => JsonConvert.DeserializeObject<Team>(await Client.GetStringAsync(url + fifaCode));

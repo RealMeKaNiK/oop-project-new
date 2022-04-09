@@ -56,9 +56,9 @@ namespace DataAccessLayer.Model
 
         public string GetURLAllResults() => TeamType == TeamType.Men ? MEN_API_RESULTS : WOMEN_API_RESULTS;     
 
-        public string GetURLTeamResult() => TeamType == TeamType.Men ? MEN_API_TEAM_RESULTS + FavoriteTeam.Fifa_Code : WOMEN_API_TEAM_RESULTS + FavoriteTeam.Fifa_Code;
+        public string GetURLTeamResult() => TeamType == TeamType.Men ? MEN_API_TEAM_RESULTS : WOMEN_API_TEAM_RESULTS;
 
-        public string GetURLTeamMatches() => TeamType == TeamType.Men ? MEN_API_TEAM_MATCHES + FavoriteTeam.Fifa_Code : WOMEN_API_TEAM_MATCHES + FavoriteTeam.Fifa_Code;
+        public string GetURLTeamMatches() => TeamType == TeamType.Men ? MEN_API_TEAM_MATCHES : WOMEN_API_TEAM_MATCHES;
 
         public static Config ParseFromFile(string line)
         {
@@ -71,7 +71,8 @@ namespace DataAccessLayer.Model
             return new Config()
             {
                 TeamType = (TeamType)Enum.Parse(typeof(TeamType), items[0]),
-                Language = (Language)Enum.Parse(typeof(Language), items[1]),                
+                Language = (Language)Enum.Parse(typeof(Language), items[1]),
+                FavoriteTeam = new Team(items[2]),
             };            
         }
     }

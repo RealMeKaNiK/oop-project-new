@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForms.Utils;
 
 namespace WindowsForms.Forms
 {
@@ -31,14 +32,11 @@ namespace WindowsForms.Forms
         {
             if (String.IsNullOrEmpty(this.cbLanguage.Text) || String.IsNullOrEmpty(this.cbLanguage.Text))
             {
-                MessageBox.Show("Please choose both options", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Utilities.DisplayMessageBox("Please choose with options", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
                 return;
             }
-            if (MessageBox.Show("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));
-                MessageBox.Show("You changed your settings", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            if (Utilities.DisplayMessageBox("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)                            
+                DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));                            
         }
     }
 }

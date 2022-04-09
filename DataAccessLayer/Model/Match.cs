@@ -135,17 +135,8 @@ namespace DataAccessLayer.Model
         public List<StartingEleven> starting_eleven { get; set; }
         public List<Substitute> substitutes { get; set; }
     }
-
-    public abstract class MatchEvents
-    {
-        public string location { get; set; }
-        public string attendance { get; set; }
-        public string home_team_country { get; set; }
-        public string away_team_country { get; set; }
-
-    }
-
-    public class Match : MatchEvents
+  
+    public class Match
     {
         public string venue { get; set; }
         public string status { get; set; }
@@ -165,5 +156,9 @@ namespace DataAccessLayer.Model
         public AwayTeamStatistics away_team_statistics { get; set; }
         public DateTime last_event_update_at { get; set; }
         public DateTime last_score_update_at { get; set; }
+        public string location { get; set; }
+        public string attendance { get; set; }
+        public string home_team_country { get; set; }
+        public string away_team_country { get; set; }
     }
 }

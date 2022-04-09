@@ -8,6 +8,10 @@ namespace DataAccessLayer.Model
 {
     public class Team
     {
+        public Team(string fifaCode)
+        {
+            Fifa_Code = fifaCode;
+        }
         public int Id { get; set; }
         public string Country { get; set; }
         public string Alternate_Name { get; set; }
@@ -22,6 +26,7 @@ namespace DataAccessLayer.Model
         public int Goals_For { get; set; }
         public int Goals_Against { get; set; }
         public int Goal_Differential { get; set; }
+        public List<Player> Players { get; set; }
         public override string ToString() => $"{Country} ({Fifa_Code})";
     }
 }

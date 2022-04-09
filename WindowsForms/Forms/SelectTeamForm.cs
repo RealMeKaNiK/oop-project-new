@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForms.Utils;
 
 namespace WindowsForms.Forms
 {
@@ -24,7 +25,7 @@ namespace WindowsForms.Forms
         private void btnSaveFavoriteTeam_Click(object sender, EventArgs e)
         {
             DataProvider.SaveFavoriteTeam(this.cbAllTeams.SelectedValue as Team);
-            MessageBox.Show($"Uspjesno ste odabrali favorit team: {this.cbAllTeams.SelectedValue}", "Promjena", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Utilities.DisplayMessageBox($"Uspjesno ste odabrali favorit team: {this.cbAllTeams.SelectedValue}", "Promjena", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
