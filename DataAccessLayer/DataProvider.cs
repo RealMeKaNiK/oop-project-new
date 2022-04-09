@@ -16,9 +16,10 @@ namespace DataAccessLayer
         private static Config Config;
 
         // Config and stuff
-        public static void LoadConfiguration()
+        public static bool LoadConfiguration()
         {
-            Config = FileRepo.GetConfig();            
+            Config = FileRepo.GetConfig();
+            return Config != null;
         }
 
         public static void UpdateConfig(TeamType teamType, Language language)
@@ -34,14 +35,14 @@ namespace DataAccessLayer
         public static void SaveFavoriteTeam(Team team) => Config.FavoriteTeam = team;
         public static void SaveFavoritePlayer(Player player) => Config.FavoritePlayers.Add(player);
         public static void DeleteFavoritePlayers() => Config.FavoritePlayers.Clear();
-        public static List<Player> GetFavoritePlayers() => new List<Player>(Config.FavoritePlayers);
+        public static List<Player> GetFavoritePlayers() => Config?.FavoritePlayers != null ? new List<Player>(Config.FavoritePlayers) : new List<Player>();        
 
         // API comunication
         public async static Task<List<Team>> GetTeams() => await ApiRepo.GetAllResults(Config.GetURLAllResults());
         public async static Task<List<Match>> GetMatchEvents() => await ApiRepo.GetTeamMatches(Config.GetURLTeamMatches(), Config.FavoriteTeam.Fifa_Code);
         public async static Task<List<Player>> GetPlayers()
         {
-            if (Config.FavoriteTeam.Players != null)
+            if (Config.FavoriteTeam?.Players != null)
             {
                 return new List<Player>(Config.FavoriteTeam.Players);
             }            

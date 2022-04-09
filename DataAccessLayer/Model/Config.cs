@@ -66,7 +66,7 @@ namespace DataAccessLayer.Model
         {
             if (String.IsNullOrEmpty(line))
             {
-                return new Config();
+                return null;
             }
             string[] items = line.Split(DEL);
 

@@ -12,8 +12,6 @@ namespace DataAccessLayer.Dal
 {
     public class ApiRepo : IGetable
     {
-
-
         private readonly HttpClient Client;
 
         public ApiRepo()

@@ -21,7 +21,12 @@ namespace WindowsForms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            DataProvider.LoadConfiguration();
+            if (!DataProvider.LoadConfiguration())
+            {
+                LoadForm(new SettingsForm());
+                return;
+            }
+            LoadForm(new SelectTeamForm());
         }
 
         private void LoadForm(object Form)
