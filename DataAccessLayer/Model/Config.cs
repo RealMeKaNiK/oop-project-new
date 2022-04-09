@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer.Dal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,7 @@ namespace DataAccessLayer.Model
         public TeamType TeamType { get; set; }
         public Language Language { get; set; }
         public Team FavoriteTeam { get; set; }
+        public List<Player> FavoritePlayers { get; set; }
         public ResolutionType ResolutionType { get; set; }
 
         public string PrepareConfigForFile()
@@ -67,12 +69,13 @@ namespace DataAccessLayer.Model
                 return new Config();
             }
             string[] items = line.Split(DEL);
-          
+
             return new Config()
             {
                 TeamType = (TeamType)Enum.Parse(typeof(TeamType), items[0]),
                 Language = (Language)Enum.Parse(typeof(Language), items[1]),
                 FavoriteTeam = new Team(items[2]),
+                FavoritePlayers = FileRepo.LoadFavoritePlayersFromFile()
             };            
         }
     }

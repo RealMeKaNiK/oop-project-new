@@ -27,14 +27,15 @@ namespace WindowsForms.Forms
         {
             if (!(control is PlayerUserControl))
                 return;
-            
+            control.SetAsFavorite();
             this.flpFavoritePlayers.Controls.Add(control);
+            AddPlayerToFavorites(control.GetUserControlPlayer());
         }
 
-        private async void SelectPlayersForm_Load(object sender, EventArgs e)
+        private void SelectPlayersForm_Load(object sender, EventArgs e)
         {
-            List<Player> players = await DataProvider.GetPlayers();
-            players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player)));
+            LoadPlayers();
+            LoadFavoritePlayers();
         }
 
         private void flpFavoritePlayers_DragEnter(object sender, DragEventArgs e) => e.Effect = DragDropEffects.All;
@@ -45,9 +46,31 @@ namespace WindowsForms.Forms
             {
                 Utilities.DisplayMessageBox("You can only have 3 selected players", "Max 3 Favorite players", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-            PlayerUserControl control = (PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl));
+            }            
             InsertControlInPanel((PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl)));
+        }
+
+        private void btnRemoveFavorites_Click(object sender, EventArgs e)
+        {
+            this.flpFavoritePlayers.Controls.Clear();
+            DataProvider.DeleteFavoritePlayers();
+            LoadPlayers();
+        }
+
+        private void AddPlayerToFavorites(Player player) => DataProvider.SaveFavoritePlayer(player);
+
+        private async void LoadPlayers()
+        {
+            this.flpLoadedPlayers.Controls.Clear();
+            List<Player> players = await DataProvider.GetPlayers();
+            players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player)));
+        }
+
+        private void LoadFavoritePlayers()
+        {
+            this.flpFavoritePlayers.Controls.Clear();
+            List<Player> players = DataProvider.GetFavoritePlayers();
+            players.ForEach(player => this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(player)));
         }
     }
 }

@@ -58,6 +58,7 @@ namespace WindowsForms
             if (MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 DataProvider.SaveConfig();
+                DataProvider.SaveFavoritePlayers();
                 Application.ExitThread();
             }
             e.Cancel = true;

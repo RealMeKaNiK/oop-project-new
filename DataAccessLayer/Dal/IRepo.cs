@@ -11,5 +11,6 @@ namespace DataAccessLayer.Dal
     {
         Config GetConfig();
         void SaveConfig(Config config);
+        void SaveFavoritePlayers(List<Player> players);
     }
 }

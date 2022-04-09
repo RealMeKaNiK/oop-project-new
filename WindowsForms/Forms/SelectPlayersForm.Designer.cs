@@ -30,6 +30,7 @@
         {
             this.flpLoadedPlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.flpFavoritePlayers = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRemoveFavorites = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flpLoadedPlayers
@@ -52,11 +53,22 @@
             this.flpFavoritePlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.flpFavoritePlayers_DragDrop);
             this.flpFavoritePlayers.DragEnter += new System.Windows.Forms.DragEventHandler(this.flpFavoritePlayers_DragEnter);
             // 
+            // btnRemoveFavorites
+            // 
+            this.btnRemoveFavorites.Location = new System.Drawing.Point(452, 395);
+            this.btnRemoveFavorites.Name = "btnRemoveFavorites";
+            this.btnRemoveFavorites.Size = new System.Drawing.Size(80, 69);
+            this.btnRemoveFavorites.TabIndex = 2;
+            this.btnRemoveFavorites.Text = "Remove All Favorites";
+            this.btnRemoveFavorites.UseVisualStyleBackColor = true;
+            this.btnRemoveFavorites.Click += new System.EventHandler(this.btnRemoveFavorites_Click);
+            // 
             // SelectPlayersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.btnRemoveFavorites);
             this.Controls.Add(this.flpFavoritePlayers);
             this.Controls.Add(this.flpLoadedPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpLoadedPlayers;
         private System.Windows.Forms.FlowLayoutPanel flpFavoritePlayers;
+        private System.Windows.Forms.Button btnRemoveFavorites;
     }
 }

@@ -28,20 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.flpPlayers = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // flpPlayers
+            // 
+            this.flpPlayers.AutoScroll = true;
+            this.flpPlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.flpPlayers.Location = new System.Drawing.Point(12, 113);
+            this.flpPlayers.Name = "flpPlayers";
+            this.flpPlayers.Size = new System.Drawing.Size(960, 636);
+            this.flpPlayers.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(209, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(566, 33);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Dupli klik na igraca za postavljane slika";
             // 
             // SetPlayerPictureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flpPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SetPlayerPictureForm";
             this.Text = "SetPlayerPictureForm";
+            this.Load += new System.EventHandler(this.SetPlayerPictureForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flpPlayers;
+        private System.Windows.Forms.Label label1;
     }
 }

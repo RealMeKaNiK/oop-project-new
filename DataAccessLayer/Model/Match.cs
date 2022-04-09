@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,6 @@ namespace DataAccessLayer.Model
     [Serializable]
     public class Player
     {
-
         public string name { get; set; }
         public bool captain { get; set; }
         public int shirt_number { get; set; }
@@ -58,7 +58,7 @@ namespace DataAccessLayer.Model
         public int GoalNumber { get; set; }
         public int YellowCardNumber { get; set; }
         public bool FavoritePlayer { get; set; }
-        //public string ImgPath { get; set; }
+        public string ImgPath { get; set; }
         //private string defaultPicture = @"..\..\..\Images\default.png";
 
 
@@ -77,7 +77,7 @@ namespace DataAccessLayer.Model
         //    }
         //}
 
-        public override string ToString() => $"{name} {shirt_number}";
+        public override string ToString() => $"{name} {shirt_number}";        
     }
 
     public class StartingEleven : Player

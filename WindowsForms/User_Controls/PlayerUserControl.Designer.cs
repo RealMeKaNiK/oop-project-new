@@ -45,6 +45,7 @@
             this.lblName.Size = new System.Drawing.Size(35, 13);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "label1";
+            this.lblName.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             // 
             // lblShirtNumber
             // 
@@ -54,6 +55,7 @@
             this.lblShirtNumber.Size = new System.Drawing.Size(35, 13);
             this.lblShirtNumber.TabIndex = 1;
             this.lblShirtNumber.Text = "label2";
+            this.lblShirtNumber.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             // 
             // lblPosition
             // 
@@ -63,6 +65,7 @@
             this.lblPosition.Size = new System.Drawing.Size(35, 13);
             this.lblPosition.TabIndex = 2;
             this.lblPosition.Text = "label3";
+            this.lblPosition.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             // 
             // lblCaptain
             // 
@@ -72,6 +75,7 @@
             this.lblCaptain.Size = new System.Drawing.Size(35, 13);
             this.lblCaptain.TabIndex = 3;
             this.lblCaptain.Text = "label4";
+            this.lblCaptain.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             // 
             // lblFavorite
             // 
@@ -81,6 +85,7 @@
             this.lblFavorite.Size = new System.Drawing.Size(35, 13);
             this.lblFavorite.TabIndex = 4;
             this.lblFavorite.Text = "label5";
+            this.lblFavorite.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             // 
             // pictureBox1
             // 
@@ -90,6 +95,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             // 
             // PlayerUserControl
             // 
@@ -105,6 +111,7 @@
             this.Name = "PlayerUserControl";
             this.Size = new System.Drawing.Size(198, 200);
             this.Load += new System.EventHandler(this.PlayerUserControl_Load);
+            this.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayerUserControl_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

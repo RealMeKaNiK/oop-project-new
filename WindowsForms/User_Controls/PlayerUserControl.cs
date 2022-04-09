@@ -13,11 +13,20 @@ namespace WindowsForms.User_Controls
 {
     public partial class PlayerUserControl : UserControl
     {
-        private readonly Player Player;
+        private const string PICTURE_FILTER = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+        private Player Player;
         public PlayerUserControl(Player player)
         {
             InitializeComponent();
             this.Player = player;
+        }
+
+        public Player GetUserControlPlayer() => Player;
+
+        public void SetAsFavorite()
+        {
+            Player.FavoritePlayer = true;
+            this.lblFavorite.Text = "ZVEZDAN";
         }
 
         private void PlayerUserControl_Load(object sender, EventArgs e)
@@ -34,5 +43,17 @@ namespace WindowsForms.User_Controls
             if (e.Button == MouseButtons.Left)
                 this.DoDragDrop(this, DragDropEffects.All);
         }
+
+        private void PlayerUserControl_DoubleClick(object sender, EventArgs e) => this.pictureBox1.Image = LoadPicture();
+
+        private Image LoadPicture()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = PICTURE_FILTER;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+                return Image.FromFile(openFileDialog.FileName);
+            return null;
+        }
+        
     }
 }
