@@ -31,6 +31,7 @@
             this.flpLoadedPlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.flpFavoritePlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRemoveFavorites = new System.Windows.Forms.Button();
+            this.btnTransferSelectedUserControls = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flpLoadedPlayers
@@ -63,11 +64,22 @@
             this.btnRemoveFavorites.UseVisualStyleBackColor = true;
             this.btnRemoveFavorites.Click += new System.EventHandler(this.btnRemoveFavorites_Click);
             // 
+            // btnTransferSelectedUserControls
+            // 
+            this.btnTransferSelectedUserControls.Location = new System.Drawing.Point(452, 240);
+            this.btnTransferSelectedUserControls.Name = "btnTransferSelectedUserControls";
+            this.btnTransferSelectedUserControls.Size = new System.Drawing.Size(80, 69);
+            this.btnTransferSelectedUserControls.TabIndex = 3;
+            this.btnTransferSelectedUserControls.Text = "Transfer selected";
+            this.btnTransferSelectedUserControls.UseVisualStyleBackColor = true;
+            this.btnTransferSelectedUserControls.Click += new System.EventHandler(this.btnTransferSelectedUserControls_Click);
+            // 
             // SelectPlayersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.btnTransferSelectedUserControls);
             this.Controls.Add(this.btnRemoveFavorites);
             this.Controls.Add(this.flpFavoritePlayers);
             this.Controls.Add(this.flpLoadedPlayers);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpLoadedPlayers;
         private System.Windows.Forms.FlowLayoutPanel flpFavoritePlayers;
         private System.Windows.Forms.Button btnRemoveFavorites;
+        private System.Windows.Forms.Button btnTransferSelectedUserControls;
     }
 }

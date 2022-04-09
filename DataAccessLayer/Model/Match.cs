@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,23 +61,21 @@ namespace DataAccessLayer.Model
         public int YellowCardNumber { get; set; }
         public bool FavoritePlayer { get; set; }
         public string ImgPath { get; set; }
-        //private string defaultPicture = @"..\..\..\Images\default.png";
-
-
-        //public Image Picture
-        //{
-        //    get
-        //    {
-        //        if (!string.IsNullOrEmpty(ImgPath))
-        //        {
-        //            if (File.Exists(ImgPath))
-        //            {
-        //                return Image.FromFile(ImgPath);
-        //            }
-        //        }
-        //        return Image.FromFile(defaultPicture);
-        //    }
-        //}
+        private readonly Bitmap DefaultPicture = new Bitmap(DataAccessLayer.Properties.ResourceFile.DefaultPicture);
+        public Bitmap Picture
+        {
+            get
+            {
+                //if (!string.IsNullOrEmpty(ImgPath))
+                //{
+                //    if (File.Exists(ImgPath))
+                //    {
+                //        return Image.FromFile(ImgPath);
+                //    }
+                //}
+                return DefaultPicture;
+            }
+        }
 
         public override string ToString() => $"{name} {shirt_number}";        
     }

@@ -72,5 +72,10 @@ namespace WindowsForms.Forms
             List<Player> players = DataProvider.GetFavoritePlayers();
             players.ForEach(player => this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(player)));
         }
+
+        private void btnTransferSelectedUserControls_Click(object sender, EventArgs e)
+        {
+            // transfer all selected to fav players
+        }
     }
 }

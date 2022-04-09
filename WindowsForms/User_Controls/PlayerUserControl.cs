@@ -37,6 +37,7 @@ namespace WindowsForms.User_Controls
             this.lblPosition.Text = Player.position;
             this.lblCaptain.Text = Player.captain ? "KAPETAN" : "";
             this.lblFavorite.Text = Player.FavoritePlayer ? "ZVEZDA" : "";
+            this.pictureBox1.Image = Player.Picture;
         }
 
         private void PlayerUserControl_MouseDown(object sender, MouseEventArgs e)
@@ -58,6 +59,7 @@ namespace WindowsForms.User_Controls
 
         private void addToFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // dodaj logiku za dodavanje u favorite
             MessageBox.Show("Stisnuo sam item u tool stripu");
         }
     }
