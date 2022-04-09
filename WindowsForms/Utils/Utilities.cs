@@ -25,5 +25,8 @@ namespace WindowsForms.Utils
             printer.FooterSpacing = 15;
             printer.PrintDataGridView(grid);
         }
+
+
+        public static DialogResult DisplayMessageBox(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon) => MessageBox.Show(text, caption, buttons, icon);
     }
 }
