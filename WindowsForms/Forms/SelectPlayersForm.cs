@@ -23,13 +23,12 @@ namespace WindowsForms.Forms
         }
 
         private bool IsThreeSelected(int selectedPlayersCount) => selectedPlayersCount == MAX_FAV_PLAYERS; 
-        private void InsertControlInPanel(Control control)
+        private void InsertControlInPanel(PlayerUserControl control)
         {
             if (!(control is PlayerUserControl))
-            {
                 return;
-            }            
-            this.flpFavoritePlayers.Controls.Add((PlayerUserControl)control);
+            
+            this.flpFavoritePlayers.Controls.Add(control);
         }
 
         private async void SelectPlayersForm_Load(object sender, EventArgs e)
@@ -47,7 +46,8 @@ namespace WindowsForms.Forms
                 Utilities.DisplayMessageBox("You can only have 3 selected players", "Max 3 Favorite players", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            InsertControlInPanel(e.Data.GetData(typeof(Control)) as Control);
+            PlayerUserControl control = (PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl));
+            InsertControlInPanel((PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl)));
         }
     }
 }
