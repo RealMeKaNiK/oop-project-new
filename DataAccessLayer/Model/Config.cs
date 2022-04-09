@@ -81,5 +81,15 @@ namespace DataAccessLayer.Model
                 FavoritePlayers = FileRepo.LoadFavoritePlayersFromFile()
             };            
         }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb
+                .AppendLine("TRENUTNE POSTAVKE")
+                .AppendLine($"ODABRANO PRVENSTVO: {TeamType}")
+                .AppendLine($"ODABRANI JEZIK: {Language}")
+                .AppendLine($"ODABRANA REZOLUCIJA: {ResolutionType}");
+            return sb.ToString();
+        }
     }
 }

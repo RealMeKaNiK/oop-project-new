@@ -29,6 +29,16 @@ namespace DataAccessLayer
             Config.Language = language;
             Config.TeamType = teamType;
         }
+        public static void UpdateConfig(TeamType teamType, Language language, ResolutionType resolutionType)
+        {
+            if (Config == null)
+                Config = new Config();
+            Config.Language = language;
+            Config.TeamType = teamType;
+            Config.ResolutionType = resolutionType;
+        }
+
+        public static string GetConfigInfo() => Config.ToString();
 
         public static void SaveConfig() => FileRepo.SaveConfig(Config);
         public static void SaveFavoritePlayers() => FileRepo.SaveFavoritePlayers(Config.FavoritePlayers);
