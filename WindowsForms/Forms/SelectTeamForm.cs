@@ -21,6 +21,10 @@ namespace WindowsForms.Forms
 
         private async void SelectTeamForm_Load(object sender, EventArgs e) => this.cbAllTeams.DataSource = await DataProvider.GetTeams();
 
-        private void btnSaveFavoriteTeam_Click(object sender, EventArgs e) => DataProvider.SaveFavoriteTeam(this.cbAllTeams.SelectedValue as Team);   
+        private void btnSaveFavoriteTeam_Click(object sender, EventArgs e)
+        {
+            DataProvider.SaveFavoriteTeam(this.cbAllTeams.SelectedValue as Team);
+            MessageBox.Show($"Uspjesno ste odabrali favorit team: {this.cbAllTeams.SelectedValue}", "Promjena", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

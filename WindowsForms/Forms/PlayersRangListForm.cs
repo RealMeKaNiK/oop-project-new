@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForms.Utils;
 
 namespace WindowsForms.Forms
 {
@@ -16,5 +17,7 @@ namespace WindowsForms.Forms
         {
             InitializeComponent();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e) => Utilities.PrintDataGridView(this.dgvPlayerStats, "Players Statistic");
     }
 }

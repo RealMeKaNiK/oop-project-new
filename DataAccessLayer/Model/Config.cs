@@ -47,17 +47,18 @@ namespace DataAccessLayer.Model
                 .Append(DEL)
                 .Append(Language)
                 .Append(DEL)
-                //.Append(FavoriteTeam.Fifa_Code)
-                //.Append(DEL)
+                .Append(FavoriteTeam.Fifa_Code)
+                .Append(DEL)
                 .Append(ResolutionType);
 
             return sb.ToString();
         }
 
-        public string GetURLFromConfig()
-        {
-            return MEN_API_RESULTS;
-        }
+        public string GetURLAllResults() => TeamType == TeamType.Men ? MEN_API_RESULTS : WOMEN_API_RESULTS;     
+
+        public string GetURLTeamResult() => TeamType == TeamType.Men ? MEN_API_TEAM_RESULTS + FavoriteTeam.Fifa_Code : WOMEN_API_TEAM_RESULTS + FavoriteTeam.Fifa_Code;
+
+        public string GetURLTeamMatches() => TeamType == TeamType.Men ? MEN_API_TEAM_MATCHES + FavoriteTeam.Fifa_Code : WOMEN_API_TEAM_MATCHES + FavoriteTeam.Fifa_Code;
 
         public static Config ParseFromFile(string line)
         {

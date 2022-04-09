@@ -1,1 +1,1 @@
-Women|Croatian|Normal
+Men|Croatian|CRO|Normal
