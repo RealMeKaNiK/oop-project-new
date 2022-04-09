@@ -44,7 +44,7 @@ namespace WindowsForms.Forms
         {
             if (IsThreeSelected(this.flpFavoritePlayers.Controls.Count))
             {
-                Utilities.DisplayMessageBox("You can only have 3 selected players", "Max 3 Favorite players", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FormUtils.DisplayMessageBox("You can only have 3 selected players", "Max 3 Favorite players", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }            
             InsertControlInPanel((PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl)));
@@ -57,7 +57,7 @@ namespace WindowsForms.Forms
             LoadPlayers();
         }
 
-        private void AddPlayerToFavorites(Player player) => DataProvider.SaveFavoritePlayer(player);
+        private void AddPlayerToFavorites(Player player) => DataProvider.InsertFavoritePlayer(player);
 
         private async void LoadPlayers()
         {

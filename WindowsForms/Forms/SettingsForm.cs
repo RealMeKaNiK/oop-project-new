@@ -32,10 +32,10 @@ namespace WindowsForms.Forms
         {
             if (String.IsNullOrEmpty(this.cbLanguage.Text) || String.IsNullOrEmpty(this.cbLanguage.Text))
             {
-                Utilities.DisplayMessageBox("Please choose with options", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                FormUtils.DisplayMessageBox("Please choose with options", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
                 return;
             }
-            if (Utilities.DisplayMessageBox("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)                            
+            if (FormUtils.DisplayMessageBox("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)                            
                 DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));                            
         }
     }

@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblName = new System.Windows.Forms.Label();
             this.lblShirtNumber = new System.Windows.Forms.Label();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblCaptain = new System.Windows.Forms.Label();
             this.lblFavorite = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmsAddPlayerToFav = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToFavoritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmsAddPlayerToFav.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -97,6 +101,20 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             // 
+            // cmsAddPlayerToFav
+            // 
+            this.cmsAddPlayerToFav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToFavoritesToolStripMenuItem});
+            this.cmsAddPlayerToFav.Name = "cmsAddPlayerToFav";
+            this.cmsAddPlayerToFav.Size = new System.Drawing.Size(181, 48);
+            // 
+            // addToFavoritesToolStripMenuItem
+            // 
+            this.addToFavoritesToolStripMenuItem.Name = "addToFavoritesToolStripMenuItem";
+            this.addToFavoritesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToFavoritesToolStripMenuItem.Text = "Add to favorites";
+            this.addToFavoritesToolStripMenuItem.Click += new System.EventHandler(this.addToFavoritesToolStripMenuItem_Click);
+            // 
             // PlayerUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,6 +132,7 @@
             this.DoubleClick += new System.EventHandler(this.PlayerUserControl_DoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayerUserControl_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.cmsAddPlayerToFav.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +146,7 @@
         private System.Windows.Forms.Label lblCaptain;
         private System.Windows.Forms.Label lblFavorite;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ContextMenuStrip cmsAddPlayerToFav;
+        private System.Windows.Forms.ToolStripMenuItem addToFavoritesToolStripMenuItem;
     }
 }

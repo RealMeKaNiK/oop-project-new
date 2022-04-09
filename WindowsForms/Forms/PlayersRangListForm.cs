@@ -19,7 +19,7 @@ namespace WindowsForms.Forms
             InitializeComponent();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e) => Utilities.PrintDataGridView(this.dgvPlayerStats, "Players Statistic");
+        private void btnPrint_Click(object sender, EventArgs e) => FormUtils.PrintDataGridView(this.dgvPlayerStats, "Players Statistic");
 
         private async void PlayersRangListForm_Load(object sender, EventArgs e) => this.dgvPlayerStats.DataSource = await DataProvider.GetPlayers();
     }

@@ -19,7 +19,7 @@ namespace DataAccessLayer
         public static bool LoadConfiguration()
         {
             Config = FileRepo.GetConfig();
-            return Config != null;
+            return Config.Language != Language.NotSet && Config.TeamType != TeamType.NotSet;
         }
 
         public static void UpdateConfig(TeamType teamType, Language language)
@@ -33,9 +33,9 @@ namespace DataAccessLayer
         public static void SaveConfig() => FileRepo.SaveConfig(Config);
         public static void SaveFavoritePlayers() => FileRepo.SaveFavoritePlayers(Config.FavoritePlayers);
         public static void SaveFavoriteTeam(Team team) => Config.FavoriteTeam = team;
-        public static void SaveFavoritePlayer(Player player) => Config.FavoritePlayers.Add(player);
+        public static void InsertFavoritePlayer(Player player) => Config.FavoritePlayers.Add(player);
         public static void DeleteFavoritePlayers() => Config.FavoritePlayers.Clear();
-        public static List<Player> GetFavoritePlayers() => Config?.FavoritePlayers != null ? new List<Player>(Config.FavoritePlayers) : new List<Player>();        
+        public static List<Player> GetFavoritePlayers() => new List<Player>(Config.FavoritePlayers);        
 
         // API comunication
         public async static Task<List<Team>> GetTeams() => await ApiRepo.GetAllResults(Config.GetURLAllResults());

@@ -25,7 +25,7 @@ namespace WindowsForms.Forms
         private void btnSaveFavoriteTeam_Click(object sender, EventArgs e)
         {
             DataProvider.SaveFavoriteTeam(this.cbAllTeams.SelectedValue as Team);
-            Utilities.DisplayMessageBox($"Uspjesno ste odabrali favorit team: {this.cbAllTeams.SelectedValue}", "Promjena", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            FormUtils.DisplayMessageBox($"Uspjesno ste odabrali favorit team: {this.cbAllTeams.SelectedValue}", "Promjena", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

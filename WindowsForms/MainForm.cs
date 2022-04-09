@@ -65,6 +65,7 @@ namespace WindowsForms
                 DataProvider.SaveConfig();
                 DataProvider.SaveFavoritePlayers();
                 Application.ExitThread();
+                return;
             }
             e.Cancel = true;
         }

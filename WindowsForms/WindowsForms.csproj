@@ -99,7 +99,7 @@
     <Compile Include="User_Controls\PlayerUserControl.Designer.cs">
       <DependentUpon>PlayerUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\Utilities.cs" />
+    <Compile Include="Utils\FormUtils.cs" />
     <EmbeddedResource Include="Forms\EventRangListForm.resx">
       <DependentUpon>EventRangListForm.cs</DependentUpon>
     </EmbeddedResource>

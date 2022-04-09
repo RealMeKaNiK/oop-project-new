@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace WindowsForms.Utils
 {
-    public static class Utilities
+    public static class FormUtils
     {
         public static void PrintDataGridView(DataGridView grid, string title)
         {

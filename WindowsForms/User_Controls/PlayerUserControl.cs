@@ -19,6 +19,7 @@ namespace WindowsForms.User_Controls
         {
             InitializeComponent();
             this.Player = player;
+            this.ContextMenuStrip = cmsAddPlayerToFav;
         }
 
         public Player GetUserControlPlayer() => Player;
@@ -54,6 +55,10 @@ namespace WindowsForms.User_Controls
                 return Image.FromFile(openFileDialog.FileName);
             return null;
         }
-        
+
+        private void addToFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Stisnuo sam item u tool stripu");
+        }
     }
 }

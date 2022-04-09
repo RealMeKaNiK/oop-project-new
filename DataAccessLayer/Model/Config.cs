@@ -9,11 +9,11 @@ namespace DataAccessLayer.Model
 {
     public enum Language
     {
-        English, Croatian
+        NotSet, English, Croatian
     }
     public enum TeamType
     {
-        Men, Women
+        NotSet, Men, Women
     }
 
     public enum ResolutionType
@@ -66,7 +66,10 @@ namespace DataAccessLayer.Model
         {
             if (String.IsNullOrEmpty(line))
             {
-                return null;
+                return new Config
+                {
+                    FavoritePlayers = new List<Player>(),
+                };
             }
             string[] items = line.Split(DEL);
 
