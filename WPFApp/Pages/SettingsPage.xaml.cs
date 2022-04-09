@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFApp.Utils;
 
 namespace WPFApp.Pages
 {
@@ -35,7 +36,11 @@ namespace WPFApp.Pages
                 return;
             }
             if (MessageBox.Show("Are you sure you want to change settings?", "Settings Change", MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
                 DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeam.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text), (ResolutionType)Enum.Parse(typeof(ResolutionType), this.cbResolution.Text));
+                WpfUtils.ChangeResolution((ResolutionType)Enum.Parse(typeof(ResolutionType), this.cbResolution.Text));
+            }
+                
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
