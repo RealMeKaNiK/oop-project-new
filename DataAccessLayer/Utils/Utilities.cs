@@ -77,6 +77,40 @@ namespace DataAccessLayer.Utils
 
             result.Sort((x, y) => -x.GoalNumber.CompareTo(y.GoalNumber));
             return result;
-        }        
+        }
+        
+        public static List<Player> CalculatePlayerStatisticsForSingleMatch(List<Player> players, List<MatchEvents> events)
+        {
+            List<Player> result = players;
+
+            foreach (MatchEvents matchEvents in events)
+            {
+                switch (matchEvents.type_of_event)
+                {
+                    case "goal":
+                        if (players.Find(x => x.name.Contains(matchEvents.player))?.name == matchEvents.player)
+                        {
+                            result.Find(x => x.name.Contains(matchEvents.player)).GoalNumber++;
+                        }
+                        break;
+                    case "goal-penalty":
+                        if (players.Find(x => x.name.Contains(matchEvents.player))?.name == matchEvents.player)
+                        {
+                            result.Find(x => x.name.Contains(matchEvents.player)).GoalNumber++;
+                        }
+                        break;
+                    case "yellow-card":
+                        if (players.Find(x => x.name.Contains(matchEvents.player))?.name == matchEvents.player)
+                        {
+                            result.Find(x => x.name.Contains(matchEvents.player)).YellowCardNumber++;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return result;
+        }
     }
 }

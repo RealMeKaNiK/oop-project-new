@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Dal;
 using DataAccessLayer.Model;
+using DataAccessLayer.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,6 +64,13 @@ namespace DataAccessLayer
 
         public async static Task<List<Team>> GetTeamStatistics(string fifaCode) => await ApiRepo.GetTeamResult(Config.GetURLTeamResult(), fifaCode);
 
-        public async static Task<Match> GetMatchWinner(string firstFifaCode, string secondFifaCode) => await ApiRepo.GetSpecificMatch(firstFifaCode, secondFifaCode, Config.GetURLTeamMatches());
+        public async static Task<Match> GetMatchWinner(string firstFifaCode, string secondFifaCode)
+        {
+            Match singleMatch = await ApiRepo.GetSpecificMatch(firstFifaCode, secondFifaCode, Config.GetURLTeamMatches());
+            singleMatch.home_team_statistics.starting_eleven = Utilities.CalculatePlayerStatisticsForSingleMatch(singleMatch.home_team_statistics.starting_eleven, singleMatch.home_team_events);
+            singleMatch.away_team_statistics.starting_eleven = Utilities.CalculatePlayerStatisticsForSingleMatch(singleMatch.away_team_statistics.starting_eleven, singleMatch.away_team_events);
+            return singleMatch;            
+        }
+                    
     }
 }

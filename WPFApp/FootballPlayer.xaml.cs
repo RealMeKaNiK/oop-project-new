@@ -26,10 +26,12 @@ namespace WPFApp
         public FootballPlayer(Player player)
         {
             InitializeComponent();
-            this.DataContext = this;
             Player = player;
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e) => this.imgPlayer.Source = WpfUtils.ConvertBitmap(Player.Picture);
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.lblPlayerInfo.Content = Player;
+        }/* => this.imgPlayer.Source = WpfUtils.ConvertBitmap(Player.Picture);*/
     }
 }

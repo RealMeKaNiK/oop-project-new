@@ -10,10 +10,8 @@
              d:DesignHeight="100" d:DesignWidth="100">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image x:Name="imgPlayer" Height="20" Width="20" Stretch="Fill">
-            </Image>
-
-            <Label FontSize="7" Content="{Binding Player}"/>
+            <!--<Image x:Name="imgPlayer" Height="20" Width="20" Stretch="Fill" />-->
+            <Label x:Name="lblPlayerInfo" FontSize="7" />
         </StackPanel>
     </Grid>
 </UserControl>

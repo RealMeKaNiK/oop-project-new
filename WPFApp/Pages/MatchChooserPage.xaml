@@ -70,18 +70,18 @@
                         </StackPanel.Resources>
                     </StackPanel>
                     <StackPanel x:Name="spMiddlePositionOpp" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <!--<StackPanel.Resources>
+                        <StackPanel.Resources>
                             <Style TargetType="{x:Type uc:FootballPlayer}">
                                 <Setter Property="Margin" Value="50 0 50 0"/>
                             </Style>
-                        </StackPanel.Resources>-->
+                        </StackPanel.Resources>
                     </StackPanel>
                     <StackPanel x:Name="spDefenderPositionOpp" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <!--<StackPanel.Resources>
+                        <StackPanel.Resources>
                             <Style TargetType="{x:Type uc:FootballPlayer}">
                                 <Setter Property="Margin" Value="20 0 20 0"/>
                             </Style>
-                        </StackPanel.Resources>-->
+                        </StackPanel.Resources>
                     </StackPanel>
                     <StackPanel x:Name="spGoaliePositionOpp" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     </StackPanel>
@@ -100,31 +100,30 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel x:Name="spForwardPosition" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <!--<StackPanel.Resources>
+                        <StackPanel.Resources>
                             <Style TargetType="{x:Type uc:FootballPlayer}">
                                 <Setter Property="Margin" Value="50 0 50 0"/>
                             </Style>
-                        </StackPanel.Resources>-->
+                        </StackPanel.Resources>
                     </StackPanel>
                     <StackPanel x:Name="spMiddlePosition" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <!--<StackPanel.Resources>
+                        <StackPanel.Resources>
                             <Style TargetType="{x:Type uc:FootballPlayer}">
                                 <Setter Property="Margin" Value="50 0 50 0"/>
                             </Style>
-                        </StackPanel.Resources>-->
+                        </StackPanel.Resources>
                     </StackPanel>
                     <StackPanel x:Name="spDefenderPosition" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <!--<StackPanel.Resources>
+                        <StackPanel.Resources>
                             <Style TargetType="{x:Type uc:FootballPlayer}">
                                 <Setter Property="Margin" Value="20 0 20 0"/>
                             </Style>
-                        </StackPanel.Resources>-->
+                        </StackPanel.Resources>
                     </StackPanel>
                     <StackPanel x:Name="spGoaliePosition" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     </StackPanel>
                 </Grid>
             </Canvas>
         </StackPanel>
-
     </Grid>
 </Page>

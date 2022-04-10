@@ -27,14 +27,13 @@ namespace DataAccessLayer.Dal
         public async Task<List<Player>> GetTeamPlayers(string url, string fifaCode)
         {
             List<Match> matches = JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync(url + fifaCode));
-            List<StartingEleven> startingElevens = matches[0].home_team_statistics.starting_eleven;
-            List<Substitute> substitutes = matches[0].home_team_statistics.substitutes;
+            List<Player> startingElevens = matches[0].home_team_statistics.starting_eleven;
+            List<Player> substitutes = matches[0].home_team_statistics.substitutes;
 
             List<Player> playerList = new List<Player>();
             startingElevens.ForEach(x => playerList.Add(x));
             substitutes.ForEach(x => playerList.Add(x));
-            List<Player> finalResult = Utilities.CalculatePlayerStatistics(matches, playerList, fifaCode);
-            return finalResult;
+            return Utilities.CalculatePlayerStatistics(matches, playerList, fifaCode);
         }
 
         public async Task<List<Team>> GetFromSelectedTeamOpponents(string url, string fifaCode, string allTeamURL)

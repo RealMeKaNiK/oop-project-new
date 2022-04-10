@@ -32,7 +32,57 @@ namespace WPFApp.Pages
 
         private async void cbSelectedTeam_SelectionChanged(object sender, SelectionChangedEventArgs e) => this.cbSelectedTeamOpponents.ItemsSource = await DataProvider.GetTeamOpponents(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code);
 
-        private async void btnShowResults_Click(object sender, RoutedEventArgs e) => this.lblResult.Content = await DataProvider.GetMatchWinner(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code, ((Team)this.cbSelectedTeamOpponents.SelectedItem).Fifa_Code);
+        private async void btnShowResults_Click(object sender, RoutedEventArgs e)
+        {
+            Match selectedMatch = await DataProvider.GetMatchWinner(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code, ((Team)this.cbSelectedTeamOpponents.SelectedItem).Fifa_Code);
+            this.lblResult.Content = selectedMatch;
+            DisplayFootballPlayersOnTheField(selectedMatch);
+        }
+
+        private void DisplayFootballPlayersOnTheField(Match match)
+        {
+            match.home_team_statistics.starting_eleven.ForEach(player =>
+            {
+                switch (player.position)
+                {
+                    case "Goalie":
+                        this.spGoaliePosition.Children.Add(new FootballPlayer(player));
+                        break;
+                    case "Defender":
+                        this.spDefenderPosition.Children.Add(new FootballPlayer(player));
+                        break;
+                    case "Midfield":
+                        this.spMiddlePosition.Children.Add(new FootballPlayer(player));
+                        break;
+                    case "Forward":
+                        this.spForwardPosition.Children.Add(new FootballPlayer(player));
+                        break;
+                    default:
+                        break;
+                }
+            });
+            match.away_team_statistics.starting_eleven.ForEach(player =>
+            {
+                switch (player.position)
+                {
+                    case "Goalie":
+                        this.spGoaliePositionOpp.Children.Add(new FootballPlayer(player));
+                        break;
+                    case "Defender":
+                        this.spDefenderPositionOpp.Children.Add(new FootballPlayer(player));
+                        break;
+                    case "Midfield":
+                        this.spMiddlePositionOpp.Children.Add(new FootballPlayer(player));
+                        break;
+                    case "Forward":
+                        this.spForwardPositionOpp.Children.Add(new FootballPlayer(player));
+                        break;
+                    default:
+                        break;
+                }
+            });
+
+        }
 
         private void btmShowFavTeamInfo_Click(object sender, RoutedEventArgs e) => ShowInformationAboutTeam(((Team)this.cbSelectedTeam.SelectedItem));
 
