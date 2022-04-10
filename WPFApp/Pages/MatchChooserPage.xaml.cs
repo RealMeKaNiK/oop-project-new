@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFApp.Windows;
 
 namespace WPFApp.Pages
 {
@@ -45,7 +46,7 @@ namespace WPFApp.Pages
                 return;
             }
             List<Team> tim = await DataProvider.GetTeamStatistics(team.Fifa_Code);
-            MessageBox.Show(tim.First<Team>().PrepareForDisplayOutput());
+            new ShowInfoAboutTeam(tim.First<Team>().PrepareForDisplayOutput()).Show();
         }
     }
 }

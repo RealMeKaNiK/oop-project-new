@@ -77,6 +77,6 @@ namespace DataAccessLayer.Utils
 
             result.Sort((x, y) => -x.GoalNumber.CompareTo(y.GoalNumber));
             return result;
-        }
+        }        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFApp.Utils;
 
 namespace WPFApp
 {
@@ -20,9 +22,14 @@ namespace WPFApp
     /// </summary>
     public partial class FootballPlayer : UserControl
     {
-        public FootballPlayer()
+        private Player Player;
+        public FootballPlayer(Player player)
         {
             InitializeComponent();
+            this.DataContext = this;
+            Player = player;
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e) => this.imgPlayer.Source = WpfUtils.ConvertBitmap(Player.Picture);
     }
 }

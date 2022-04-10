@@ -60,6 +60,9 @@
       <DependentUpon>FootballPlayer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\WpfUtils.cs" />
+    <Compile Include="Windows\ShowInfoAboutTeam.xaml.cs">
+      <DependentUpon>ShowInfoAboutTeam.xaml</DependentUpon>
+    </Compile>
     <Page Include="FootballPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ShowInfoAboutTeam.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
