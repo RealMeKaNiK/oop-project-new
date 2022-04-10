@@ -61,6 +61,7 @@ namespace DataAccessLayer.Model
         public string GetURLTeamResult() => TeamType == TeamType.Men ? MEN_API_TEAM_RESULTS : WOMEN_API_TEAM_RESULTS;
 
         public string GetURLTeamMatches() => TeamType == TeamType.Men ? MEN_API_TEAM_MATCHES : WOMEN_API_TEAM_MATCHES;
+        public string GetURLAllMatches() => TeamType == TeamType.Men ? MEN_API_ALL_MATCHES : WOMEN_API_ALL_MATCHES;
 
         public static Config ParseFromFile(string line)
         {

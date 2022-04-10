@@ -106,7 +106,25 @@ namespace DataAccessLayer.Model
         public int clearances { get; set; }
         public int yellow_cards { get; set; }
         public int red_cards { get; set; }
-        public int fouls_committed { get; set; }
+
+        private int foulsCommited;
+        public object fouls_committed 
+        { 
+            get => foulsCommited; 
+            set
+            {
+                if (value == null)
+                {
+                    foulsCommited = 0;
+                }
+                else
+                {
+                    string test = value.ToString();
+                    foulsCommited = int.Parse(test);
+                }
+                    
+            }
+        }
         public string tactics { get; set; }
         public List<StartingEleven> starting_eleven { get; set; }
         public List<Substitute> substitutes { get; set; }
@@ -130,7 +148,25 @@ namespace DataAccessLayer.Model
         public int clearances { get; set; }
         public int yellow_cards { get; set; }
         public int red_cards { get; set; }
-        public int fouls_committed { get; set; }
+
+        private int foulsCommited;
+        public object fouls_committed
+        {
+            get => foulsCommited;
+            set
+            {
+                if (value == null)
+                {
+                    foulsCommited = 0;
+                }
+                else
+                {
+                    string test = value.ToString();
+                    foulsCommited = int.Parse(test);
+                }
+
+            }
+        }
         public string tactics { get; set; }
         public List<StartingEleven> starting_eleven { get; set; }
         public List<Substitute> substitutes { get; set; }
@@ -155,10 +191,36 @@ namespace DataAccessLayer.Model
         public HomeTeamStatistics home_team_statistics { get; set; }
         public AwayTeamStatistics away_team_statistics { get; set; }
         public DateTime last_event_update_at { get; set; }
-        public DateTime last_score_update_at { get; set; }
+
+        //private DateTime lastScoreUpdate;
+        //public DateTime last_score_update_at 
+        //{ 
+        //    get => lastScoreUpdate; 
+        //    set
+        //    {
+        //        lastScoreUpdate = DateTime.Now;
+        //        //if (value == null)
+        //        //{
+        //        //    lastScoreUpdate =  DateTime.Now;
+        //        //}
+        //        //else
+        //        //{
+        //        //    lastScoreUpdate = value;
+                
+        //    }
+        //}
         public string location { get; set; }
         public string attendance { get; set; }
         public string home_team_country { get; set; }
         public string away_team_country { get; set; }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb
+                .AppendLine($"POBJEDNIK: {winner}")
+                .AppendLine("REZULTAT")
+                .Append($"{home_team.code} {home_team.goals} : {away_team.goals} {away_team.code}");
+            return sb.ToString();
+        }
     }
 }

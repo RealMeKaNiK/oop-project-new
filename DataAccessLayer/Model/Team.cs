@@ -28,5 +28,16 @@ namespace DataAccessLayer.Model
         public int Goal_Differential { get; set; }
         public List<Player> Players { get; set; }
         public override string ToString() => $"{Country} ({Fifa_Code})";
+
+        public string PrepareForDisplayOutput()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb
+                .AppendLine($"INFORMACIJE O {Country}")
+                .AppendLine($"FIFA CODE: {Fifa_Code}")
+                .AppendLine($"ODIGRANE/POBEJDA/PORAZ/NEODLUCENE: {Games_Played}/{Wins}/{Losses}/{Draws}")
+                .AppendLine($"GOLOVI ZABIJENI/PRIMLJENI/RAZLIKA: {Goals_For}/{Goals_Against}/{Goal_Differential}");
+            return sb.ToString();
+        }
     }
 }

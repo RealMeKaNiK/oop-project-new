@@ -50,15 +50,19 @@ namespace DataAccessLayer
         // API comunication
         public async static Task<List<Team>> GetTeams() => await ApiRepo.GetAllResults(Config.GetURLAllResults());
         public async static Task<List<Match>> GetMatchEvents() => await ApiRepo.GetTeamMatches(Config.GetURLTeamMatches(), Config.FavoriteTeam.Fifa_Code);
+
+        public async static Task<List<Team>> GetTeamOpponents(string fifaCodeFromSelectedTeam) => await ApiRepo.GetFromSelectedTeamOpponents(Config.GetURLTeamMatches(), fifaCodeFromSelectedTeam, Config.GetURLAllResults());
         public async static Task<List<Player>> GetPlayers()
         {
             if (Config.FavoriteTeam?.Players != null)
             {
                 return new List<Player>(Config.FavoriteTeam.Players);
-            }            
-            List<Player> players = await ApiRepo.GetTeamPlayers(Config.GetURLTeamMatches(), Config.FavoriteTeam.Fifa_Code);
-            Config.FavoriteTeam.Players = players;
-            return players;
-        } 
+            }                                     
+            return Config.FavoriteTeam.Players = await ApiRepo.GetTeamPlayers(Config.GetURLTeamMatches(), Config.FavoriteTeam.Fifa_Code);
+        }
+
+        public async static Task<List<Team>> GetTeamStatistics(string fifaCode) => await ApiRepo.GetTeamResult(Config.GetURLTeamResult(), fifaCode);
+
+        public async static Task<Match> GetMatchWinner(string firstFifaCode, string secondFifaCode) => await ApiRepo.GetSpecificMatch(firstFifaCode, secondFifaCode, Config.GetURLTeamMatches());
     }
 }
