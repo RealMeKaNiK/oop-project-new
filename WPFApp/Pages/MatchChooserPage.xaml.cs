@@ -34,9 +34,22 @@ namespace WPFApp.Pages
 
         private async void btnShowResults_Click(object sender, RoutedEventArgs e)
         {
+            CleanBoard();
             Match selectedMatch = await DataProvider.GetMatchWinner(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code, ((Team)this.cbSelectedTeamOpponents.SelectedItem).Fifa_Code);
             this.lblResult.Content = selectedMatch;
             DisplayFootballPlayersOnTheField(selectedMatch);
+        }
+
+        private void CleanBoard()
+        {
+            this.spDefenderPosition.Children.Clear();
+            this.spDefenderPositionOpp.Children.Clear();
+            this.spForwardPosition.Children.Clear();
+            this.spForwardPositionOpp.Children.Clear();
+            this.spMiddlePosition.Children.Clear();
+            this.spMiddlePositionOpp.Children.Clear();
+            this.spGoaliePosition.Children.Clear();
+            this.spGoaliePositionOpp.Children.Clear();
         }
 
         private void DisplayFootballPlayersOnTheField(Match match)

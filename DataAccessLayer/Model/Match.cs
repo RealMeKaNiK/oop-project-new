@@ -61,7 +61,7 @@ namespace DataAccessLayer.Model
         public int YellowCardNumber { get; set; }
         public bool FavoritePlayer { get; set; }
         public string ImgPath { get; set; }
-        private readonly Bitmap DefaultPicture = new Bitmap(DataAccessLayer.Properties.ResourceFile.DefaultPicture);
+        private Bitmap DefaultPicture = new Bitmap(DataAccessLayer.Properties.ResourceFile.DefaultPicture);
         public Bitmap Picture
         {
             get

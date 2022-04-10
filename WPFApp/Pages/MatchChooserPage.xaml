@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Background="LightGoldenrodYellow"
       Loaded="Page_Loaded"
-      d:DesignHeight="650" d:DesignWidth="1200"
+      d:DesignHeight="850" d:DesignWidth="1400"
       Title="MatchChooserPage">
 
     <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
@@ -49,17 +49,17 @@
                     </StackPanel>
                 </Grid>
             </StackPanel>
-            <Image Height="550" Width="500" Stretch="Fill" Margin="0 20 0 0" Source="/Resources/footballfield.png"/>
+            <Image Height="750" Width="600" Stretch="Fill" Margin="0 20 0 0" Source="/Resources/footballfield.png"/>
             <Canvas>
-                <Grid Canvas.Top="50" Canvas.Left="-480">
+                <Grid Canvas.Top="50" Canvas.Left="-590">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="470"/>
+                        <ColumnDefinition Width="600"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="90"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel x:Name="spForwardPositionOpp" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -88,15 +88,15 @@
                 </Grid>
             </Canvas>
             <Canvas>
-                <Grid Canvas.Top="320" Canvas.Left="-480">
+                <Grid Canvas.Top="420" Canvas.Left="-590">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="470"/>
+                        <ColumnDefinition Width="600"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel x:Name="spForwardPosition" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

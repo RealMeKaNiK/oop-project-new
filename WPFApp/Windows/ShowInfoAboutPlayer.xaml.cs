@@ -11,31 +11,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFApp.Utils;
-using WPFApp.Windows;
 
-namespace WPFApp
+namespace WPFApp.Windows
 {
     /// <summary>
-    /// Interaction logic for FootballPlayer.xaml
+    /// Interaction logic for ShowInfoAboutPlayer.xaml
     /// </summary>
-    public partial class FootballPlayer : UserControl
+    public partial class ShowInfoAboutPlayer : Window
     {
         private Player Player;
-        public FootballPlayer(Player player)
+        public ShowInfoAboutPlayer(Player player)
         {
             InitializeComponent();
             Player = player;
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.lblPlayerInfo.Content = $"{Player.name}{System.Environment.NewLine}{Player.shirt_number}";
-            this.imgPlayer.Source = WpfUtils.ConvertBitmap(Player.Picture);
-        }
+        private void Button_Click(object sender, RoutedEventArgs e) => this.Close();
 
-        private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e) => new ShowInfoAboutPlayer(Player).Show();       
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.imgPlayer.Source = WpfUtils.ConvertBitmap(Player.Picture);
+            this.lblPlayerInfo.Content = Player;
+        }
     }
 }

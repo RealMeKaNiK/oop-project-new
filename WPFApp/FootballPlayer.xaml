@@ -7,11 +7,12 @@
              mc:Ignorable="d"
              Background="LightPink"
              Loaded="UserControl_Loaded"
+             MouseDoubleClick="UserControl_MouseDoubleClick"
              d:DesignHeight="100" d:DesignWidth="100">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <!--<Image x:Name="imgPlayer" Height="20" Width="20" Stretch="Fill" />-->
-            <Label x:Name="lblPlayerInfo" FontSize="7" />
+            <Image x:Name="imgPlayer" Height="30" Width="30" Stretch="Fill" />
+            <Label x:Name="lblPlayerInfo" FontSize="14" />
         </StackPanel>
     </Grid>
 </UserControl>
