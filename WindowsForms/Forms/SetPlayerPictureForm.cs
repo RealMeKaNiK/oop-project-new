@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms.User_Controls;
+using WindowsForms.Utils;
 
 namespace WindowsForms.Forms
 {
@@ -25,6 +26,7 @@ namespace WindowsForms.Forms
         private async void LoadPlayers()
         {
             List<Player> players = await DataProvider.GetPlayers();
+            FormUtils.CheckIfListCountZero<Player>(players);
             players.ForEach(p => this.flpPlayers.Controls.Add(new PlayerUserControl(p)));
         }
     }

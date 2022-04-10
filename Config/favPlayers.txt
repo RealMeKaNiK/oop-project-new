@@ -1,1 +1,1 @@
-[{"name":"Mario MANDZUKIC","captain":false,"shirt_number":17,"position":"Forward","GoalNumber":2,"YellowCardNumber":1,"FavoritePlayer":true,"ImgPath":null,"Picture":"System.Drawing.Bitmap"},{"name":"Danijel SUBASIC","captain":false,"shirt_number":23,"position":"Goalie","GoalNumber":0,"YellowCardNumber":0,"FavoritePlayer":true,"ImgPath":null,"Picture":"System.Drawing.Bitmap"},{"name":"Milan BADELJ","captain":false,"shirt_number":19,"position":"Midfield","GoalNumber":0,"YellowCardNumber":0,"FavoritePlayer":true,"ImgPath":null,"Picture":"System.Drawing.Bitmap"}]
+[]

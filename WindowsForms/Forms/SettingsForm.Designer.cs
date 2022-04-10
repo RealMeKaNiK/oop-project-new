@@ -34,6 +34,7 @@
             this.cbTeamType = new System.Windows.Forms.ComboBox();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.btnSaveConfig = new System.Windows.Forms.Button();
+            this.lblCurrentSettings = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -92,11 +93,21 @@
             this.btnSaveConfig.UseVisualStyleBackColor = true;
             this.btnSaveConfig.Click += new System.EventHandler(this.btnSaveConfig_Click);
             // 
+            // lblCurrentSettings
+            // 
+            this.lblCurrentSettings.AutoSize = true;
+            this.lblCurrentSettings.Location = new System.Drawing.Point(755, 330);
+            this.lblCurrentSettings.Name = "lblCurrentSettings";
+            this.lblCurrentSettings.Size = new System.Drawing.Size(35, 13);
+            this.lblCurrentSettings.TabIndex = 6;
+            this.lblCurrentSettings.Text = "label4";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.lblCurrentSettings);
             this.Controls.Add(this.btnSaveConfig);
             this.Controls.Add(this.cbLanguage);
             this.Controls.Add(this.cbTeamType);
@@ -121,5 +132,6 @@
         private System.Windows.Forms.ComboBox cbTeamType;
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Button btnSaveConfig;
+        private System.Windows.Forms.Label lblCurrentSettings;
     }
 }

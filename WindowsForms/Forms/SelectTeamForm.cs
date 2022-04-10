@@ -20,7 +20,11 @@ namespace WindowsForms.Forms
             InitializeComponent();
         }
 
-        private async void SelectTeamForm_Load(object sender, EventArgs e) => this.cbAllTeams.DataSource = await DataProvider.GetTeams();
+        private async void SelectTeamForm_Load(object sender, EventArgs e)
+        {
+            this.cbAllTeams.DataSource = await DataProvider.GetTeams();
+            FormUtils.CheckIfListCountZero<Team>((List<Team>)this.cbAllTeams.DataSource);
+        }
 
         private void btnSaveFavoriteTeam_Click(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using DataAccessLayer.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,10 @@ namespace WindowsForms.Forms
 
         private void btnPrint_Click(object sender, EventArgs e) => FormUtils.PrintDataGridView(this.dgvPlayerStats, "Players Statistic");
 
-        private async void PlayersRangListForm_Load(object sender, EventArgs e) => this.dgvPlayerStats.DataSource = await DataProvider.GetPlayers();
+        private async void PlayersRangListForm_Load(object sender, EventArgs e)
+        {
+            this.dgvPlayerStats.DataSource = await DataProvider.GetPlayers();
+            FormUtils.CheckIfListCountZero<Player>((List<Player>)this.dgvPlayerStats.DataSource);
+        } 
     }
 }

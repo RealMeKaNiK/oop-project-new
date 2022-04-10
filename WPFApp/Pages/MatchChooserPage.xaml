@@ -30,7 +30,7 @@
                         <Label FontSize="16">Odaberi prvu momcad</Label>
                         <ComboBox x:Name="cbSelectedTeam" Width="100" SelectionChanged="cbSelectedTeam_SelectionChanged"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="spOppTeam" Orientation="Horizontal">
                         <Label FontSize="16">Odaberi protivnike izabrane momcadi</Label>
                         <ComboBox x:Name="cbSelectedTeamOpponents" Width="100" />
                     </StackPanel>

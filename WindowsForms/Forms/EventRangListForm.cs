@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms.Utils;
@@ -21,6 +22,10 @@ namespace WindowsForms.Forms
 
         private void btnPrint_Click(object sender, EventArgs e) => FormUtils.PrintDataGridView(this.dgvEventStats, "Event stats");
 
-        private async void EventRangListForm_Load(object sender, EventArgs e) => this.dgvEventStats.DataSource = await DataProvider.GetMatchEvents();
+        private async void EventRangListForm_Load(object sender, EventArgs e)
+        {
+            this.dgvEventStats.DataSource = await DataProvider.GetMatchEvents();
+            FormUtils.CheckIfListCountZero<Match>((List<Match>)this.dgvEventStats.DataSource);
+        } 
     }
 }

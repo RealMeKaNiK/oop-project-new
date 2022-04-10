@@ -28,12 +28,25 @@ namespace WPFApp.Pages
             InitializeComponent();
         }
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e) => this.cbSelectedTeam.ItemsSource = await DataProvider.GetTeams();
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.spOppTeam.Visibility = Visibility.Collapsed;
+            this.cbSelectedTeam.ItemsSource = await DataProvider.GetTeams();
+        }
 
-        private async void cbSelectedTeam_SelectionChanged(object sender, SelectionChangedEventArgs e) => this.cbSelectedTeamOpponents.ItemsSource = await DataProvider.GetTeamOpponents(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code);
+        private async void cbSelectedTeam_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.spOppTeam.Visibility = Visibility.Visible;
+            this.cbSelectedTeamOpponents.ItemsSource = await DataProvider.GetTeamOpponents(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code);
+        } 
 
         private async void btnShowResults_Click(object sender, RoutedEventArgs e)
         {
+            if (this.cbSelectedTeam.SelectedItem == null || this.cbSelectedTeamOpponents.SelectedItem == null)
+            {
+                MessageBox.Show("Please select both options before getting result", "Select Two Teams", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             CleanBoard();
             Match selectedMatch = await DataProvider.GetMatchWinner(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code, ((Team)this.cbSelectedTeamOpponents.SelectedItem).Fifa_Code);
             this.lblResult.Content = selectedMatch;

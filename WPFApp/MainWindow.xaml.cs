@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFApp.Pages;
+using WPFApp.Utils;
 
 namespace WPFApp
 {
@@ -35,6 +36,7 @@ namespace WPFApp
         {
             if (ShowClosingProcess() == MessageBoxResult.Yes)
             {
+                DataProvider.SaveConfig();
                 Application.Current.Shutdown();
                 return;
             }            
@@ -46,9 +48,11 @@ namespace WPFApp
         {
             if (!DataProvider.LoadConfiguration())
             {
+                WpfUtils.ChangeResolution(DataProvider.GetResolutionType());
                 this.MainFrame.Content = new SettingsPage();
                 return;
             }
+            WpfUtils.ChangeResolution(DataProvider.GetResolutionType());
             this.MainFrame.Content = new MatchChooserPage();
         }
     }

@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
+        WindowStyle="None"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="WPF APP" Height="820" Width="1500">
     <Grid>

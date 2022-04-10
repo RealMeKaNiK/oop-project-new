@@ -26,6 +26,10 @@ namespace WindowsForms.Forms
             this.cbTeamType.Items.Add(TeamType.Women);
             this.cbLanguage.Items.Add(Language.Croatian);
             this.cbLanguage.Items.Add(Language.English);
+            this.lblCurrentSettings.Text = DataProvider.GetConfigInfo();
+
+            this.cbTeamType.SelectedItem = DataProvider.GetTeamType();
+            this.cbLanguage.SelectedItem = DataProvider.GetLanguage();
         }
 
         private void btnSaveConfig_Click(object sender, EventArgs e)

@@ -30,22 +30,56 @@ namespace DataAccessLayer.Dal
 
         public Config GetConfig()
         {
-            string line = File.ReadAllText(CONFIG_PATH);
-            return Config.ParseFromFile(line);
+            try
+            {
+                string line = File.ReadAllText(CONFIG_PATH);
+                return Config.ParseFromFile(line);
+            }
+            catch (Exception)
+            {
+                return new Config();
+            }
         }
 
         public static List<Player> LoadFavoritePlayersFromFile()
         {
-            List<Player> players = JsonConvert.DeserializeObject<List<Player>>(File.ReadAllText(CONFIG_FAVORITE_PLAYERS));
-            if (players == null)
+            try
+            {
+                List<Player> players = JsonConvert.DeserializeObject<List<Player>>(File.ReadAllText(CONFIG_FAVORITE_PLAYERS));
+                if (players == null)
+                {
+                    return new List<Player>();
+                }
+                return players;
+            }
+            catch (Exception)
             {
                 return new List<Player>();
             }
-            return players;
         } 
 
-        public void SaveConfig(Config config) => File.WriteAllText(CONFIG_PATH, config.PrepareConfigForFile());
+        public void SaveConfig(Config config)
+        {
+            try
+            {
+                File.WriteAllText(CONFIG_PATH, config.PrepareConfigForFile());
+            }
+            catch (Exception)
+            {
+                return;                
+            }
+        }
 
-        public void SaveFavoritePlayers(List<Player> players) => File.WriteAllText(CONFIG_FAVORITE_PLAYERS, JsonConvert.SerializeObject(players));      
+        public void SaveFavoritePlayers(List<Player> players)
+        {
+            try
+            {
+                File.WriteAllText(CONFIG_FAVORITE_PLAYERS, JsonConvert.SerializeObject(players));
+            }
+            catch (Exception)
+            {
+                return;                
+            }
+        }
     }
 }

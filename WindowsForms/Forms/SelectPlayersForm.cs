@@ -63,6 +63,7 @@ namespace WindowsForms.Forms
         {
             this.flpLoadedPlayers.Controls.Clear();
             List<Player> players = await DataProvider.GetPlayers();
+            FormUtils.CheckIfListCountZero<Player>(players);
             players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player)));
         }
 

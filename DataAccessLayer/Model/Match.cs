@@ -134,7 +134,6 @@ namespace DataAccessLayer.Model
                     string test = value.ToString();
                     foulsCommited = int.Parse(test);
                 }
-
             }
         }
         public string tactics { get; set; }

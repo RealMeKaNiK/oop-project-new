@@ -44,8 +44,8 @@ namespace WPFApp.Pages
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
+        {            
             this.lblCurrentSettings.Content = DataProvider.GetConfigInfo();
-        }
+        }       
     }
 }

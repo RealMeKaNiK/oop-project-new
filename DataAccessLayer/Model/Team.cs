@@ -8,6 +8,7 @@ namespace DataAccessLayer.Model
 {
     public class Team
     {
+        public Team() { }        
         public Team(string fifaCode)
         {
             Fifa_Code = fifaCode;

@@ -69,16 +69,18 @@ namespace DataAccessLayer.Model
             {
                 return new Config
                 {
-                    FavoritePlayers = new List<Player>(),
+                    FavoriteTeam = new Team(),
+                    FavoritePlayers = new List<Player>()
                 };
             }
             string[] items = line.Split(DEL);
 
             return new Config()
             {
-                TeamType = (TeamType)Enum.Parse(typeof(TeamType), items[0]),
-                Language = (Language)Enum.Parse(typeof(Language), items[1]),
-                FavoriteTeam = new Team(items[2]),
+                TeamType = items.Length > 0 ? (TeamType)Enum.Parse(typeof(TeamType), items[0]) : TeamType.Men,
+                Language = items.Length > 1 ? (Language)Enum.Parse(typeof(Language), items[1]) : Language.Croatian,
+                FavoriteTeam = items.Length > 2 ? new Team(items[2]) : new Team(),
+                ResolutionType = items.Length > 3 ? (ResolutionType)Enum.Parse(typeof(ResolutionType), items[3]) : ResolutionType.Normal,
                 FavoritePlayers = FileRepo.LoadFavoritePlayersFromFile()
             };            
         }
