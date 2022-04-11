@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbAllTeams = new System.Windows.Forms.ComboBox();
             this.btnSaveFavoriteTeam = new System.Windows.Forms.Button();
+            this.lblCurrentTeam = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -62,11 +64,33 @@
             this.btnSaveFavoriteTeam.UseVisualStyleBackColor = true;
             this.btnSaveFavoriteTeam.Click += new System.EventHandler(this.btnSaveFavoriteTeam_Click);
             // 
+            // lblCurrentTeam
+            // 
+            this.lblCurrentTeam.AutoSize = true;
+            this.lblCurrentTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentTeam.Location = new System.Drawing.Point(454, 448);
+            this.lblCurrentTeam.Name = "lblCurrentTeam";
+            this.lblCurrentTeam.Size = new System.Drawing.Size(76, 25);
+            this.lblCurrentTeam.TabIndex = 3;
+            this.lblCurrentTeam.Text = "label2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(328, 401);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(329, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "TRENUTNO ODABRANI TEAM";
+            // 
             // SelectTeamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCurrentTeam);
             this.Controls.Add(this.btnSaveFavoriteTeam);
             this.Controls.Add(this.cbAllTeams);
             this.Controls.Add(this.label1);
@@ -84,5 +108,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbAllTeams;
         private System.Windows.Forms.Button btnSaveFavoriteTeam;
+        private System.Windows.Forms.Label lblCurrentTeam;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -43,6 +43,7 @@ namespace DataAccessLayer
         public static Language GetLanguage() => Config.Language;
 
         public static string GetConfigInfo() => Config.ToString();
+        public static Team GetFavoriteTeam() => Config.FavoriteTeam;
 
         public static void SaveConfig() => FileRepo.SaveConfig(Config);
         public static void SaveFavoritePlayers() => FileRepo.SaveFavoritePlayers(Config.FavoritePlayers);
