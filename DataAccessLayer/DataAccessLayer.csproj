@@ -70,14 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="worldcup-sfg-io\men\group_results.json" />
-    <None Include="worldcup-sfg-io\men\matches.json" />
-    <None Include="worldcup-sfg-io\men\results.json" />
-    <None Include="worldcup-sfg-io\men\teams.json" />
-    <None Include="worldcup-sfg-io\women\group_results.json" />
-    <None Include="worldcup-sfg-io\women\matches.json" />
-    <None Include="worldcup-sfg-io\women\results.json" />
-    <None Include="worldcup-sfg-io\women\teams.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\ResourceFile.resx">

@@ -85,6 +85,10 @@ namespace WindowsForms.Forms
             }
         }
 
-        private void flpFavoritePlayers_ControlAdded(object sender, ControlEventArgs e) => (e.Control as PlayerUserControl).SetAsFavorite();
+        private void flpFavoritePlayers_ControlAdded(object sender, ControlEventArgs e)
+        {
+            (e.Control as PlayerUserControl).SetAsFavorite();
+            AddPlayerToFavorites((e.Control as PlayerUserControl).GetUserControlPlayer());
+        }
     }
 }
