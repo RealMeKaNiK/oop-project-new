@@ -17,10 +17,19 @@ namespace WindowsForms.User_Controls
         private Player Player;
 
         public bool isCheckedForTransfer = false;
-        public PlayerUserControl(Player player)
+        public PlayerUserControl(Player player )
         {
             InitializeComponent();
             this.Player = player;
+            this.ContextMenuStrip = cmsAddPlayerToFav;
+        }
+
+        private FlowLayoutPanel favoritePanelRef;
+        public PlayerUserControl(Player player, FlowLayoutPanel flpFavoritePlayers)
+        {
+            InitializeComponent();
+            this.Player = player;
+            this.favoritePanelRef = flpFavoritePlayers;
             this.ContextMenuStrip = cmsAddPlayerToFav;
         }
 
@@ -61,8 +70,7 @@ namespace WindowsForms.User_Controls
 
         private void addToFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // dodaj logiku za dodavanje u favorite
-            MessageBox.Show("Stisnuo sam item u tool stripu");
+            this.favoritePanelRef.Controls.Add(this);
         }
 
         private void cbTransfer_CheckedChanged(object sender, EventArgs e) => isCheckedForTransfer = cbTransfer.Checked;

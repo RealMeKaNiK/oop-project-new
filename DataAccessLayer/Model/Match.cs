@@ -66,13 +66,13 @@ namespace DataAccessLayer.Model
         {
             get
             {
-                //if (!string.IsNullOrEmpty(ImgPath))
-                //{
-                //    if (File.Exists(ImgPath))
-                //    {
-                //        return Image.FromFile(ImgPath);
-                //    }
-                //}
+                if (!string.IsNullOrEmpty(ImgPath))
+                {
+                    if (File.Exists(ImgPath))
+                    {
+                        return (Bitmap)Bitmap.FromFile(ImgPath);
+                    }
+                }
                 return DefaultPicture;
             }
         }

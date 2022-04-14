@@ -64,14 +64,14 @@ namespace WindowsForms.Forms
             this.flpLoadedPlayers.Controls.Clear();
             List<Player> players = await DataProvider.GetPlayers();
             FormUtils.CheckIfListCountZero<Player>(players);
-            players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player)));
+            players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player, this.flpFavoritePlayers)));
         }
 
         private void LoadFavoritePlayers()
         {
             this.flpFavoritePlayers.Controls.Clear();
             List<Player> players = DataProvider.GetFavoritePlayers();
-            players.ForEach(player => this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(player)));
+            players.ForEach(player => this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(player, this.flpFavoritePlayers)));
         }
 
         private void btnTransferSelectedUserControls_Click(object sender, EventArgs e)
@@ -84,5 +84,7 @@ namespace WindowsForms.Forms
                 }
             }
         }
+
+        private void flpFavoritePlayers_ControlAdded(object sender, ControlEventArgs e) => (e.Control as PlayerUserControl).SetAsFavorite();
     }
 }
