@@ -44,7 +44,7 @@ namespace WindowsForms.Forms
         {
             if (IsThreeSelected(this.flpFavoritePlayers.Controls.Count))
             {
-                FormUtils.DisplayMessageBox("You can only have 3 selected players", "Max 3 Favorite players", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FormUtils.DisplayErrorMessageBox("You can only have 3 selected players", "Max 3 Favorite players");
                 return;
             }            
             InsertControlInPanel((PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl)));

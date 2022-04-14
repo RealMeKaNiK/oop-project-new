@@ -30,10 +30,14 @@ namespace WindowsForms.Utils
         {
             if (neceg.Count == 0)
             {
-                MessageBox.Show("Please go to settings and setup your configuration. \nNeeded Config: Competition Type, Language, Selected Team", "Config Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DisplayErrorMessageBox("Configuration missing, go setup your config", "Config Error");
             }
         }
 
-        public static DialogResult DisplayMessageBox(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon) => MessageBox.Show(text, caption, buttons, icon);
+        public static void DisplayErrorMessageBox(string description, string title) 
+            => MessageBox.Show(description, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        public static void DisplaySuccessMessageBox(string description, string title)
+            => MessageBox.Show(description, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 }

@@ -36,10 +36,10 @@ namespace WindowsForms.Forms
         {
             if (String.IsNullOrEmpty(this.cbLanguage.Text) || String.IsNullOrEmpty(this.cbLanguage.Text))
             {
-                FormUtils.DisplayMessageBox("Please choose with options", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                FormUtils.DisplayErrorMessageBox("Please choose with options", "Error");                
                 return;
             }
-            if (FormUtils.DisplayMessageBox("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)                            
+            if (MessageBox.Show("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)                            
                 DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));                            
         }
     }

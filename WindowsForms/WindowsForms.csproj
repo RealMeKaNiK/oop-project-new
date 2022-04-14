@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DGV Printer">
-      <HintPath>C:\Users\Alan\OneDrive\Desktop\dgvprinter\DGV Printer.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\dgvprinter\DGV Printer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
