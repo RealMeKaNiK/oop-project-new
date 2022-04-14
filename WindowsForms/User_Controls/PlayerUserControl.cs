@@ -15,6 +15,8 @@ namespace WindowsForms.User_Controls
     {
         private const string PICTURE_FILTER = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
         private Player Player;
+
+        public bool isCheckedForTransfer = false;
         public PlayerUserControl(Player player)
         {
             InitializeComponent();
@@ -62,5 +64,8 @@ namespace WindowsForms.User_Controls
             // dodaj logiku za dodavanje u favorite
             MessageBox.Show("Stisnuo sam item u tool stripu");
         }
+
+        private void cbTransfer_CheckedChanged(object sender, EventArgs e) => isCheckedForTransfer = cbTransfer.Checked;
+
     }
 }

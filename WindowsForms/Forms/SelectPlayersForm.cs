@@ -76,7 +76,13 @@ namespace WindowsForms.Forms
 
         private void btnTransferSelectedUserControls_Click(object sender, EventArgs e)
         {
-            // transfer all selected to fav players
+            foreach (PlayerUserControl singleControl in this.flpLoadedPlayers.Controls)
+            {
+                if (singleControl.isCheckedForTransfer)
+                {
+                    InsertControlInPanel(singleControl as PlayerUserControl);
+                }
+            }
         }
     }
 }
