@@ -12,7 +12,7 @@ namespace DataAccessLayer
     public static class DataProvider
     {
 
-        private static readonly IGetable ApiRepo = ApiRepoFactory.GetRepo();
+        private static readonly IGetable ApiRepo = JsonParserRepoFactory.GetJsonParserRepo();
         private static readonly IRepo FileRepo = FileRepoFactory.GetRepo();
         private static Config Config;
 

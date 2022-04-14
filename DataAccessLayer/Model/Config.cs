@@ -23,6 +23,7 @@ namespace DataAccessLayer.Model
 
     public class Config
     {
+        // API ENDPOINTS
         private const string WOMEN_API_RESULTS = "http://worldcup.sfg.io/teams/results";
         private const string WOMEN_API_TEAM_RESULTS = "http://worldcup.sfg.io/teams/results?fifa_code=";
         private const string WOMEN_API_ALL_MATCHES = "http://worldcup.sfg.io/matches";
@@ -32,6 +33,16 @@ namespace DataAccessLayer.Model
         private const string MEN_API_TEAM_RESULTS = "http://world-cup-json-2018.herokuapp.com/teams/results?fifa_code=";
         private const string MEN_API_ALL_MATCHES = "http://world-cup-json-2018.herokuapp.com/matches";
         private const string MEN_API_TEAM_MATCHES = "http://world-cup-json-2018.herokuapp.com/matches/country?fifa_code=";
+
+        //FILE ENDPOINTS
+
+        private const string WOMEN_FILE_RESULTS = @"..\..\..\worldcup-sfg-io\women\results.json";
+        private const string WOMEN_FILE_TEAMS = @"..\..\..\worldcup-sfg-io\women\teams.json";
+        private const string WOMEN_FILE_ALL_MATCHES = @"..\..\..\worldcup-sfg-io\women\matches.json";
+
+        private const string MEN_FILE_RESULTS = @"..\..\..\worldcup-sfg-io\men\results.json";
+        private const string MEN_FILE_TEAMS = @"..\..\..\worldcup-sfg-io\men\teams.json";
+        private const string MEN_FILE_ALL_MATCHES = @"..\..\..\worldcup-sfg-io\men\matches.json";
 
         private const char DEL = '|';
       
@@ -56,12 +67,12 @@ namespace DataAccessLayer.Model
             return sb.ToString();
         }
 
-        public string GetURLAllResults() => TeamType == TeamType.Men ? MEN_API_RESULTS : WOMEN_API_RESULTS;     
+        public string GetURLAllResults() => TeamType == TeamType.Men ? MEN_FILE_RESULTS : WOMEN_FILE_RESULTS;     
 
-        public string GetURLTeamResult() => TeamType == TeamType.Men ? MEN_API_TEAM_RESULTS : WOMEN_API_TEAM_RESULTS;
+        public string GetURLTeamResult() => TeamType == TeamType.Men ? MEN_FILE_RESULTS : WOMEN_FILE_RESULTS;
 
-        public string GetURLTeamMatches() => TeamType == TeamType.Men ? MEN_API_TEAM_MATCHES : WOMEN_API_TEAM_MATCHES;
-        public string GetURLAllMatches() => TeamType == TeamType.Men ? MEN_API_ALL_MATCHES : WOMEN_API_ALL_MATCHES;
+        public string GetURLTeamMatches() => TeamType == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES;
+        public string GetURLAllMatches() => TeamType == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES;
 
         public static Config ParseFromFile(string line)
         {
