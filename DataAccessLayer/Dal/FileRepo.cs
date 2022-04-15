@@ -97,6 +97,10 @@ namespace DataAccessLayer.Dal
             Directory.CreateDirectory(specificPath);
             foreach (var player in players)
             {
+                // Problem with bitmap. Bitmap is locked for entire lifetime of object and the file or picture is locked
+                // So first kill the object, set it to null, and before that save the old bitmap in freshly new bitmap
+                // Then you can save
+
                 Bitmap newBitmap = new Bitmap(player.Picture);
                 player.Picture.Dispose();
                 player.Picture = null;
