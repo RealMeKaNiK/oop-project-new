@@ -25,9 +25,9 @@
                     <Label HorizontalAlignment="Center" x:Name="lblResult" FontSize="20" FontWeight="Bold" Foreground="OrangeRed"/>
                 </StackPanel>
                 <Label HorizontalAlignment="Center" FontSize="22" FontWeight="Bold">Odaberi Timove</Label>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <Label FontSize="16">Odaberi prvu momcad</Label>
+                        <Label FontSize="16">Odaberi Favorite Team</Label>
                         <ComboBox x:Name="cbSelectedTeam" Width="100" SelectionChanged="cbSelectedTeam_SelectionChanged"/>
                     </StackPanel>
                     <StackPanel x:Name="spOppTeam" Orientation="Horizontal">
@@ -49,11 +49,11 @@
                     </StackPanel>
                 </Grid>
             </StackPanel>
-            <Image Height="750" Width="600" Stretch="Fill" Margin="0 20 0 0" Source="/Resources/footballfield.png"/>
+            <Image Height="750" Width="800" Stretch="Fill" Margin="90 20 0 0" Source="/Resources/footballfield.png"/>
             <Canvas>
-                <Grid Canvas.Top="50" Canvas.Left="-590">
+                <Grid Canvas.Top="50" Canvas.Left="-790">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="600"/>
+                        <ColumnDefinition Width="800"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
@@ -88,9 +88,9 @@
                 </Grid>
             </Canvas>
             <Canvas>
-                <Grid Canvas.Top="420" Canvas.Left="-590">
+                <Grid Canvas.Top="420" Canvas.Left="-790">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="600"/>
+                        <ColumnDefinition Width="800"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
