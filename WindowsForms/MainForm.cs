@@ -62,9 +62,10 @@ namespace WindowsForms
         {
             if (MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Application.ExitThread();
                 DataProvider.SaveConfig();
                 DataProvider.SaveFavoritePlayers();
-                Application.ExitThread();
+                DataProvider.SaveAllPicutres();                
                 return;
             }
             e.Cancel = true;

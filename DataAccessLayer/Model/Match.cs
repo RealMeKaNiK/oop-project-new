@@ -62,20 +62,30 @@ namespace DataAccessLayer.Model
         public bool FavoritePlayer { get; set; }
         public string ImgPath { get; set; }
         private Bitmap DefaultPicture = new Bitmap(DataAccessLayer.Properties.ResourceFile.DefaultPicture);
+
+        private Bitmap _picture;
         public Bitmap Picture
         {
             get
             {
-                if (!string.IsNullOrEmpty(ImgPath))
+                if (!string.IsNullOrEmpty(ImgPath) || _picture != null)
                 {
                     if (File.Exists(ImgPath))
                     {
                         return (Bitmap)Bitmap.FromFile(ImgPath);
                     }
+                    if (_picture != null)
+                    {
+                        return _picture;
+                    }
                 }
                 return DefaultPicture;
             }
-        }
+            set
+            {
+                _picture = value;
+            }
+        }     
 
         public override string ToString()
         {

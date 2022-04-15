@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Model;
+﻿using DataAccessLayer;
+using DataAccessLayer.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,10 @@ namespace WindowsForms.User_Controls
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = PICTURE_FILTER;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                DataProvider.SetPictureForPlayer(Player, new Bitmap(openFileDialog.FileName));                
                 return Image.FromFile(openFileDialog.FileName);
+            }                
             return null;
         }
 

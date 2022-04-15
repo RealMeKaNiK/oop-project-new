@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,9 @@ namespace DataAccessLayer.Dal
     {
         private const string CONFIG_DIR = @"..\..\..\Config";
         private const string CONFIG_PATH = CONFIG_DIR + @"\config.txt";
+
+        private const string IMAGES_DIR = @"..\..\..\Images";
+
 
         private const string CONFIG_FAVORITE_PLAYERS = CONFIG_DIR + @"\favPlayers.txt";
 
@@ -78,8 +83,32 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return;                
+                throw new Exception("Error saving favorite players");
             }
+        }
+       
+        public void SavePicturesFromPlayers(List<Player> players, string fifaCode)
+        {
+            string specificPath = IMAGES_DIR + $@"\{fifaCode}";
+            Directory.CreateDirectory(specificPath);
+            foreach (var player in players)
+            {               
+                player.Picture.Save(specificPath + $"\\{player.name}.png", ImageFormat.Png);
+            }
+        }
+
+        public List<Player> LoadPicutres(List<Player> players, string fifaCode)
+        {
+            string picFolder = IMAGES_DIR + $@"\{fifaCode}";
+            foreach (var player in players)
+            {
+                if (File.Exists(picFolder + $@"\{player.name}.png"))
+                {
+                    player.Picture = (Bitmap)Bitmap.FromFile(picFolder + $@"\{player.name}.png");
+                }                
+            }
+
+            return players;
         }
     }
 }
