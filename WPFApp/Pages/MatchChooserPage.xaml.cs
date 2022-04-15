@@ -48,10 +48,12 @@ namespace WPFApp.Pages
                 MessageBox.Show("Please select both options before getting result", "Select Two Teams", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            this.imgLoadingAnimation.Visibility = Visibility.Visible;
             CleanBoard();
             Match selectedMatch = await DataProvider.GetMatchWinner(((Team)this.cbSelectedTeam.SelectedItem).Fifa_Code, ((Team)this.cbSelectedTeamOpponents.SelectedItem).Fifa_Code);
             this.lblResult.Content = selectedMatch;
             DisplayFootballPlayersOnTheField(selectedMatch);
+            this.imgLoadingAnimation.Visibility= Visibility.Collapsed;
         }
 
         private void CleanBoard()

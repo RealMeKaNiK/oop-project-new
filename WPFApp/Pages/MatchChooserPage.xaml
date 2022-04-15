@@ -48,6 +48,7 @@
                         <Button x:Name="btnShowOppTeamInfo" Click="btnShowOppTeamInfo_Click">SHOW OPPONENT TEAM INFO</Button>
                     </StackPanel>
                 </Grid>
+                <Image x:Name="imgLoadingAnimation" Source="/Resources/loadingAnimation.gif" Width="100" Height="100" Visibility="Collapsed"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0 0 0 50">
                 <StackPanel.Background>
