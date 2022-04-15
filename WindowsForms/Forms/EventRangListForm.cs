@@ -24,8 +24,16 @@ namespace WindowsForms.Forms
 
         private async void EventRangListForm_Load(object sender, EventArgs e)
         {
-            this.dgvEventStats.DataSource = await DataProvider.GetMatchEvents();
-            FormUtils.CheckIfListCountZero<Match>((List<Match>)this.dgvEventStats.DataSource);
+            try
+            {
+                this.dgvEventStats.DataSource = await DataProvider.GetMatchEvents();
+                FormUtils.CheckIfListCountZero<Match>((List<Match>)this.dgvEventStats.DataSource);
+            }
+            catch (Exception err)
+            {
+                FormUtils.DisplayErrorMessageBox(err.Message, "Error");
+                return;
+            }
         } 
     }
 }

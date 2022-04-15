@@ -39,8 +39,12 @@ namespace WindowsForms.Forms
                 FormUtils.DisplayErrorMessageBox("Please choose with options", "Error");                
                 return;
             }
-            if (MessageBox.Show("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)                            
-                DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));                            
+            if (MessageBox.Show("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));
+                this.lblCurrentSettings.Text = DataProvider.GetConfigInfo();
+            }                            
+                
         }
     }
 }

@@ -24,8 +24,16 @@ namespace WindowsForms.Forms
 
         private async void PlayersRangListForm_Load(object sender, EventArgs e)
         {
-            this.dgvPlayerStats.DataSource = await DataProvider.GetPlayers();
-            FormUtils.CheckIfListCountZero<Player>((List<Player>)this.dgvPlayerStats.DataSource);
+            try
+            {
+                this.dgvPlayerStats.DataSource = await DataProvider.GetPlayers();
+                FormUtils.CheckIfListCountZero<Player>((List<Player>)this.dgvPlayerStats.DataSource);
+            }
+            catch (Exception err)
+            {
+                FormUtils.DisplayErrorMessageBox(err.Message, "Error");
+                return;
+            }
         } 
     }
 }

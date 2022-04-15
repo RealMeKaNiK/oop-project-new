@@ -26,14 +26,23 @@ namespace WindowsForms.Forms
             {
                 this.lblCurrentTeam.Text = DataProvider.GetFavoriteTeam().ToString();
             }
-            this.cbAllTeams.DataSource = await DataProvider.GetTeams();
-            FormUtils.CheckIfListCountZero<Team>((List<Team>)this.cbAllTeams.DataSource);
+            try
+            {
+                this.cbAllTeams.DataSource = await DataProvider.GetTeams();
+                FormUtils.CheckIfListCountZero<Team>((List<Team>)this.cbAllTeams.DataSource);
+            }
+            catch (Exception err)
+            {
+                FormUtils.DisplayErrorMessageBox(err.Message, "Error");
+                return;
+            }
         }
 
         private void btnSaveFavoriteTeam_Click(object sender, EventArgs e)
         {
             DataProvider.SaveFavoriteTeam(this.cbAllTeams.SelectedValue as Team);
             FormUtils.DisplaySuccessMessageBox($"Uspjesno ste odabrali favorit team: {this.cbAllTeams.SelectedValue}", "Promjena");
+            this.lblCurrentTeam.Text = DataProvider.GetFavoriteTeam().ToString();
         }
     }
 }

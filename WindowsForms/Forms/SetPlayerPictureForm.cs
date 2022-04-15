@@ -25,9 +25,17 @@ namespace WindowsForms.Forms
 
         private async void LoadPlayers()
         {
-            List<Player> players = await DataProvider.GetPlayers();
-            FormUtils.CheckIfListCountZero<Player>(players);
-            players.ForEach(p => this.flpPlayers.Controls.Add(new PlayerUserControl(p)));
+            try
+            {
+                List<Player> players = await DataProvider.GetPlayers();
+                FormUtils.CheckIfListCountZero<Player>(players);
+                players.ForEach(p => this.flpPlayers.Controls.Add(new PlayerUserControl(p)));
+            }
+            catch (Exception err)
+            {
+                FormUtils.DisplayErrorMessageBox(err.Message, "Error");
+                return;
+            }
         }
     }
 }

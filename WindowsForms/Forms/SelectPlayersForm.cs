@@ -34,8 +34,16 @@ namespace WindowsForms.Forms
 
         private void SelectPlayersForm_Load(object sender, EventArgs e)
         {
-            LoadPlayers();
-            LoadFavoritePlayers();
+            try
+            {
+                LoadPlayers();
+                LoadFavoritePlayers();
+            }
+            catch (Exception err)
+            {
+                FormUtils.DisplayErrorMessageBox(err.Message, "Error");
+                return;
+            }
         }
 
         private void flpFavoritePlayers_DragEnter(object sender, DragEventArgs e) => e.Effect = DragDropEffects.All;
