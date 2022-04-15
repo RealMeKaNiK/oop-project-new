@@ -38,31 +38,27 @@
             // 
             this.flpLoadedPlayers.AutoScroll = true;
             this.flpLoadedPlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.flpLoadedPlayers.Location = new System.Drawing.Point(807, 18);
-            this.flpLoadedPlayers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpLoadedPlayers.Location = new System.Drawing.Point(538, 12);
             this.flpLoadedPlayers.Name = "flpLoadedPlayers";
-            this.flpLoadedPlayers.Size = new System.Drawing.Size(651, 1134);
+            this.flpLoadedPlayers.Size = new System.Drawing.Size(434, 695);
             this.flpLoadedPlayers.TabIndex = 0;
             // 
             // flpFavoritePlayers
             // 
             this.flpFavoritePlayers.AllowDrop = true;
             this.flpFavoritePlayers.BackColor = System.Drawing.Color.Aqua;
-            this.flpFavoritePlayers.Location = new System.Drawing.Point(18, 18);
-            this.flpFavoritePlayers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpFavoritePlayers.Location = new System.Drawing.Point(12, 12);
             this.flpFavoritePlayers.Name = "flpFavoritePlayers";
-            this.flpFavoritePlayers.Size = new System.Drawing.Size(651, 1134);
+            this.flpFavoritePlayers.Size = new System.Drawing.Size(434, 695);
             this.flpFavoritePlayers.TabIndex = 1;
-            this.flpFavoritePlayers.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flpFavoritePlayers_ControlAdded);
             this.flpFavoritePlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.flpFavoritePlayers_DragDrop);
             this.flpFavoritePlayers.DragEnter += new System.Windows.Forms.DragEventHandler(this.flpFavoritePlayers_DragEnter);
             // 
             // btnRemoveFavorites
             // 
-            this.btnRemoveFavorites.Location = new System.Drawing.Point(678, 608);
-            this.btnRemoveFavorites.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemoveFavorites.Location = new System.Drawing.Point(452, 395);
             this.btnRemoveFavorites.Name = "btnRemoveFavorites";
-            this.btnRemoveFavorites.Size = new System.Drawing.Size(120, 106);
+            this.btnRemoveFavorites.Size = new System.Drawing.Size(80, 69);
             this.btnRemoveFavorites.TabIndex = 2;
             this.btnRemoveFavorites.Text = "Remove All Favorites";
             this.btnRemoveFavorites.UseVisualStyleBackColor = true;
@@ -70,10 +66,9 @@
             // 
             // btnTransferSelectedUserControls
             // 
-            this.btnTransferSelectedUserControls.Location = new System.Drawing.Point(678, 369);
-            this.btnTransferSelectedUserControls.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTransferSelectedUserControls.Location = new System.Drawing.Point(452, 240);
             this.btnTransferSelectedUserControls.Name = "btnTransferSelectedUserControls";
-            this.btnTransferSelectedUserControls.Size = new System.Drawing.Size(120, 106);
+            this.btnTransferSelectedUserControls.Size = new System.Drawing.Size(80, 69);
             this.btnTransferSelectedUserControls.TabIndex = 3;
             this.btnTransferSelectedUserControls.Text = "Transfer selected";
             this.btnTransferSelectedUserControls.UseVisualStyleBackColor = true;
@@ -81,15 +76,14 @@
             // 
             // SelectPlayersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 1106);
+            this.ClientSize = new System.Drawing.Size(984, 719);
             this.Controls.Add(this.btnTransferSelectedUserControls);
             this.Controls.Add(this.btnRemoveFavorites);
             this.Controls.Add(this.flpFavoritePlayers);
             this.Controls.Add(this.flpLoadedPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SelectPlayersForm";
             this.Text = "SelectPlayersForm";
             this.Load += new System.EventHandler(this.SelectPlayersForm_Load);

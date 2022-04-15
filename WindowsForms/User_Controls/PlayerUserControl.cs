@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForms.Utils;
 
 namespace WindowsForms.User_Controls
 {
@@ -60,7 +61,13 @@ namespace WindowsForms.User_Controls
         
         private void addToFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!DataProvider.InsertFavoritePlayer(Player))
+            {
+                FormUtils.DisplayErrorMessageBox("Already in favorites!", "Already chosen");
+                return;
+            }
             this.favoritePanelRef.Controls.Add(this);
+            SetAsFavorite();
         }
 
         private void cbTransfer_CheckedChanged(object sender, EventArgs e) => isCheckedForTransfer = cbTransfer.Checked;

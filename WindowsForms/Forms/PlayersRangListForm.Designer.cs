@@ -31,13 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPlayerStats = new System.Windows.Forms.DataGridView();
+            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnPrint = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shirtnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goalNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yellowCardNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.Picture = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerStats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -46,10 +47,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(498, 114);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(332, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(503, 40);
+            this.label1.Size = new System.Drawing.Size(343, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Rang Lista / Statistika igraca";
             // 
@@ -64,15 +64,29 @@
             this.shirtnumberDataGridViewTextBoxColumn,
             this.positionDataGridViewTextBoxColumn,
             this.goalNumberDataGridViewTextBoxColumn,
-            this.yellowCardNumberDataGridViewTextBoxColumn});
+            this.yellowCardNumberDataGridViewTextBoxColumn,
+            this.Picture});
             this.dgvPlayerStats.DataSource = this.playerBindingSource;
-            this.dgvPlayerStats.Location = new System.Drawing.Point(18, 235);
-            this.dgvPlayerStats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvPlayerStats.Location = new System.Drawing.Point(12, 153);
             this.dgvPlayerStats.Name = "dgvPlayerStats";
             this.dgvPlayerStats.ReadOnly = true;
             this.dgvPlayerStats.RowHeadersWidth = 62;
-            this.dgvPlayerStats.Size = new System.Drawing.Size(1440, 686);
+            this.dgvPlayerStats.Size = new System.Drawing.Size(960, 446);
             this.dgvPlayerStats.TabIndex = 1;
+            // 
+            // playerBindingSource
+            // 
+            this.playerBindingSource.DataSource = typeof(DataAccessLayer.Model.Player);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(829, 74);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(143, 49);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -119,31 +133,24 @@
             this.yellowCardNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.yellowCardNumberDataGridViewTextBoxColumn.Width = 150;
             // 
-            // playerBindingSource
+            // Picture
             // 
-            this.playerBindingSource.DataSource = typeof(DataAccessLayer.Model.Player);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(1244, 114);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(214, 75);
-            this.btnPrint.TabIndex = 2;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.Picture.DataPropertyName = "Picture";
+            this.Picture.HeaderText = "Picture";
+            this.Picture.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Picture.Name = "Picture";
+            this.Picture.ReadOnly = true;
+            this.Picture.Width = 200;
             // 
             // PlayersRangListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 1106);
+            this.ClientSize = new System.Drawing.Size(984, 719);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dgvPlayerStats);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PlayersRangListForm";
             this.Text = "PlayersRangListForm";
             this.Load += new System.EventHandler(this.PlayersRangListForm_Load);
@@ -165,5 +172,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goalNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yellowCardNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn Picture;
     }
 }

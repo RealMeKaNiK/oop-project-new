@@ -27,6 +27,11 @@ namespace WindowsForms.Forms
         {
             if (!(control is PlayerUserControl))
                 return;
+            if (!DataProvider.InsertFavoritePlayer(control.GetUserControlPlayer()))
+            {
+                FormUtils.DisplayErrorMessageBox("Already selected", "Error");
+                return;
+            }
             control.SetAsFavorite();
             this.flpFavoritePlayers.Controls.Add(control);
             AddPlayerToFavorites(control.GetUserControlPlayer());
@@ -91,12 +96,6 @@ namespace WindowsForms.Forms
                     InsertControlInPanel(singleControl as PlayerUserControl);
                 }
             }
-        }
-
-        private void flpFavoritePlayers_ControlAdded(object sender, ControlEventArgs e)
-        {
-            (e.Control as PlayerUserControl).SetAsFavorite();
-            AddPlayerToFavorites((e.Control as PlayerUserControl).GetUserControlPlayer());
-        }
+        }      
     }
 }
