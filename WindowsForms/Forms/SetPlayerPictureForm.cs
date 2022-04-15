@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms.User_Controls;
@@ -27,9 +28,11 @@ namespace WindowsForms.Forms
         {
             try
             {
+                this.pbLoadingAnimation.Show();
                 List<Player> players = await DataProvider.GetPlayers();
                 FormUtils.CheckIfListCountZero<Player>(players);
                 players.ForEach(p => this.flpPlayers.Controls.Add(new PlayerSetPicute_Control(p)));
+                this.pbLoadingAnimation.Hide();
             }
             catch (Exception err)
             {

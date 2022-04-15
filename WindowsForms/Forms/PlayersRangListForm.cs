@@ -26,8 +26,10 @@ namespace WindowsForms.Forms
         {
             try
             {
+                this.pbLoadingAnimation.Show();
                 this.dgvPlayerStats.DataSource = await DataProvider.GetPlayers();
                 FormUtils.CheckIfListCountZero<Player>((List<Player>)this.dgvPlayerStats.DataSource);
+                this.pbLoadingAnimation.Hide();
             }
             catch (Exception err)
             {

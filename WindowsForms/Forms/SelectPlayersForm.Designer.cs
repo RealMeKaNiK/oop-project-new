@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectPlayersForm));
             this.flpLoadedPlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.flpFavoritePlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRemoveFavorites = new System.Windows.Forms.Button();
             this.btnTransferSelectedUserControls = new System.Windows.Forms.Button();
+            this.pbLoadingAnimation = new System.Windows.Forms.PictureBox();
+            this.flpLoadedPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).BeginInit();
             this.SuspendLayout();
             // 
             // flpLoadedPlayers
             // 
             this.flpLoadedPlayers.AutoScroll = true;
             this.flpLoadedPlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.flpLoadedPlayers.Controls.Add(this.pbLoadingAnimation);
             this.flpLoadedPlayers.Location = new System.Drawing.Point(538, 12);
             this.flpLoadedPlayers.Name = "flpLoadedPlayers";
             this.flpLoadedPlayers.Size = new System.Drawing.Size(434, 695);
@@ -74,6 +79,16 @@
             this.btnTransferSelectedUserControls.UseVisualStyleBackColor = true;
             this.btnTransferSelectedUserControls.Click += new System.EventHandler(this.btnTransferSelectedUserControls_Click);
             // 
+            // pbLoadingAnimation
+            // 
+            this.pbLoadingAnimation.Image = ((System.Drawing.Image)(resources.GetObject("pbLoadingAnimation.Image")));
+            this.pbLoadingAnimation.Location = new System.Drawing.Point(3, 3);
+            this.pbLoadingAnimation.Name = "pbLoadingAnimation";
+            this.pbLoadingAnimation.Size = new System.Drawing.Size(96, 67);
+            this.pbLoadingAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoadingAnimation.TabIndex = 4;
+            this.pbLoadingAnimation.TabStop = false;
+            // 
             // SelectPlayersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,6 +102,8 @@
             this.Name = "SelectPlayersForm";
             this.Text = "SelectPlayersForm";
             this.Load += new System.EventHandler(this.SelectPlayersForm_Load);
+            this.flpLoadedPlayers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,5 +114,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpFavoritePlayers;
         private System.Windows.Forms.Button btnRemoveFavorites;
         private System.Windows.Forms.Button btnTransferSelectedUserControls;
+        private System.Windows.Forms.PictureBox pbLoadingAnimation;
     }
 }

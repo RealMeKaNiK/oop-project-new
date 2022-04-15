@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectTeamForm));
             this.label1 = new System.Windows.Forms.Label();
             this.cbAllTeams = new System.Windows.Forms.ComboBox();
             this.btnSaveFavoriteTeam = new System.Windows.Forms.Button();
             this.lblCurrentTeam = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pbLoadingAnimation = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,11 +87,22 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "TRENUTNO ODABRANI TEAM";
             // 
+            // pbLoadingAnimation
+            // 
+            this.pbLoadingAnimation.Image = ((System.Drawing.Image)(resources.GetObject("pbLoadingAnimation.Image")));
+            this.pbLoadingAnimation.Location = new System.Drawing.Point(380, 194);
+            this.pbLoadingAnimation.Name = "pbLoadingAnimation";
+            this.pbLoadingAnimation.Size = new System.Drawing.Size(209, 67);
+            this.pbLoadingAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoadingAnimation.TabIndex = 5;
+            this.pbLoadingAnimation.TabStop = false;
+            // 
             // SelectTeamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.pbLoadingAnimation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCurrentTeam);
             this.Controls.Add(this.btnSaveFavoriteTeam);
@@ -98,6 +112,7 @@
             this.Name = "SelectTeamForm";
             this.Text = "SelectTeamForm";
             this.Load += new System.EventHandler(this.SelectTeamForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +125,6 @@
         private System.Windows.Forms.Button btnSaveFavoriteTeam;
         private System.Windows.Forms.Label lblCurrentTeam;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbLoadingAnimation;
     }
 }

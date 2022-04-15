@@ -41,8 +41,10 @@ namespace WindowsForms.Forms
         {
             try
             {
+                this.pbLoadingAnimation.Show();
                 LoadPlayers();
                 LoadFavoritePlayers();
+                this.pbLoadingAnimation.Hide();
             }
             catch (Exception err)
             {

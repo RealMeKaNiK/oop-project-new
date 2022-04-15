@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetPlayerPictureForm));
             this.flpPlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbLoadingAnimation = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).BeginInit();
             this.SuspendLayout();
             // 
             // flpPlayers
@@ -51,17 +54,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Dupli klik na igraca za postavljane slika";
             // 
+            // pbLoadingAnimation
+            // 
+            this.pbLoadingAnimation.Image = ((System.Drawing.Image)(resources.GetObject("pbLoadingAnimation.Image")));
+            this.pbLoadingAnimation.Location = new System.Drawing.Point(444, 347);
+            this.pbLoadingAnimation.Name = "pbLoadingAnimation";
+            this.pbLoadingAnimation.Size = new System.Drawing.Size(96, 67);
+            this.pbLoadingAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoadingAnimation.TabIndex = 4;
+            this.pbLoadingAnimation.TabStop = false;
+            // 
             // SetPlayerPictureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.pbLoadingAnimation);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flpPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SetPlayerPictureForm";
             this.Text = "SetPlayerPictureForm";
             this.Load += new System.EventHandler(this.SetPlayerPictureForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,5 +86,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpPlayers;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbLoadingAnimation;
     }
 }

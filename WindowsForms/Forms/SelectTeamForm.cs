@@ -28,8 +28,10 @@ namespace WindowsForms.Forms
             }
             try
             {
+                this.pbLoadingAnimation.Show();
                 this.cbAllTeams.DataSource = await DataProvider.GetTeams();
                 FormUtils.CheckIfListCountZero<Team>((List<Team>)this.cbAllTeams.DataSource);
+                this.pbLoadingAnimation.Hide();
             }
             catch (Exception err)
             {

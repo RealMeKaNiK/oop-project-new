@@ -31,16 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPlayerStats = new System.Windows.Forms.DataGridView();
-            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPrint = new System.Windows.Forms.Button();
+            this.Picture = new System.Windows.Forms.DataGridViewImageColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shirtnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goalNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yellowCardNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Picture = new System.Windows.Forms.DataGridViewImageColumn();
+            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pbLoadingAnimation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerStats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,10 +76,6 @@
             this.dgvPlayerStats.Size = new System.Drawing.Size(960, 446);
             this.dgvPlayerStats.TabIndex = 1;
             // 
-            // playerBindingSource
-            // 
-            this.playerBindingSource.DataSource = typeof(DataAccessLayer.Model.Player);
-            // 
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(829, 74);
@@ -87,6 +85,15 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // Picture
+            // 
+            this.Picture.DataPropertyName = "Picture";
+            this.Picture.HeaderText = "Picture";
+            this.Picture.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Picture.Name = "Picture";
+            this.Picture.ReadOnly = true;
+            this.Picture.Width = 200;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -133,20 +140,26 @@
             this.yellowCardNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.yellowCardNumberDataGridViewTextBoxColumn.Width = 150;
             // 
-            // Picture
+            // playerBindingSource
             // 
-            this.Picture.DataPropertyName = "Picture";
-            this.Picture.HeaderText = "Picture";
-            this.Picture.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Picture.Name = "Picture";
-            this.Picture.ReadOnly = true;
-            this.Picture.Width = 200;
+            this.playerBindingSource.DataSource = typeof(DataAccessLayer.Model.Player);
+            // 
+            // pbLoadingAnimation
+            // 
+            this.pbLoadingAnimation.Image = global::WindowsForms.Properties.Resources.loadingAnimation;
+            this.pbLoadingAnimation.Location = new System.Drawing.Point(444, 335);
+            this.pbLoadingAnimation.Name = "pbLoadingAnimation";
+            this.pbLoadingAnimation.Size = new System.Drawing.Size(96, 67);
+            this.pbLoadingAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoadingAnimation.TabIndex = 3;
+            this.pbLoadingAnimation.TabStop = false;
             // 
             // PlayersRangListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 719);
+            this.Controls.Add(this.pbLoadingAnimation);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dgvPlayerStats);
             this.Controls.Add(this.label1);
@@ -156,6 +169,7 @@
             this.Load += new System.EventHandler(this.PlayersRangListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerStats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +187,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn goalNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yellowCardNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Picture;
+        private System.Windows.Forms.PictureBox pbLoadingAnimation;
     }
 }

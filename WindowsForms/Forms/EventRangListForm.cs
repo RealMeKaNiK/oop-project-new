@@ -26,8 +26,10 @@ namespace WindowsForms.Forms
         {
             try
             {
+                this.pbLoadingAnim.Show();
                 this.dgvEventStats.DataSource = await DataProvider.GetMatchEvents();
                 FormUtils.CheckIfListCountZero<Match>((List<Match>)this.dgvEventStats.DataSource);
+                this.pbLoadingAnim.Hide();
             }
             catch (Exception err)
             {
