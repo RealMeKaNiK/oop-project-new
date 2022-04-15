@@ -49,7 +49,7 @@
                     </StackPanel>
                 </Grid>
             </StackPanel>
-            <Image Height="750" Width="800" Stretch="Fill" Margin="90 20 0 0" Source="/Resources/footballfield.png"/>
+            <Image Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="90 20 0 20" Source="/Resources/footballfield.png"/>
             <Canvas>
                 <Grid Canvas.Top="50" Canvas.Left="-790">
                     <Grid.ColumnDefinitions>
