@@ -140,7 +140,7 @@ namespace DataAccessLayer.Dal
                 try
                 {
                     List<Team> parsedTeams = JsonConvert.DeserializeObject<List<Team>>(File.ReadAllText(url));
-                    return new List<Team>((IEnumerable<Team>)parsedTeams.Find(team => team.Fifa_Code == fifaCode));
+                    return new List<Team> { parsedTeams.Find(x => x.Fifa_Code == fifaCode) };
                 }
                 catch (Exception)
                 {

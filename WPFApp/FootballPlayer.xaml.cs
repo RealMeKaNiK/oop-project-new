@@ -1,6 +1,8 @@
 ﻿using DataAccessLayer.Model;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +35,21 @@ namespace WPFApp
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             this.lblPlayerInfo.Content = $"{Player.name}{System.Environment.NewLine}{Player.shirt_number}";
-            this.imgPlayer.Source = WpfUtils.ConvertBitmap(Player.Picture);
+            this.imgPlayer.Source = ConvertImageForWpf(Player.Picture);
+        }
+
+        private BitmapImage ConvertImageForWpf(Bitmap picture)
+        {
+            MemoryStream ms = new MemoryStream();
+            picture.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+            BitmapImage newImage = new BitmapImage();
+            newImage.BeginInit();
+            newImage.CacheOption = BitmapCacheOption.OnLoad;
+            newImage.StreamSource = ms;
+            newImage.EndInit();
+
+            return newImage;
         }
 
         private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e) => new ShowInfoAboutPlayer(Player).Show();       

@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using DataAccessLayer.Dal;
 using DataAccessLayer.Model;
 using System;
 using System.Collections.Generic;
@@ -67,7 +68,12 @@ namespace WPFApp.Pages
 
         private void DisplayFootballPlayersOnTheField(Match match)
         {
-            match.home_team_statistics.starting_eleven.ForEach(player =>
+            IRepo imgLoader = FileRepoFactory.GetRepo();
+
+            List<Player> homeTeam = imgLoader.LoadPicutres(match.home_team_statistics.starting_eleven, match.home_team.code);
+            List<Player> awayTeam = imgLoader.LoadPicutres(match.away_team_statistics.starting_eleven, match.away_team.code);
+
+            homeTeam.ForEach(player =>
             {
                 switch (player.position)
                 {
@@ -87,7 +93,7 @@ namespace WPFApp.Pages
                         break;
                 }
             });
-            match.away_team_statistics.starting_eleven.ForEach(player =>
+            awayTeam.ForEach(player =>
             {
                 switch (player.position)
                 {
@@ -122,7 +128,7 @@ namespace WPFApp.Pages
                 return;
             }
             List<Team> tim = await DataProvider.GetTeamStatistics(team.Fifa_Code);
-            new ShowInfoAboutTeam(tim.First<Team>().PrepareForDisplayOutput()).Show();
+            new ShowInfoAboutTeam(tim.FirstOrDefault<Team>().PrepareForDisplayOutput()).Show();
         }
     }
 }
