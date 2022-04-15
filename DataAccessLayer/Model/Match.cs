@@ -60,9 +60,14 @@ namespace DataAccessLayer.Model
         public int GoalNumber { get; set; }
         public int YellowCardNumber { get; set; }
         public bool FavoritePlayer { get; set; }
+        
+        [JsonIgnore]
         private Bitmap DefaultPicture = new Bitmap(DataAccessLayer.Properties.ResourceFile.DefaultPicture);
 
+        [JsonIgnore]
         private Bitmap _picture;
+        
+        [JsonIgnore]
         public Bitmap Picture
         {
             get

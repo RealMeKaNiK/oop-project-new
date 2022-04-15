@@ -57,21 +57,7 @@ namespace WindowsForms.User_Controls
             if (e.Button == MouseButtons.Left)
                 this.DoDragDrop(this, DragDropEffects.All);
         }
-
-        private void PlayerUserControl_DoubleClick(object sender, EventArgs e) => this.pictureBox1.Image = SetPlayerPicture();
-
-        private Image SetPlayerPicture()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = PICTURE_FILTER;
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                DataProvider.SetPictureForPlayer(Player, new Bitmap(openFileDialog.FileName));
-                return Image.FromFile(openFileDialog.FileName);
-            }                
-            return null;
-        }
-
+        
         private void addToFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.favoritePanelRef.Controls.Add(this);

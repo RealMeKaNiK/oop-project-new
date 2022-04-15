@@ -1,1 +1,1 @@
-[]
+[{"name":"Mario MANDZUKIC","captain":false,"shirt_number":17,"position":"Forward","GoalNumber":2,"YellowCardNumber":1,"FavoritePlayer":true},{"name":"Mario MANDZUKIC","captain":false,"shirt_number":17,"position":"Forward","GoalNumber":2,"YellowCardNumber":1,"FavoritePlayer":true}]
