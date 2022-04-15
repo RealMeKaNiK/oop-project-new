@@ -58,15 +58,15 @@ namespace WindowsForms.User_Controls
                 this.DoDragDrop(this, DragDropEffects.All);
         }
 
-        private void PlayerUserControl_DoubleClick(object sender, EventArgs e) => this.pictureBox1.Image = LoadPicture();
+        private void PlayerUserControl_DoubleClick(object sender, EventArgs e) => this.pictureBox1.Image = SetPlayerPicture();
 
-        private Image LoadPicture()
+        private Image SetPlayerPicture()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = PICTURE_FILTER;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                DataProvider.SetPictureForPlayer(Player, new Bitmap(openFileDialog.FileName));                
+                DataProvider.SetPictureForPlayer(Player, new Bitmap(openFileDialog.FileName));
                 return Image.FromFile(openFileDialog.FileName);
             }                
             return null;

@@ -89,11 +89,18 @@ namespace DataAccessLayer.Dal
        
         public void SavePicturesFromPlayers(List<Player> players, string fifaCode)
         {
+            if (players == null)
+            {
+                return;
+            }
             string specificPath = IMAGES_DIR + $@"\{fifaCode}";
             Directory.CreateDirectory(specificPath);
             foreach (var player in players)
-            {               
-                player.Picture.Save(specificPath + $"\\{player.name}.png", ImageFormat.Png);
+            {
+                Bitmap newBitmap = new Bitmap(player.Picture);
+                player.Picture.Dispose();
+                player.Picture = null;
+                newBitmap.Save(specificPath + $"\\{player.name}.png");
             }
         }
 
@@ -104,7 +111,11 @@ namespace DataAccessLayer.Dal
             {
                 if (File.Exists(picFolder + $@"\{player.name}.png"))
                 {
-                    player.Picture = (Bitmap)Bitmap.FromFile(picFolder + $@"\{player.name}.png");
+                    using (FileStream fs = new FileStream(picFolder + $@"\{player.name}.png", FileMode.Open))
+                    {
+                        player.Picture = (Bitmap)Image.FromStream(fs);
+                        fs.Close();
+                    }                    
                 }                
             }
 

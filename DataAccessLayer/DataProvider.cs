@@ -55,7 +55,7 @@ namespace DataAccessLayer
 
         public static void SetPictureForPlayer(Player player, Bitmap picture) => Config.FavoriteTeam.Players.Find(x => x.name.Equals(player.name)).Picture = picture;
         public static void DeleteFavoritePlayers() => Config.FavoritePlayers.Clear();
-        public static List<Player> GetFavoritePlayers() => new List<Player>(FileRepo.LoadPicutres(Config.FavoritePlayers, Config.FavoriteTeam?.Fifa_Code));        
+        public static List<Player> GetFavoritePlayers() => new List<Player>(Config.FavoritePlayers);        
 
         // API comunication
         public async static Task<List<Team>> GetTeams()
@@ -73,14 +73,13 @@ namespace DataAccessLayer
         {
             if (Config.FavoriteTeam?.Players != null)
             {
-                return new List<Player>(FileRepo.LoadPicutres(Config.FavoriteTeam.Players, Config.FavoriteTeam.Fifa_Code));
+                return new List<Player>(Config.FavoriteTeam.Players);
             }
             if (Config.FavoriteTeam == null && Config.FavoriteTeam.Fifa_Code == null)
             {
                 return new List<Player>();
             }
-            Config.FavoriteTeam.Players = await ApiRepo.GetTeamPlayers(Config.GetURLTeamMatches(), Config.FavoriteTeam?.Fifa_Code);
-            return FileRepo.LoadPicutres(Config.FavoriteTeam.Players, Config.FavoriteTeam?.Fifa_Code);
+            return FileRepo.LoadPicutres(Config.FavoriteTeam.Players = await ApiRepo.GetTeamPlayers(Config.GetURLTeamMatches(), Config.FavoriteTeam?.Fifa_Code), Config.FavoriteTeam?.Fifa_Code);
         }
 
         public async static Task<List<Team>> GetTeamStatistics(string fifaCode) => await ApiRepo.GetTeamResult(Config.GetURLTeamResult(), fifaCode);
