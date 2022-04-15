@@ -49,13 +49,13 @@
                     </StackPanel>
                 </Grid>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Width="800">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0 0 0 50">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="/Resources/footballfield.png"/>
                 </StackPanel.Background>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="800"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
@@ -87,9 +87,9 @@
                     <StackPanel x:Name="spGoaliePositionOpp" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     </StackPanel>
                 </Grid>
-                <Grid Canvas.Top="420" Canvas.Left="-790">
+                <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="800"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
