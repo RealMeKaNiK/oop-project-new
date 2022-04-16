@@ -10,7 +10,7 @@
       d:DesignHeight="850" d:DesignWidth="1400"
       Title="MatchChooserPage">
 
-    <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
+    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50 0 0 0">
         <StackPanel Orientation="Horizontal">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel.Resources>
