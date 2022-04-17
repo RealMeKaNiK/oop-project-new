@@ -43,6 +43,7 @@ namespace WindowsForms.Forms
             {
                 DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));
                 this.lblCurrentSettings.Text = DataProvider.GetConfigInfo();
+                FormUtils.DisplaySuccessMessageBox("For language change please restart application", "Language Change");
             }                            
                 
         }
