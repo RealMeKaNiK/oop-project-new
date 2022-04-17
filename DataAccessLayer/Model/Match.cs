@@ -196,7 +196,7 @@ namespace DataAccessLayer.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            if ((System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
             {
                 sb
                     .AppendLine($"WINNER: {winner}")
