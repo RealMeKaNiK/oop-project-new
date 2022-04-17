@@ -87,14 +87,28 @@ namespace DataAccessLayer.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb
-                .AppendLine("INFORMACIJE O IGRACU")
-                .AppendLine($"IME: {name}")
-                .AppendLine($"SHIRT NUMBER: {shirt_number}")
-                .AppendLine($"POSITION: {position}")
-                .AppendLine($"{(captain ? "KAPETAN" : "")}")
-                .AppendLine($"BROJ GOLOVA: {GoalNumber}")
-                .AppendLine($"BROJ ZUTIH: {YellowCardNumber}");
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
+            {
+                sb
+                    .AppendLine("INFROMATION ABOUT PLAYER")
+                    .AppendLine($"NAME: {name}")
+                    .AppendLine($"SHIRT NUMBER: {shirt_number}")
+                    .AppendLine($"POSITION: {position}")
+                    .AppendLine($"{(captain ? "KAPETAN" : "")}")
+                    .AppendLine($"GOAL NUMBER: {GoalNumber}")
+                    .AppendLine($"YELLOW CARDS: {YellowCardNumber}"); 
+            }
+            else
+            {
+                sb
+                    .AppendLine("INFORMACIJE O IGRACU")
+                    .AppendLine($"IME: {name}")
+                    .AppendLine($"SHIRT NUMBER: {shirt_number}")
+                    .AppendLine($"POSITION: {position}")
+                    .AppendLine($"{(captain ? "KAPETAN" : "")}")
+                    .AppendLine($"BROJ GOLOVA: {GoalNumber}")
+                    .AppendLine($"BROJ ZUTIH: {YellowCardNumber}");
+            }
             return sb.ToString();
         }        
     }
@@ -182,10 +196,20 @@ namespace DataAccessLayer.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb
-                .AppendLine($"POBJEDNIK: {winner}")
-                .AppendLine("REZULTAT")
-                .Append($"{home_team.code} {home_team.goals} : {away_team.goals} {away_team.code}");
+            if ((System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
+            {
+                sb
+                    .AppendLine($"WINNER: {winner}")
+                    .AppendLine("RESULT")
+                    .Append($"{home_team.code} {home_team.goals} : {away_team.goals} {away_team.code}");
+            }
+            else
+            {
+                sb
+                    .AppendLine($"POBJEDNIK: {winner}")
+                    .AppendLine("REZULTAT")
+                    .Append($"{home_team.code} {home_team.goals} : {away_team.goals} {away_team.code}");
+            }
             return sb.ToString();
         }
     }

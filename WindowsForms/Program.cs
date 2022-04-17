@@ -16,7 +16,6 @@ namespace WindowsForms
         static void Main()
         {
             DataProvider.LoadConfiguration();
-
             switch (DataProvider.GetLanguage())
             {
                 case DataAccessLayer.Model.Language.NotSet:

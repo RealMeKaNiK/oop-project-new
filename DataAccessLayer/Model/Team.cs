@@ -33,11 +33,23 @@ namespace DataAccessLayer.Model
         public string PrepareForDisplayOutput()
         {
             StringBuilder sb = new StringBuilder();
-            sb
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
+            {
+                sb
+                .AppendLine($"INFORMATION ABOUT {Country}")
+                .AppendLine($"FIFA CODE: {Fifa_Code}")
+                .AppendLine($"PLAYED/WINS/LOSSES/DRAW: {Games_Played}/{Wins}/{Losses}/{Draws}")
+                .AppendLine($"GOALS FOR/AGAINST/DIFFERENTIAL: {Goals_For}/{Goals_Against}/{Goal_Differential}");
+            }
+            else
+            {
+                sb
                 .AppendLine($"INFORMACIJE O {Country}")
                 .AppendLine($"FIFA CODE: {Fifa_Code}")
                 .AppendLine($"ODIGRANE/POBEJDA/PORAZ/NEODLUCENE: {Games_Played}/{Wins}/{Losses}/{Draws}")
                 .AppendLine($"GOLOVI ZABIJENI/PRIMLJENI/RAZLIKA: {Goals_For}/{Goals_Against}/{Goal_Differential}");
+            }
+            
             return sb.ToString();
         }
     }

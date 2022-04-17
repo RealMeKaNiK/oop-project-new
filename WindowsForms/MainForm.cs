@@ -21,7 +21,6 @@ namespace WindowsForms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
             if (!DataProvider.LoadConfiguration())
             {
                 LoadForm(new SettingsForm());

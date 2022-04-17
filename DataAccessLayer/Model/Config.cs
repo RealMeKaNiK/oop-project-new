@@ -98,11 +98,23 @@ namespace DataAccessLayer.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en")
+            {
+                sb
+                .AppendLine("CURRENT SETTINGS")
+                .AppendLine($"CHOOSEN COMPETITION: {TeamType}")
+                .AppendLine($"CHOOSEN LANGUAGE: {Language}")
+                .AppendLine($"CHOOSEN RESOLUTION: {ResolutionType}");
+            }
+            else
+            {
+                sb
                 .AppendLine("TRENUTNE POSTAVKE")
                 .AppendLine($"ODABRANO PRVENSTVO: {TeamType}")
                 .AppendLine($"ODABRANI JEZIK: {Language}")
                 .AppendLine($"ODABRANA REZOLUCIJA: {ResolutionType}");
+            }
+            
             return sb.ToString();
         }
     }
