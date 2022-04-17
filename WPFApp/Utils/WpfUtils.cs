@@ -13,6 +13,15 @@ namespace WPFApp.Utils
 {
     public static class WpfUtils
     {
+        private static double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+        private static double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+        private static double windowWidth = Application.Current.MainWindow.Width;
+        private static double windowHeight = Application.Current.MainWindow.Height;
+        private static void CenterWindowOnScreen()
+        {
+            Application.Current.MainWindow.Left = (screenWidth / 2) - (windowWidth / 2);
+            Application.Current.MainWindow.Top = (screenHeight / 2) - (windowHeight / 2);
+        }
         public static void ChangeResolution(ResolutionType type)
         {
             switch (type)
@@ -23,16 +32,18 @@ namespace WPFApp.Utils
                     break;
                 case ResolutionType.Big:
                     Application.Current.MainWindow.WindowStyle = WindowStyle.SingleBorderWindow;
-                    Application.Current.MainWindow.Width = 1700;
-                    Application.Current.MainWindow.Height = 960;
+                    Application.Current.MainWindow.Width = 1500;
+                    Application.Current.MainWindow.Height = 900;
                     break;
                 case ResolutionType.Normal:
                     Application.Current.MainWindow.WindowStyle = WindowStyle.SingleBorderWindow;
-                    Application.Current.MainWindow.WindowState = WindowState.Normal;
+                    Application.Current.MainWindow.Width = 1200;
+                    Application.Current.MainWindow.Height = 800;
                     break;
                 default:
                     Application.Current.MainWindow.WindowStyle = WindowStyle.SingleBorderWindow;
-                    Application.Current.MainWindow.WindowState = WindowState.Normal;
+                    Application.Current.MainWindow.Width = 1200;
+                    Application.Current.MainWindow.Height = 800;
                     break;
             }
         }

@@ -54,6 +54,9 @@ namespace WPFApp.Pages
             this.lblResult.Content = selectedMatch;
             DisplayFootballPlayersOnTheField(selectedMatch);
             this.imgLoadingAnimation.Visibility= Visibility.Collapsed;
+            this.spStatButtons.Visibility = Visibility.Visible;
+            this.btmShowFavTeamInfo.Content = $"{((Team)this.cbSelectedTeam.SelectedItem).Country} STATS";
+            this.btnShowOppTeamInfo.Content = $"{((Team)this.cbSelectedTeamOpponents.SelectedItem).Country} STATS";
         }
 
         private void CleanBoard()

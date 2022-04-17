@@ -34,7 +34,7 @@ namespace WPFApp
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            this.lblPlayerInfo.Content = $"{Player.name}{System.Environment.NewLine}{Player.shirt_number}";
+            this.lblPlayerInfo.Content = $"{Player.name.Replace(' ', '\n')}{System.Environment.NewLine}{Player.shirt_number}";
             this.imgPlayer.Source = ConvertImageForWpf(Player.Picture);
         }
 

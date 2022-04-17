@@ -2,17 +2,23 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       xmlns:uc="clr-namespace:WPFApp"
       mc:Ignorable="d"
-      Background="LightGoldenrodYellow"
+      Background="LightBlue"
       Loaded="Page_Loaded"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      Margin="0"
+      Height="Auto"
+      Width="Auto"
       d:DesignHeight="850" d:DesignWidth="1400"
       Title="MatchChooserPage">
 
     <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50 0 0 0">
         <StackPanel Orientation="Horizontal">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="250">
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type StackPanel}">
                         <Setter Property="Margin" Value="0 10 10 0"/>
@@ -27,11 +33,11 @@
                 <Label HorizontalAlignment="Center" FontSize="22" FontWeight="Bold">Odaberi Timove</Label>
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <Label FontSize="16">Odaberi Favorite Team</Label>
+                        <Label FontSize="16">Team</Label>
                         <ComboBox x:Name="cbSelectedTeam" Width="100" SelectionChanged="cbSelectedTeam_SelectionChanged"/>
                     </StackPanel>
                     <StackPanel x:Name="spOppTeam" Orientation="Horizontal">
-                        <Label FontSize="16">Odaberi protivnike izabrane momcadi</Label>
+                        <Label FontSize="16">Protivnici</Label>
                         <ComboBox x:Name="cbSelectedTeamOpponents" Width="100" />
                     </StackPanel>
                 </StackPanel>
@@ -39,24 +45,21 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <Button x:Name="btmShowFavTeamInfo" Click="btmShowFavTeamInfo_Click">SHOW FAVORITE TEAM INFO</Button>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <Button x:Name="btnShowOppTeamInfo" Click="btnShowOppTeamInfo_Click">SHOW OPPONENT TEAM INFO</Button>
+                    <StackPanel x:Name="spStatButtons" Grid.Column="0" Visibility="Collapsed">
+                        <Button x:Name="btmShowFavTeamInfo" Click="btmShowFavTeamInfo_Click" />
+                        <Button x:Name="btnShowOppTeamInfo" Click="btnShowOppTeamInfo_Click" />
                     </StackPanel>
                 </Grid>
-                <Image x:Name="imgLoadingAnimation" Source="/Resources/loadingAnimation.gif" Width="100" Height="100" Visibility="Collapsed"/>
+                <Image x:Name="imgLoadingAnimation" gif:ImageBehavior.AnimatedSource="/Resources/loadingAnimation.gif" Width="100" Height="100" Visibility="Collapsed"/>
             </StackPanel>
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0 0 0 50">
+            <StackPanel x:Name="spFieldPanel" Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0 5 0 5">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="/Resources/footballfield.png"/>
                 </StackPanel.Background>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
@@ -90,13 +93,13 @@
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
                         <RowDefinition Height="80"/>
                         <RowDefinition Height="80"/>
-                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="90"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel x:Name="spForwardPosition" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

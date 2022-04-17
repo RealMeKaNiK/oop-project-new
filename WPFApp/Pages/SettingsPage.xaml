@@ -24,21 +24,21 @@
             <Label HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">POSTAVKE</Label>
             <StackPanel Orientation="Horizontal">
                 <Label>Izaberi Momcad</Label>
-                <ComboBox x:Name="cbTeam" Width="100" Margin="29 0 0 0">
+                <ComboBox x:Name="cbTeam" Width="100" Margin="29 0 0 0" SelectedIndex="0">
                     <ComboBoxItem>Men</ComboBoxItem>
                     <ComboBoxItem>Women</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Izaberi Jezik</Label>
-                <ComboBox x:Name="cbLanguage" Width="100" Margin="51 0 0 0">
+                <ComboBox x:Name="cbLanguage" Width="100" Margin="51 0 0 0" SelectedIndex="1">
                     <ComboBoxItem>English</ComboBoxItem>
                     <ComboBoxItem>Croatian</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Izaberi Rezoluciju</Label>
-                <ComboBox x:Name="cbResolution" Width="100" Margin="22 0 0 0">
+                <ComboBox x:Name="cbResolution" Width="100" Margin="22 0 0 0" SelectedIndex="0">
                     <ComboBoxItem>Fullscreen</ComboBoxItem>
                     <ComboBoxItem>Big</ComboBoxItem>
                     <ComboBoxItem>Normal</ComboBoxItem>
