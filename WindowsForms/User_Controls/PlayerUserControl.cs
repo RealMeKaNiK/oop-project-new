@@ -48,8 +48,8 @@ namespace WindowsForms.User_Controls
             this.lblName.Text = Player.name;
             this.lblShirtNumber.Text = Player.shirt_number.ToString();
             this.lblPosition.Text = Player.position;
-            this.lblCaptain.Text = Player.captain ? "KAPETAN" : "";
-            this.lblFavorite.Text = Player.FavoritePlayer ? "ZVEZDA" : "";
+            this.lblCaptain.Text = Player.captain ? "CAPTAIN" : "";
+            this.lblFavorite.Text = Player.FavoritePlayer ? "★" : "";
             this.pictureBox1.Image = Player.Picture;
         }
 
