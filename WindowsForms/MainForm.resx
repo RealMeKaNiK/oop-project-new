@@ -117,4 +117,241 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;pnlNavigation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnOpenSetPicutres.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnOpenEventsRang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 586</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnOpenTeams.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOpenEventsRang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 35</value>
+  </data>
+  <data name="btnOpenPlayersRang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 621</value>
+  </data>
+  <data name="btnOpenPlayersRang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 35</value>
+  </data>
+  <data name="&gt;&gt;pnlNavigation.Name" xml:space="preserve">
+    <value>pnlNavigation</value>
+  </data>
+  <data name="btnOpenSettingsForm.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnOpenSetPicutres.Text" xml:space="preserve">
+    <value>Set Player Pictures</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="pnlNavigation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 761</value>
+  </data>
+  <data name="&gt;&gt;pnlMain.Name" xml:space="preserve">
+    <value>pnlMain</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSetPicutres.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayers.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnOpenEventsRang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;btnOpenTeams.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pnlMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 0</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayersRang.Name" xml:space="preserve">
+    <value>btnOpenPlayersRang</value>
+  </data>
+  <data name="btnOpenSettingsForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 35</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSettingsForm.Name" xml:space="preserve">
+    <value>btnOpenSettingsForm</value>
+  </data>
+  <data name="btnOpenSetPicutres.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 35</value>
+  </data>
+  <data name="pnlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 761</value>
+  </data>
+  <data name="btnOpenEventsRang.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnOpenEventsRang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnOpenSettingsForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 726</value>
+  </data>
+  <data name="btnOpenEventsRang.Text" xml:space="preserve">
+    <value>Rang Lista Event-a</value>
+  </data>
+  <data name="btnOpenTeams.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 35</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Window Forms</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSetPicutres.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSetPicutres.Parent" xml:space="preserve">
+    <value>pnlNavigation</value>
+  </data>
+  <data name="btnOpenPlayersRang.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnOpenEventsRang.Name" xml:space="preserve">
+    <value>btnOpenEventsRang</value>
+  </data>
+  <data name="btnOpenTeams.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;btnOpenTeams.Name" xml:space="preserve">
+    <value>btnOpenTeams</value>
+  </data>
+  <data name="&gt;&gt;pnlNavigation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnOpenSetPicutres.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnOpenPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnOpenEventsRang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlNavigation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnOpenTeams.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnOpenPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 35</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;pnlMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSettingsForm.Parent" xml:space="preserve">
+    <value>pnlNavigation</value>
+  </data>
+  <data name="btnOpenPlayersRang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="btnOpenPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 656</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayers.Name" xml:space="preserve">
+    <value>btnOpenPlayers</value>
+  </data>
+  <data name="pnlNavigation.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnOpenSettingsForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="btnOpenTeams.Text" xml:space="preserve">
+    <value>Odaberi momcad</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayersRang.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;btnOpenTeams.Parent" xml:space="preserve">
+    <value>pnlNavigation</value>
+  </data>
+  <data name="pnlNavigation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnOpenTeams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 691</value>
+  </data>
+  <data name="&gt;&gt;btnOpenEventsRang.Parent" xml:space="preserve">
+    <value>pnlNavigation</value>
+  </data>
+  <data name="pnlNavigation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 761</value>
+  </data>
+  <data name="btnOpenSetPicutres.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 551</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSetPicutres.Name" xml:space="preserve">
+    <value>btnOpenSetPicutres</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayers.Parent" xml:space="preserve">
+    <value>pnlNavigation</value>
+  </data>
+  <data name="btnOpenPlayers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayersRang.Parent" xml:space="preserve">
+    <value>pnlNavigation</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPlayersRang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnOpenSettingsForm.Text" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSettingsForm.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pnlMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnOpenPlayers.Text" xml:space="preserve">
+    <value>Odaberi Igrace</value>
+  </data>
+  <data name="&gt;&gt;pnlMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pnlMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOpenPlayersRang.Text" xml:space="preserve">
+    <value>Rang Lista Igraca</value>
+  </data>
+  <data name="&gt;&gt;btnOpenSettingsForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en</value>
+  </metadata>
 </root>

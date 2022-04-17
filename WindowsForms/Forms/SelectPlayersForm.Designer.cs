@@ -40,67 +40,50 @@
             // 
             // flpLoadedPlayers
             // 
-            this.flpLoadedPlayers.AutoScroll = true;
+            resources.ApplyResources(this.flpLoadedPlayers, "flpLoadedPlayers");
             this.flpLoadedPlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.flpLoadedPlayers.Controls.Add(this.pbLoadingAnimation);
-            this.flpLoadedPlayers.Location = new System.Drawing.Point(538, 12);
             this.flpLoadedPlayers.Name = "flpLoadedPlayers";
-            this.flpLoadedPlayers.Size = new System.Drawing.Size(434, 695);
-            this.flpLoadedPlayers.TabIndex = 0;
             // 
             // flpFavoritePlayers
             // 
+            resources.ApplyResources(this.flpFavoritePlayers, "flpFavoritePlayers");
             this.flpFavoritePlayers.AllowDrop = true;
             this.flpFavoritePlayers.BackColor = System.Drawing.Color.Aqua;
-            this.flpFavoritePlayers.Location = new System.Drawing.Point(12, 12);
             this.flpFavoritePlayers.Name = "flpFavoritePlayers";
-            this.flpFavoritePlayers.Size = new System.Drawing.Size(434, 695);
-            this.flpFavoritePlayers.TabIndex = 1;
             this.flpFavoritePlayers.DragDrop += new System.Windows.Forms.DragEventHandler(this.flpFavoritePlayers_DragDrop);
             this.flpFavoritePlayers.DragEnter += new System.Windows.Forms.DragEventHandler(this.flpFavoritePlayers_DragEnter);
             // 
             // btnRemoveFavorites
             // 
-            this.btnRemoveFavorites.Location = new System.Drawing.Point(452, 395);
+            resources.ApplyResources(this.btnRemoveFavorites, "btnRemoveFavorites");
             this.btnRemoveFavorites.Name = "btnRemoveFavorites";
-            this.btnRemoveFavorites.Size = new System.Drawing.Size(80, 69);
-            this.btnRemoveFavorites.TabIndex = 2;
-            this.btnRemoveFavorites.Text = "Remove All Favorites";
             this.btnRemoveFavorites.UseVisualStyleBackColor = true;
             this.btnRemoveFavorites.Click += new System.EventHandler(this.btnRemoveFavorites_Click);
             // 
             // btnTransferSelectedUserControls
             // 
-            this.btnTransferSelectedUserControls.Location = new System.Drawing.Point(452, 240);
+            resources.ApplyResources(this.btnTransferSelectedUserControls, "btnTransferSelectedUserControls");
             this.btnTransferSelectedUserControls.Name = "btnTransferSelectedUserControls";
-            this.btnTransferSelectedUserControls.Size = new System.Drawing.Size(80, 69);
-            this.btnTransferSelectedUserControls.TabIndex = 3;
-            this.btnTransferSelectedUserControls.Text = "Transfer selected";
             this.btnTransferSelectedUserControls.UseVisualStyleBackColor = true;
             this.btnTransferSelectedUserControls.Click += new System.EventHandler(this.btnTransferSelectedUserControls_Click);
             // 
             // pbLoadingAnimation
             // 
-            this.pbLoadingAnimation.Image = ((System.Drawing.Image)(resources.GetObject("pbLoadingAnimation.Image")));
-            this.pbLoadingAnimation.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.pbLoadingAnimation, "pbLoadingAnimation");
             this.pbLoadingAnimation.Name = "pbLoadingAnimation";
-            this.pbLoadingAnimation.Size = new System.Drawing.Size(96, 67);
-            this.pbLoadingAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoadingAnimation.TabIndex = 4;
             this.pbLoadingAnimation.TabStop = false;
             // 
             // SelectPlayersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 719);
             this.Controls.Add(this.btnTransferSelectedUserControls);
             this.Controls.Add(this.btnRemoveFavorites);
             this.Controls.Add(this.flpFavoritePlayers);
             this.Controls.Add(this.flpLoadedPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SelectPlayersForm";
-            this.Text = "SelectPlayersForm";
             this.Load += new System.EventHandler(this.SelectPlayersForm_Load);
             this.flpLoadedPlayers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).EndInit();

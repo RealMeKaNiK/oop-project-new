@@ -106,23 +106,65 @@
       <DependentUpon>PlayerUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\FormUtils.cs" />
+    <EmbeddedResource Include="Forms\EventRangListForm.en.resx">
+      <DependentUpon>EventRangListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventRangListForm.hr-HR.resx">
+      <DependentUpon>EventRangListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventRangListForm.resx">
       <DependentUpon>EventRangListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayersRangListForm.en.resx">
+      <DependentUpon>PlayersRangListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayersRangListForm.hr-HR.resx">
+      <DependentUpon>PlayersRangListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlayersRangListForm.resx">
       <DependentUpon>PlayersRangListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectPlayersForm.en.resx">
+      <DependentUpon>SelectPlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectPlayersForm.hr-HR.resx">
+      <DependentUpon>SelectPlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectPlayersForm.resx">
       <DependentUpon>SelectPlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectTeamForm.en.resx">
+      <DependentUpon>SelectTeamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectTeamForm.hr-HR.resx">
+      <DependentUpon>SelectTeamForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectTeamForm.resx">
       <DependentUpon>SelectTeamForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetPlayerPictureForm.en.resx">
+      <DependentUpon>SetPlayerPictureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetPlayerPictureForm.hr-HR.resx">
+      <DependentUpon>SetPlayerPictureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SetPlayerPictureForm.resx">
       <DependentUpon>SetPlayerPictureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.en.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.hr-HR.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.en.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.hr-HR.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
