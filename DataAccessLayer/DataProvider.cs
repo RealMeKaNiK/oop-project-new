@@ -3,6 +3,7 @@ using DataAccessLayer.Model;
 using DataAccessLayer.Utils;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,18 @@ namespace DataAccessLayer
     public static class DataProvider
     {
 
-        private static readonly IGetable ApiRepo = JsonParserRepoFactory.GetJsonParserRepo();
+        private static readonly IGetable ApiRepo = GetDataLoader();
         private static readonly IRepo FileRepo = FileRepoFactory.GetRepo();
         private static Config Config;
 
         // Config and stuff
+
+        private static IGetable GetDataLoader()
+        {
+            //if (ConfigurationManager.AppSettings["conType"] == "FileParser")            
+            //    return JsonParserRepoFactory.GetJsonParserRepo();            
+            return ApiRepoFactory.GetRepo();
+        }
         public static bool LoadConfiguration()
         {
             Config = FileRepo.GetConfig();
@@ -72,11 +80,11 @@ namespace DataAccessLayer
             {
                 return new List<Team>();
             }
-            return await ApiRepo.GetAllResults(Config.GetURLAllResults());
+            return await ApiRepo.GetAllResults(Config.TeamType);
         }
-        public async static Task<List<Match>> GetMatchEvents() => await ApiRepo.GetTeamMatches(Config.GetURLTeamMatches(), Config.FavoriteTeam.Fifa_Code);
+        public async static Task<List<Match>> GetMatchEvents() => await ApiRepo.GetTeamMatches(Config.TeamType, Config.FavoriteTeam.Fifa_Code);
 
-        public async static Task<List<Team>> GetTeamOpponents(string fifaCodeFromSelectedTeam) => await ApiRepo.GetFromSelectedTeamOpponents(Config.GetURLTeamMatches(), fifaCodeFromSelectedTeam, Config.GetURLAllResults());
+        public async static Task<List<Team>> GetTeamOpponents(string fifaCodeFromSelectedTeam) => await ApiRepo.GetFromSelectedTeamOpponents(Config.TeamType, fifaCodeFromSelectedTeam);
         public async static Task<List<Player>> GetPlayers()
         {
             if (Config.FavoriteTeam?.Players != null)
@@ -87,14 +95,14 @@ namespace DataAccessLayer
             {
                 return new List<Player>();
             }
-            return FileRepo.LoadPicutres(Config.FavoriteTeam.Players = await ApiRepo.GetTeamPlayers(Config.GetURLTeamMatches(), Config.FavoriteTeam?.Fifa_Code), Config.FavoriteTeam?.Fifa_Code);
+            return FileRepo.LoadPicutres(Config.FavoriteTeam.Players = await ApiRepo.GetTeamPlayers(Config.TeamType, Config.FavoriteTeam?.Fifa_Code), Config.FavoriteTeam?.Fifa_Code);
         }
 
-        public async static Task<List<Team>> GetTeamStatistics(string fifaCode) => await ApiRepo.GetTeamResult(Config.GetURLTeamResult(), fifaCode);
+        public async static Task<List<Team>> GetTeamStatistics(string fifaCode) => await ApiRepo.GetTeamResult(Config.TeamType, fifaCode);
 
         public async static Task<Match> GetMatchWinner(string firstFifaCode, string secondFifaCode)
         {
-            Match singleMatch = await ApiRepo.GetSpecificMatch(firstFifaCode, secondFifaCode, Config.GetURLTeamMatches());
+            Match singleMatch = await ApiRepo.GetSpecificMatch(firstFifaCode, secondFifaCode, Config.TeamType);
             singleMatch.home_team_statistics.starting_eleven = Utilities.CalculatePlayerStatisticsForSingleMatch(singleMatch.home_team_statistics.starting_eleven, singleMatch.home_team_events);
             singleMatch.away_team_statistics.starting_eleven = Utilities.CalculatePlayerStatisticsForSingleMatch(singleMatch.away_team_statistics.starting_eleven, singleMatch.away_team_events);
             return singleMatch;            

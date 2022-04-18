@@ -9,14 +9,14 @@ namespace DataAccessLayer.Dal
 {
     public interface IGetable
     {
-        Task<List<Team>> GetAllResults(string url);
-        Task<List<Match>> GetAllMatches(string url);
-        Task<List<Team>> GetTeamResult(string url, string fifaCode);
-        Task<List<Match>> GetTeamMatches(string url, string fifaCode);
-        Task<List<Player>> GetTeamPlayers(string url, string fifaCode);
-        Task<List<Team>> GetFromSelectedTeamOpponents(string url, string fifaCode, string teamInfoUrl);
+        Task<List<Team>> GetAllResults(TeamType type);
+        Task<List<Match>> GetAllMatches(TeamType type);
+        Task<List<Team>> GetTeamResult(TeamType type, string fifaCode);
+        Task<List<Match>> GetTeamMatches(TeamType type, string fifaCode);
+        Task<List<Player>> GetTeamPlayers(TeamType type, string fifaCode);
+        Task<List<Team>> GetFromSelectedTeamOpponents(TeamType type, string fifaCode);
 
-        Task<Match> GetSpecificMatch(string firstFifaCode, string secondFifaCode, string allMatchesURL);
+        Task<Match> GetSpecificMatch(string firstFifaCode, string secondFifaCode, TeamType type);
 
     }
 }
