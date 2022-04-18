@@ -15,7 +15,6 @@ namespace WindowsForms.User_Controls
 {
     public partial class PlayerUserControl : UserControl
     {
-        private const string PICTURE_FILTER = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
         private Player Player;
 
         public bool isCheckedForTransfer = false;
@@ -40,7 +39,7 @@ namespace WindowsForms.User_Controls
         public void SetAsFavorite()
         {
             Player.FavoritePlayer = true;
-            this.lblFavorite.Text = "ZVEZDAN";
+            this.lblFavorite.Text = "★";
         }
 
         private void PlayerUserControl_Load(object sender, EventArgs e)
