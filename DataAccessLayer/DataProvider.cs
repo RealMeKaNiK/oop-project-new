@@ -14,16 +14,15 @@ namespace DataAccessLayer
     public static class DataProvider
     {
 
-        private static readonly IGetable ApiRepo = GetDataLoader();
+        private static readonly IGetable ApiRepo = GetDataLoaderFromConfigFile();
         private static readonly IRepo FileRepo = FileRepoFactory.GetRepo();
         private static Config Config;
 
         // Config and stuff
-
-        private static IGetable GetDataLoader()
+        private static IGetable GetDataLoaderFromConfigFile()
         {
-            //if (ConfigurationManager.AppSettings["conType"] == "FileParser")            
-            //    return JsonParserRepoFactory.GetJsonParserRepo();            
+            if (ConfigurationManager.AppSettings["conType"] == "FileParser")
+                return JsonParserRepoFactory.GetJsonParserRepo();
             return JsonParserRepoFactory.GetJsonParserRepo();
         }
         public static bool LoadConfiguration()
@@ -61,10 +60,8 @@ namespace DataAccessLayer
         public static void SaveFavoriteTeam(Team team) => Config.FavoriteTeam = team;
         public static bool InsertFavoritePlayer(Player player)
         {
-            if (Config.FavoritePlayers.Exists(x => x.name.Equals(player.name)))
-            {
+            if (Config.FavoritePlayers.Exists(x => x.name.Equals(player.name)))            
                 return false;
-            }
             Config.FavoritePlayers.Add(player);
             return true;
         }
@@ -106,7 +103,6 @@ namespace DataAccessLayer
             singleMatch.home_team_statistics.starting_eleven = Utilities.CalculatePlayerStatisticsForSingleMatch(singleMatch.home_team_statistics.starting_eleven, singleMatch.home_team_events);
             singleMatch.away_team_statistics.starting_eleven = Utilities.CalculatePlayerStatisticsForSingleMatch(singleMatch.away_team_statistics.starting_eleven, singleMatch.away_team_events);
             return singleMatch;            
-        }
-                    
+        }                    
     }
 }
