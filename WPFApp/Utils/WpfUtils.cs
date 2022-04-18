@@ -32,16 +32,19 @@ namespace WPFApp.Utils
                     break;
                 case ResolutionType.Big:
                     Application.Current.MainWindow.WindowStyle = WindowStyle.SingleBorderWindow;
+                    Application.Current.MainWindow.WindowState = WindowState.Normal;
                     Application.Current.MainWindow.Width = 1500;
                     Application.Current.MainWindow.Height = 900;
                     break;
                 case ResolutionType.Normal:
                     Application.Current.MainWindow.WindowStyle = WindowStyle.SingleBorderWindow;
+                    Application.Current.MainWindow.WindowState = WindowState.Normal;
                     Application.Current.MainWindow.Width = 1200;
                     Application.Current.MainWindow.Height = 800;
                     break;
                 default:
                     Application.Current.MainWindow.WindowStyle = WindowStyle.SingleBorderWindow;
+                    Application.Current.MainWindow.WindowState = WindowState.Normal;
                     Application.Current.MainWindow.Width = 1200;
                     Application.Current.MainWindow.Height = 800;
                     break;

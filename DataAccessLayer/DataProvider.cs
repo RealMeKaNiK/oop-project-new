@@ -24,7 +24,7 @@ namespace DataAccessLayer
         {
             //if (ConfigurationManager.AppSettings["conType"] == "FileParser")            
             //    return JsonParserRepoFactory.GetJsonParserRepo();            
-            return ApiRepoFactory.GetRepo();
+            return JsonParserRepoFactory.GetJsonParserRepo();
         }
         public static bool LoadConfiguration()
         {

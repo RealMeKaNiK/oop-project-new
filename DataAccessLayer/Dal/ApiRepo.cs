@@ -57,7 +57,7 @@ namespace DataAccessLayer.Dal
         {
             try
             {
-                return JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync(type == TeamType.Men ? MEN_API_TEAM_MATCHES : WOMEN_API_TEAM_MATCHES + fifaCode));
+                return JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync((type == TeamType.Men ? MEN_API_TEAM_MATCHES : WOMEN_API_TEAM_MATCHES) + fifaCode));
             }
             catch (Exception)
             {
@@ -69,7 +69,7 @@ namespace DataAccessLayer.Dal
         {
             try
             {
-                List<Match> matches = JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync(type == TeamType.Men ? MEN_API_TEAM_MATCHES : WOMEN_API_TEAM_MATCHES + fifaCode));
+                List<Match> matches = JsonConvert.DeserializeObject<List<Match>>(await Client.GetStringAsync((type == TeamType.Men ? MEN_API_TEAM_MATCHES : WOMEN_API_TEAM_MATCHES) + fifaCode));
                 List<Player> startingElevens = matches[0].home_team_statistics.starting_eleven;
                 List<Player> substitutes = matches[0].home_team_statistics.substitutes;
 
@@ -129,7 +129,7 @@ namespace DataAccessLayer.Dal
         {
             try
             {
-                return JsonConvert.DeserializeObject<List<Team>>(await Client.GetStringAsync(type == TeamType.Men ? MEN_API_TEAM_RESULTS : WOMEN_API_TEAM_RESULTS + fifaCode));
+                return JsonConvert.DeserializeObject<List<Team>>(await Client.GetStringAsync((type == TeamType.Men ? MEN_API_TEAM_RESULTS : WOMEN_API_TEAM_RESULTS) + fifaCode));
             }
             catch (Exception)
             {

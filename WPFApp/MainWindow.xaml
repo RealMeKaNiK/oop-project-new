@@ -9,6 +9,8 @@
         Loaded="Window_Loaded"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
+        MinWidth="1150"
+        MinHeight="750"
         Title="WPF APP" Height="820" Width="1500">
     <Grid>
         <Grid.ColumnDefinitions>
