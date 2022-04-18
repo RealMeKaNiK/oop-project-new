@@ -69,15 +69,13 @@
     <Compile Include="Utils\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\ResourceFile.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceFile.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

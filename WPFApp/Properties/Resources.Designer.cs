@@ -178,5 +178,14 @@ namespace WPFApp.Properties {
                 return ResourceManager.GetString("ShowResults", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Teams for Display.
+        /// </summary>
+        public static string TeamChooserLabel {
+            get {
+                return ResourceManager.GetString("TeamChooserLabel", resourceCulture);
+            }
+        }
     }
 }

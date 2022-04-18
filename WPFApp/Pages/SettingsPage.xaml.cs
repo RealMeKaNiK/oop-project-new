@@ -39,6 +39,7 @@ namespace WPFApp.Pages
             {
                 DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeam.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text), (ResolutionType)Enum.Parse(typeof(ResolutionType), this.cbResolution.Text));
                 WpfUtils.ChangeResolution((ResolutionType)Enum.Parse(typeof(ResolutionType), this.cbResolution.Text));
+                MessageBox.Show("Language will change after app restart!", "Language Settings", MessageBoxButton.OK, MessageBoxImage.Information);
             }
                 
         }

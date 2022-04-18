@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFApp.Pages"
-      xmlns:rs="clr-namespace:WPFApp.Properties"
+      xmlns:language="clr-namespace:WPFApp.Properties"
       mc:Ignorable="d"
       Loaded="Page_Loaded"
       d:DesignHeight="450" d:DesignWidth="800"
@@ -22,30 +22,30 @@
                     <Setter Property="Margin" Value="0 10 0 0"/>
                 </Style>
             </StackPanel.Resources>
-            <Label HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="{x:Static rs:Resources.SettingsLabel}" />
+            <Label HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="{x:Static language:Resources.SettingsLabel}" />
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static rs:Resources.SettingsChooseTeam}" />
+                <Label Content="{x:Static language:Resources.SettingsChooseTeam}"/>
                 <ComboBox x:Name="cbTeam" Width="100" Margin="29 0 0 0" SelectedIndex="0">
                     <ComboBoxItem>Men</ComboBoxItem>
                     <ComboBoxItem>Women</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static rs:Resources.SettingsChooseLanguage}" />
+                <Label Content="{x:Static language:Resources.SettingsChooseLanguage}"/>
                 <ComboBox x:Name="cbLanguage" Width="100" Margin="51 0 0 0" SelectedIndex="1">
                     <ComboBoxItem>English</ComboBoxItem>
                     <ComboBoxItem>Croatian</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static rs:Resources.SettingsChooseResolution}" />
+                <Label Content="{x:Static language:Resources.SettingsChooseResolution}"/>
                 <ComboBox x:Name="cbResolution" Width="100" Margin="22 0 0 0" SelectedIndex="0">
                     <ComboBoxItem>Fullscreen</ComboBoxItem>
                     <ComboBoxItem>Big</ComboBoxItem>
                     <ComboBoxItem>Normal</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
-            <Button x:Name="btnSaveConfig" Click="btnSaveConfig_Click" Margin="0 10 0 0" Padding="10" Content="{x:Static rs:Resources.SettingsButton}" />
+            <Button x:Name="btnSaveConfig" Click="btnSaveConfig_Click" Margin="0 10 0 0" Padding="10" Content="{x:Static language:Resources.SettingsButton}"/>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label x:Name="lblCurrentSettings" FontSize="18" FontWeight="Bold"/>
