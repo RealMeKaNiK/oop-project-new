@@ -61,6 +61,24 @@ namespace WPFApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close this.
+        /// </summary>
+        public static string CloseButtonPlayer {
+            get {
+                return ResourceManager.GetString("CloseButtonPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close this.
+        /// </summary>
+        public static string CloseButtonTeam {
+            get {
+                return ResourceManager.GetString("CloseButtonTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap FootballField {
@@ -77,6 +95,87 @@ namespace WPFApp.Properties {
             get {
                 object obj = ResourceManager.GetObject("loadingAnimation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Team.
+        /// </summary>
+        public static string NavButtonFirst {
+            get {
+                return ResourceManager.GetString("NavButtonFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string NavButtonSecond {
+            get {
+                return ResourceManager.GetString("NavButtonSecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quit Application.
+        /// </summary>
+        public static string NavButtonThird {
+            get {
+                return ResourceManager.GetString("NavButtonThird", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Config.
+        /// </summary>
+        public static string SettingsButton {
+            get {
+                return ResourceManager.GetString("SettingsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Language.
+        /// </summary>
+        public static string SettingsChooseLanguage {
+            get {
+                return ResourceManager.GetString("SettingsChooseLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Resolution.
+        /// </summary>
+        public static string SettingsChooseResolution {
+            get {
+                return ResourceManager.GetString("SettingsChooseResolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Team Type.
+        /// </summary>
+        public static string SettingsChooseTeam {
+            get {
+                return ResourceManager.GetString("SettingsChooseTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsLabel {
+            get {
+                return ResourceManager.GetString("SettingsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Results.
+        /// </summary>
+        public static string ShowResults {
+            get {
+                return ResourceManager.GetString("ShowResults", resourceCulture);
             }
         }
     }

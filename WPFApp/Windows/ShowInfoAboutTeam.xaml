@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp.Windows"
+        xmlns:rs="clr-namespace:WPFApp.Properties"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
@@ -22,7 +23,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label x:Name="lblTeamInfo" FontSize="20" FontWeight="Bold" Foreground="OrangeRed"/>
-            <Button x:Name="btnCloseWindow" Click="btnCloseWindow_Click" Padding="10 10 10 10" Width="100" Background="Yellow">CLOSE</Button>
+            <Button x:Name="btnCloseWindow" Click="btnCloseWindow_Click" Padding="10 10 10 10" Width="100" Background="Yellow" Content="{x:Static rs:Resources.CloseButtonTeam}"/>
         </StackPanel>
     </Grid>
 </Window>

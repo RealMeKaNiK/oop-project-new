@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
+        xmlns:rs="clr-namespace:WPFApp.Properties"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         WindowStyle="None"
@@ -26,9 +27,9 @@
                     <Setter Property="Padding" Value="10"/>
                 </Style>
             </StackPanel.Resources>
-            <Button x:Name="btnChooseTeam" Click="btnChooseTeam_Click">Odaberi Momcad</Button>
-            <Button x:Name="btnSettings" Click="btnSettings_Click">Settings</Button>
-            <Button x:Name="btnQuitApp" Click="btnQuitApp_Click">Quit Application</Button>
+            <Button x:Name="btnChooseTeam" Click="btnChooseTeam_Click" Content="{x:Static rs:Resources.NavButtonFirst}"/>
+            <Button x:Name="btnSettings" Click="btnSettings_Click" Content="{x:Static rs:Resources.NavButtonSecond}" />
+            <Button x:Name="btnQuitApp" Click="btnQuitApp_Click" Content="{x:Static rs:Resources.NavButtonThird}" />
         </StackPanel>
         <Frame x:Name="MainFrame" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>

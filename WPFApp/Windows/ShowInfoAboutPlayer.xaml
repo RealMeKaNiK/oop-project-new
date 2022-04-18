@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp.Windows"
+        xmlns:rs="clr-namespace:WPFApp.Properties"
         mc:Ignorable="d"
         x:Name="playerWindow"
         WindowStartupLocation="CenterScreen"
@@ -26,9 +27,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image x:Name="imgPlayer" Height="70" Width="70" Stretch="Fill"/>
             <Label x:Name="lblPlayerInfo" FontSize="16" Foreground="OrangeRed" />
-            <Button Click="Button_Click" Width="250" Height="50" FontSize="20" FontWeight="Bold">
-                Close this window
-            </Button>
+            <Button Click="Button_Click" Width="250" Height="50" FontSize="20" FontWeight="Bold" Content="{x:Static rs:Resources.CloseButtonPlayer}" />
         </StackPanel>
     </Grid>
 </Window>

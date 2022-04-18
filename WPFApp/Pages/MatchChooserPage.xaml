@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:gif="http://wpfanimatedgif.codeplex.com"
       xmlns:uc="clr-namespace:WPFApp"
+      xmlns:rs="clr-namespace:WPFApp.Properties"
       mc:Ignorable="d"
       Background="LightBlue"
       Loaded="Page_Loaded"
@@ -30,18 +31,18 @@
                 <StackPanel HorizontalAlignment="Center">
                     <Label HorizontalAlignment="Center" x:Name="lblResult" FontSize="20" FontWeight="Bold" Foreground="OrangeRed"/>
                 </StackPanel>
-                <Label HorizontalAlignment="Center" FontSize="22" FontWeight="Bold">Odaberi Timove</Label>
+                <Label HorizontalAlignment="Center" FontSize="22" FontWeight="Bold" Content="{x:Static rs:Resources.MatchChooserLabelOne}" />
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
                         <Label FontSize="16">Team</Label>
                         <ComboBox x:Name="cbSelectedTeam" Width="100" SelectionChanged="cbSelectedTeam_SelectionChanged"/>
                     </StackPanel>
                     <StackPanel x:Name="spOppTeam" Orientation="Horizontal">
-                        <Label FontSize="16">Protivnici</Label>
+                        <Label FontSize="16">Team</Label>
                         <ComboBox x:Name="cbSelectedTeamOpponents" Width="100" />
                     </StackPanel>
                 </StackPanel>
-                <Button x:Name="btnShowResults"  Padding="8" Margin="0 10 0 0" Click="btnShowResults_Click">Prikazi Rezultate</Button>
+                <Button x:Name="btnShowResults"  Padding="8" Margin="0 10 0 0" Click="btnShowResults_Click" Content="{x:Static rs:Resources.ShowResults}" />
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
