@@ -30,6 +30,7 @@ namespace WindowsForms.User_Controls
         {
             InitializeComponent();
             this.Player = player;
+            this.Player.FavoritePlayer = false;
             this.favoritePanelRef = flpFavoritePlayers;
             this.ContextMenuStrip = cmsAddPlayerToFav;
         }

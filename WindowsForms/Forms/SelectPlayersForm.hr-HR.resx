@@ -14176,19 +14176,52 @@
   <data name="pbLoadingAnimation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="pbLoadingAnimation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 5</value>
+  </data>
+  <data name="pbLoadingAnimation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="pbLoadingAnimation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 103</value>
+  </data>
+  <data name="flpLoadedPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>807, 18</value>
+  </data>
+  <data name="flpLoadedPlayers.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="flpLoadedPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>651, 1069</value>
+  </data>
+  <data name="flpFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="flpFavoritePlayers.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="flpFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>651, 1069</value>
+  </data>
   <data name="btnRemoveFavorites.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnRemoveFavorites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>677, 372</value>
+  </data>
+  <data name="btnRemoveFavorites.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="btnRemoveFavorites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 106</value>
   </data>
   <data name="btnRemoveFavorites.Text" xml:space="preserve">
     <value>Izbrisi sve favorite</value>
   </data>
-  <data name="btnTransferSelectedUserControls.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
   </data>
-  <data name="btnTransferSelectedUserControls.Text" xml:space="preserve">
-    <value>Prebaci odabrane</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1476, 1106</value>
   </data>
 </root>

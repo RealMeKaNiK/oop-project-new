@@ -32,8 +32,8 @@ namespace WindowsForms.Forms
                 FormUtils.DisplayErrorMessageBox("Already selected", "Error");
                 return;
             }
-            control.SetAsFavorite();
-            this.flpFavoritePlayers.Controls.Add(control);
+            control.Hide();
+            this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(control.GetUserControlPlayer()));
             AddPlayerToFavorites(control.GetUserControlPlayer());
         }
 
@@ -61,8 +61,32 @@ namespace WindowsForms.Forms
             {
                 FormUtils.DisplayErrorMessageBox("You can only have 3 selected players", "Max 3 Favorite players");
                 return;
-            }            
+            }
+            if (IsMultiSelecet(this.flpLoadedPlayers.Controls))
+            {
+                foreach (PlayerUserControl item in this.flpLoadedPlayers.Controls)
+                {
+                    if (item.isCheckedForTransfer)
+                    {
+                        InsertControlInPanel(item);
+                    }
+                }
+                return;
+            }
             InsertControlInPanel((PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl)));
+        }
+
+        private bool IsMultiSelecet(Control.ControlCollection controls)
+        {
+            int countOfSelected = 0;
+            foreach (PlayerUserControl singleControl in controls)
+            {
+                if (singleControl.isCheckedForTransfer)
+                {
+                    countOfSelected++;
+                }
+            }
+            return countOfSelected > 0;
         }
 
         private void btnRemoveFavorites_Click(object sender, EventArgs e)
@@ -79,7 +103,7 @@ namespace WindowsForms.Forms
             this.flpLoadedPlayers.Controls.Clear();
             List<Player> players = await DataProvider.GetPlayers();
             FormUtils.CheckIfListCountZero<Player>(players);
-            players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player, this.flpFavoritePlayers)));
+            players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player, this.flpFavoritePlayers) { isCheckedForTransfer = false}));
         }
 
         private void LoadFavoritePlayers()
@@ -87,17 +111,6 @@ namespace WindowsForms.Forms
             this.flpFavoritePlayers.Controls.Clear();
             List<Player> players = DataProvider.GetFavoritePlayers();
             players.ForEach(player => this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(player, this.flpFavoritePlayers)));
-        }
-
-        private void btnTransferSelectedUserControls_Click(object sender, EventArgs e)
-        {
-            foreach (PlayerUserControl singleControl in this.flpLoadedPlayers.Controls)
-            {
-                if (singleControl.isCheckedForTransfer)
-                {
-                    InsertControlInPanel(singleControl as PlayerUserControl);
-                }
-            }
-        }      
+        }    
     }
 }

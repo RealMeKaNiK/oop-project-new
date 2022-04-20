@@ -30,10 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectPlayersForm));
             this.flpLoadedPlayers = new System.Windows.Forms.FlowLayoutPanel();
+            this.pbLoadingAnimation = new System.Windows.Forms.PictureBox();
             this.flpFavoritePlayers = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRemoveFavorites = new System.Windows.Forms.Button();
-            this.btnTransferSelectedUserControls = new System.Windows.Forms.Button();
-            this.pbLoadingAnimation = new System.Windows.Forms.PictureBox();
             this.flpLoadedPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnimation)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +43,12 @@
             this.flpLoadedPlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.flpLoadedPlayers.Controls.Add(this.pbLoadingAnimation);
             this.flpLoadedPlayers.Name = "flpLoadedPlayers";
+            // 
+            // pbLoadingAnimation
+            // 
+            resources.ApplyResources(this.pbLoadingAnimation, "pbLoadingAnimation");
+            this.pbLoadingAnimation.Name = "pbLoadingAnimation";
+            this.pbLoadingAnimation.TabStop = false;
             // 
             // flpFavoritePlayers
             // 
@@ -61,24 +66,10 @@
             this.btnRemoveFavorites.UseVisualStyleBackColor = true;
             this.btnRemoveFavorites.Click += new System.EventHandler(this.btnRemoveFavorites_Click);
             // 
-            // btnTransferSelectedUserControls
-            // 
-            resources.ApplyResources(this.btnTransferSelectedUserControls, "btnTransferSelectedUserControls");
-            this.btnTransferSelectedUserControls.Name = "btnTransferSelectedUserControls";
-            this.btnTransferSelectedUserControls.UseVisualStyleBackColor = true;
-            this.btnTransferSelectedUserControls.Click += new System.EventHandler(this.btnTransferSelectedUserControls_Click);
-            // 
-            // pbLoadingAnimation
-            // 
-            resources.ApplyResources(this.pbLoadingAnimation, "pbLoadingAnimation");
-            this.pbLoadingAnimation.Name = "pbLoadingAnimation";
-            this.pbLoadingAnimation.TabStop = false;
-            // 
             // SelectPlayersForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnTransferSelectedUserControls);
             this.Controls.Add(this.btnRemoveFavorites);
             this.Controls.Add(this.flpFavoritePlayers);
             this.Controls.Add(this.flpLoadedPlayers);
@@ -96,7 +87,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpLoadedPlayers;
         private System.Windows.Forms.FlowLayoutPanel flpFavoritePlayers;
         private System.Windows.Forms.Button btnRemoveFavorites;
-        private System.Windows.Forms.Button btnTransferSelectedUserControls;
         private System.Windows.Forms.PictureBox pbLoadingAnimation;
     }
 }
