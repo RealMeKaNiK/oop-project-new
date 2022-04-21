@@ -7,10 +7,12 @@
         xmlns:language="clr-namespace:WPFApp.Properties"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
+        ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         MinWidth="1150"
         MinHeight="750"
+        Closing="Window_Closing"
         Title="WPF APP" Height="820" Width="1500">
     <Grid>
         <Grid.ColumnDefinitions>
