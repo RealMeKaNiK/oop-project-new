@@ -58,12 +58,10 @@ namespace DataAccessLayer
 
         public static void SaveAllPicutres() => FileRepo.SavePicturesFromPlayers(Config.FavoriteTeam.Players, Config.FavoriteTeam.Fifa_Code);
         public static void SaveFavoriteTeam(Team team) => Config.FavoriteTeam = team;
-        public static bool InsertFavoritePlayer(Player player)
+        public static void InsertFavoritePlayer(Player player)
         {
-            if (Config.FavoritePlayers.Exists(x => x.name.Equals(player.name)))            
-                return false;
+            player.FavoritePlayer = true;            
             Config.FavoritePlayers.Add(player);
-            return true;
         }
 
         public static void SetPictureForPlayer(Player player, Bitmap picture) => Config.FavoriteTeam.Players.Find(x => x.name.Equals(player.name)).Picture = picture;

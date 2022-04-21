@@ -26,13 +26,9 @@ namespace WindowsForms.Forms
         private void InsertControlInPanel(PlayerUserControl control)
         {
             if (!(control is PlayerUserControl))
-                return;
-            if (!DataProvider.InsertFavoritePlayer(control.GetUserControlPlayer()))
-            {
-                FormUtils.DisplayErrorMessageBox("Already selected", "Error");
-                return;
-            }
+                return;           
             control.Hide();
+            DataProvider.InsertFavoritePlayer(control.GetUserControlPlayer());
             this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(control.GetUserControlPlayer()));
             AddPlayerToFavorites(control.GetUserControlPlayer());
         }
@@ -42,8 +38,8 @@ namespace WindowsForms.Forms
             try
             {
                 this.pbLoadingAnimation.Show();
-                LoadPlayers();
                 LoadFavoritePlayers();
+                LoadPlayers();                
                 this.pbLoadingAnimation.Hide();
             }
             catch (Exception err)
@@ -103,7 +99,13 @@ namespace WindowsForms.Forms
             this.flpLoadedPlayers.Controls.Clear();
             List<Player> players = await DataProvider.GetPlayers();
             FormUtils.CheckIfListCountZero<Player>(players);
-            players.ForEach(player => this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player, this.flpFavoritePlayers) { isCheckedForTransfer = false}));
+            players.ForEach(player =>
+            {
+                if (!DataProvider.GetFavoritePlayers().Exists(somePlayer => somePlayer.name == player.name))
+                {
+                    this.flpLoadedPlayers.Controls.Add(new PlayerUserControl(player, this.flpFavoritePlayers) { isCheckedForTransfer = false });
+                }
+            });
         }
 
         private void LoadFavoritePlayers()
