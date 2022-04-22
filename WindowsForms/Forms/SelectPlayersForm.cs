@@ -21,12 +21,10 @@ namespace WindowsForms.Forms
         {
             InitializeComponent();
         }
-
         private bool IsThreeSelected(int selectedPlayersCount) => selectedPlayersCount == MAX_FAV_PLAYERS; 
         private void InsertControlInPanel(PlayerUserControl control)
         {
-            if (!(control is PlayerUserControl))
-                return;           
+            if (!(control is PlayerUserControl)) { return; }                           
             control.Hide();
             DataProvider.InsertFavoritePlayer(control.GetUserControlPlayer());
             this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(control.GetUserControlPlayer()));
@@ -59,30 +57,12 @@ namespace WindowsForms.Forms
             }
             if (IsMultiSelecet(this.flpLoadedPlayers.Controls))
             {
-                foreach (PlayerUserControl item in this.flpLoadedPlayers.Controls)
-                {
-                    if (item.isCheckedForTransfer)
-                    {
-                        InsertControlInPanel(item);
-                    }
-                }
+                this.flpLoadedPlayers.Controls.Cast<PlayerUserControl>().ToList().FindAll(singleControl => singleControl.isCheckedForTransfer).ForEach(singleControl => InsertControlInPanel(singleControl));              
                 return;
             }
             InsertControlInPanel((PlayerUserControl)e.Data.GetData(typeof(PlayerUserControl)));
         }
-
-        private bool IsMultiSelecet(Control.ControlCollection controls)
-        {
-            int countOfSelected = 0;
-            foreach (PlayerUserControl singleControl in controls)
-            {
-                if (singleControl.isCheckedForTransfer)
-                {
-                    countOfSelected++;
-                }
-            }
-            return countOfSelected > 0;
-        }
+        private bool IsMultiSelecet(Control.ControlCollection controls) => controls.Cast<PlayerUserControl>().ToList().FindAll(singleControl => singleControl.isCheckedForTransfer).Count() > 0;        
 
         private void btnRemoveFavorites_Click(object sender, EventArgs e)
         {
