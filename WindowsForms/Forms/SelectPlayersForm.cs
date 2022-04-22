@@ -30,7 +30,6 @@ namespace WindowsForms.Forms
             control.Hide();
             DataProvider.InsertFavoritePlayer(control.GetUserControlPlayer());
             this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(control.GetUserControlPlayer()));
-            AddPlayerToFavorites(control.GetUserControlPlayer());
         }
 
         private void SelectPlayersForm_Load(object sender, EventArgs e)
@@ -91,8 +90,6 @@ namespace WindowsForms.Forms
             DataProvider.DeleteFavoritePlayers();
             LoadPlayers();
         }
-
-        private void AddPlayerToFavorites(Player player) => DataProvider.InsertFavoritePlayer(player);
 
         private async void LoadPlayers()
         {
