@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Dal;
+using DataAccessLayer.Exceptions;
 using DataAccessLayer.Model;
 using DataAccessLayer.Utils;
 using System;
@@ -68,8 +69,7 @@ namespace DataAccessLayer
         public async static Task<List<Player>> GetPlayers()
         {
             if (Config.FavoriteTeam?.Players != null) { return new List<Player>(Config.FavoriteTeam.Players); }                            
-            if (Config.FavoriteTeam == null && Config.FavoriteTeam.Fifa_Code == null) { return new List<Player>(); }            
-                            
+            if (Config.FavoriteTeam == null && Config.FavoriteTeam.Fifa_Code == null) { throw new ConfigMissingException(); }                                        
             return FileRepo.LoadPicutres(Config.FavoriteTeam.Players = await ApiRepo.GetTeamPlayers(Config.TeamType, Config.FavoriteTeam?.Fifa_Code), Config.FavoriteTeam?.Fifa_Code);
         }
         public async static Task<List<Team>> GetTeamStatistics(string fifaCode) => await ApiRepo.GetTeamResult(Config.TeamType, fifaCode);
