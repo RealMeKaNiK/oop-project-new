@@ -1,1 +1,1 @@
-[]
+[{"name":"Khadim NDIAYE","captain":false,"shirt_number":16,"position":"Goalie","GoalNumber":0,"YellowCardNumber":0,"FavoritePlayer":true},{"name":"Keita BALDE","captain":false,"shirt_number":20,"position":"Forward","GoalNumber":0,"YellowCardNumber":0,"FavoritePlayer":true},{"name":"Pape Alioune NDIAYE","captain":false,"shirt_number":17,"position":"Midfield","GoalNumber":0,"YellowCardNumber":0,"FavoritePlayer":true}]

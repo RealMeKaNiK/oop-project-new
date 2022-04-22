@@ -60,7 +60,7 @@ namespace DataAccessLayer
         // API comunication
         public async static Task<List<Team>> GetTeams()
         {
-            if (Config.TeamType == TeamType.NotSet) { return new List<Team>(); }            
+            if (Config.TeamType == TeamType.NotSet) { throw new ConfigMissingException("Please setup your config in settings"); }            
             return await ApiRepo.GetAllResults(Config.TeamType);
         }
         public async static Task<List<Match>> GetMatchEvents() => await ApiRepo.GetTeamMatches(Config.TeamType, Config.FavoriteTeam.Fifa_Code);
