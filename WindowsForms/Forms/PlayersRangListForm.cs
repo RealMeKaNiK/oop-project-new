@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,14 @@ namespace WindowsForms.Forms
             InitializeComponent();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e) => FormUtils.PrintDataGridView(this.dgvPlayerStats, "Players Statistic");
+        private Bitmap bmp;
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {            
+            bmp = new Bitmap(dgvPlayerStats.Width, dgvPlayerStats.Height);
+            dgvPlayerStats.DrawToBitmap(bmp, new Rectangle(0, 0, dgvPlayerStats.Width, dgvPlayerStats.Height));
+            printPreviewDialog1.ShowDialog();
+        } 
 
         private async void PlayersRangListForm_Load(object sender, EventArgs e)
         {
@@ -28,7 +36,6 @@ namespace WindowsForms.Forms
             {
                 this.pbLoadingAnimation.Show();
                 this.dgvPlayerStats.DataSource = await DataProvider.GetPlayers();
-                FormUtils.CheckIfListCountZero<Player>((List<Player>)this.dgvPlayerStats.DataSource);
                 this.pbLoadingAnimation.Hide();
             }
             catch (Exception err)
@@ -36,6 +43,11 @@ namespace WindowsForms.Forms
                 FormUtils.DisplayErrorMessageBox(err.Message, "Error");
                 return;
             }
-        } 
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
     }
 }
