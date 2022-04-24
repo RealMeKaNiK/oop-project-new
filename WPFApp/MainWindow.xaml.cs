@@ -59,7 +59,5 @@ namespace WPFApp
             WpfUtils.ChangeResolution(DataProvider.GetResolutionType());
             this.MainFrame.Content = new MatchChooserPage();
         }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) => SaveChangesAndShutDown();
     }
 }

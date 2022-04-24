@@ -12,7 +12,6 @@
         WindowStartupLocation="CenterScreen"
         MinWidth="1150"
         MinHeight="750"
-        Closing="Window_Closing"
         Title="WPF APP" Height="820" Width="1500">
     <Grid>
         <Grid.ColumnDefinitions>
