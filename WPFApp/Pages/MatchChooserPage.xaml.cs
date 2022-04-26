@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFApp.Utils;
 using WPFApp.Windows;
 
 namespace WPFApp.Pages
@@ -32,7 +33,14 @@ namespace WPFApp.Pages
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             this.spOppTeam.Visibility = Visibility.Collapsed;
-            this.cbSelectedTeam.ItemsSource = await DataProvider.GetTeams();
+            try
+            {
+                this.cbSelectedTeam.ItemsSource = await DataProvider.GetTeams();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error");                
+            }
         }
 
         private async void cbSelectedTeam_SelectionChanged(object sender, SelectionChangedEventArgs e)
