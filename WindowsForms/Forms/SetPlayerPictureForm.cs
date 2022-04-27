@@ -30,7 +30,6 @@ namespace WindowsForms.Forms
             {
                 this.pbLoadingAnimation.Show();
                 List<Player> players = await DataProvider.GetPlayers();
-                FormUtils.CheckIfListCountZero<Player>(players);
                 players.ForEach(p => this.flpPlayers.Controls.Add(new PlayerSetPicute_Control(p)));
                 this.pbLoadingAnimation.Hide();
             }

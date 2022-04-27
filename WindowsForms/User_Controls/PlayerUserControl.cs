@@ -18,24 +18,27 @@ namespace WindowsForms.User_Controls
         private Player Player;
 
         public bool isCheckedForTransfer = false;
-        public PlayerUserControl(Player player )
+        public PlayerUserControl(Player player)
         {
             InitializeComponent();
             this.Player = player;
             this.ContextMenuStrip = cmsAddPlayerToFav;
         }
-
+      
         private FlowLayoutPanel favoritePanelRef;
         public PlayerUserControl(Player player, FlowLayoutPanel flpFavoritePlayers)
         {
             InitializeComponent();
             this.Player = player;
-            this.Player.FavoritePlayer = false;
             this.favoritePanelRef = flpFavoritePlayers;
             this.ContextMenuStrip = cmsAddPlayerToFav;
         }
 
-        public Player GetUserControlPlayer() => Player;
+        public Player GetUserControlPlayer()
+        {
+            Player.FavoritePlayer = true;
+            return Player;
+        }
 
         public void SetAsFavorite()
         {
@@ -60,13 +63,9 @@ namespace WindowsForms.User_Controls
         }
         
         private void addToFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!DataProvider.InsertFavoritePlayer(Player))
-            {
-                FormUtils.DisplayErrorMessageBox("Already in favorites!", "Already chosen");
-                return;
-            }
+        {            
             this.favoritePanelRef.Controls.Add(this);
+            DataProvider.InsertFavoritePlayer(Player);
             SetAsFavorite();
         }
 

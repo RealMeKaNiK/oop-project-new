@@ -22,15 +22,11 @@ namespace WindowsForms.Forms
 
         private async void SelectTeamForm_Load(object sender, EventArgs e)
         {
-            if (DataProvider.GetFavoriteTeam() != null)
-            {
-                this.lblCurrentTeam.Text = DataProvider.GetFavoriteTeam().ToString();
-            }
+            if (DataProvider.GetFavoriteTeam() != null) { this.lblCurrentTeam.Text = DataProvider.GetFavoriteTeam().ToString(); }
             try
             {
                 this.pbLoadingAnimation.Show();
                 this.cbAllTeams.DataSource = await DataProvider.GetTeams();
-                FormUtils.CheckIfListCountZero<Team>((List<Team>)this.cbAllTeams.DataSource);
                 this.pbLoadingAnimation.Hide();
             }
             catch (Exception err)

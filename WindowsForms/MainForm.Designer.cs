@@ -97,12 +97,14 @@
             // pnlMain
             // 
             resources.ApplyResources(this.pnlMain, "pnlMain");
+            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pnlMain.Name = "pnlMain";
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlNavigation);
             this.Name = "MainForm";

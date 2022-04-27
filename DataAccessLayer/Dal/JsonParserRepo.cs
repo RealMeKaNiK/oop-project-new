@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Model;
+﻿using DataAccessLayer.Exceptions;
+using DataAccessLayer.Model;
 using DataAccessLayer.Utils;
 using Newtonsoft.Json;
 using System;
@@ -27,11 +28,12 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
+                    if (AreParamsMissing(type)) { throw new ConfigMissingException("Please setup config in settings"); }
                     return JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
                 }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    return new List<Match>();
+                    throw new Exception(err.Message);
                 }
             });
         }
@@ -42,6 +44,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
+                    if (AreParamsMissing(type)) { throw new ConfigMissingException("Please setup config in settings"); }
                     return JsonConvert.DeserializeObject<List<Team>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_RESULTS : WOMEN_FILE_RESULTS));
                 }
                 catch (Exception)
@@ -55,6 +58,7 @@ namespace DataAccessLayer.Dal
         {
             try
             {
+                if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup config in settings"); }
                 List<Match> allTeamMatches = await GetTeamMatches(type, fifaCode);
                 List<Team> allTeamsInTournument = await GetAllResults(type);
                 List<string> opponentsFifaCode = new List<string>();
@@ -74,9 +78,9 @@ namespace DataAccessLayer.Dal
                 opponentsFifaCode.ForEach(x => oppTeams.Add(allTeamsInTournument.Find(y => y.Fifa_Code == x)));
                 return oppTeams;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                return new List<Team>();
+                throw new Exception(err.Message);
             }
         }
 
@@ -86,12 +90,13 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
+                    if (AreParamsMissing(type)) { throw new ConfigMissingException("Please setup config in settings"); }
                     List<Match> allMatches = JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
                     return allMatches.Find(match => (match.home_team.code == firstFifaCode && match.away_team.code == secondFifaCode) || match.away_team.code == firstFifaCode && match.home_team.code == secondFifaCode);
                 }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    return new Match();
+                    throw new Exception(err.Message);
                 }
             });
         }
@@ -102,12 +107,13 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
+                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup config in settings"); }
                     List<Match> allMatches = JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
                     return new List<Match>(allMatches.FindAll(match => match.home_team.code == fifaCode || match.away_team.code == fifaCode));
                 }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    return new List<Match>();
+                    throw new Exception(err.Message);
                 }
             });
         }
@@ -118,6 +124,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
+                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup config in settings"); }
                     List<Match> allMatches = JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
 
                     List<Match> allTeamMatches = allMatches.FindAll(match => match.home_team.code == fifaCode || match.away_team.code == fifaCode);
@@ -131,9 +138,9 @@ namespace DataAccessLayer.Dal
                     substitutes.ForEach(x => playerList.Add(x));
                     return Utilities.CalculatePlayerStatistics(allTeamMatches, playerList, fifaCode);
                 }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    return new List<Player>();
+                    throw new Exception(err.Message);
                 }
             });
         }
@@ -144,14 +151,16 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
+                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup config in settings"); }                    
                     List<Team> parsedTeams = JsonConvert.DeserializeObject<List<Team>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_RESULTS : WOMEN_FILE_RESULTS));
                     return new List<Team> { parsedTeams.Find(x => x.Fifa_Code == fifaCode) };
                 }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    return new List<Team>();
+                    throw new Exception(err.Message);
                 }
             });
         }
+        private bool AreParamsMissing(TeamType type, string fifaCode = "ignoreIfOnlyTypeAvailible") => (type == TeamType.NotSet || String.IsNullOrEmpty(fifaCode));
     }
 }

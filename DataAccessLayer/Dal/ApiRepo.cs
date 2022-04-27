@@ -124,7 +124,6 @@ namespace DataAccessLayer.Dal
                 return new Match();
             }
         }
-        //returning a list with one item in it
         public async Task<List<Team>> GetTeamResult(TeamType type, string fifaCode)
         {
             try

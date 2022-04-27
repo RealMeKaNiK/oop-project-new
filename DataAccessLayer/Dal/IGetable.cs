@@ -15,7 +15,6 @@ namespace DataAccessLayer.Dal
         Task<List<Match>> GetTeamMatches(TeamType type, string fifaCode);
         Task<List<Player>> GetTeamPlayers(TeamType type, string fifaCode);
         Task<List<Team>> GetFromSelectedTeamOpponents(TeamType type, string fifaCode);
-
         Task<Match> GetSpecificMatch(string firstFifaCode, string secondFifaCode, TeamType type);
 
     }

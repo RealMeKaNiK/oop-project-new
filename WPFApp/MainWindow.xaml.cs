@@ -25,6 +25,7 @@ namespace WPFApp
     {
         public MainWindow()
         {
+            WpfUtils.SetFormLanguage();
             InitializeComponent();
         }
 
@@ -32,14 +33,17 @@ namespace WPFApp
 
         private void btnSettings_Click(object sender, RoutedEventArgs e) => this.MainFrame.Content = new SettingsPage();
 
-        private void btnQuitApp_Click(object sender, RoutedEventArgs e)
+        private void btnQuitApp_Click(object sender, RoutedEventArgs e) => SaveChangesAndShutDown();
+
+
+        private void SaveChangesAndShutDown()
         {
             if (ShowClosingProcess() == MessageBoxResult.Yes)
             {
                 DataProvider.SaveConfig();
                 Application.Current.Shutdown();
                 return;
-            }            
+            }
         }
 
         private MessageBoxResult ShowClosingProcess() => MessageBox.Show("Do you really want to exit?", "Exit", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
