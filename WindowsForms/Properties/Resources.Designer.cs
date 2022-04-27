@@ -61,12 +61,39 @@ namespace WindowsForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Already selected.
+        /// </summary>
+        internal static string alreadySelected {
+            get {
+                return ResourceManager.GetString("alreadySelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap loadingAnimation {
             get {
                 object obj = ResourceManager.GetObject("loadingAnimation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max 3 Favorite players.
+        /// </summary>
+        internal static string maxPlayer {
+            get {
+                return ResourceManager.GetString("maxPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can only have 3 selected players.
+        /// </summary>
+        internal static string maxPlayersError {
+            get {
+                return ResourceManager.GetString("maxPlayersError", resourceCulture);
             }
         }
     }

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms.User_Controls;
 using WindowsForms.Utils;
+using System.Resources;
 
 namespace WindowsForms.Forms
 {
@@ -29,7 +30,7 @@ namespace WindowsForms.Forms
                 return;
             if (!DataProvider.InsertFavoritePlayer(control.GetUserControlPlayer()))
             {
-                FormUtils.DisplayErrorMessageBox("Already selected", "Error");
+                FormUtils.DisplayErrorMessageBox(Properties.Resources.alreadySelected, "Error");
                 return;
             }
             control.Hide();
@@ -59,7 +60,7 @@ namespace WindowsForms.Forms
         {
             if (IsThreeSelected(this.flpFavoritePlayers.Controls.Count))
             {
-                FormUtils.DisplayErrorMessageBox("You can only have 3 selected players", "Max 3 Favorite players");
+                FormUtils.DisplayErrorMessageBox(Properties.Resources.maxPlayersError, Properties.Resources.maxPlayer);
                 return;
             }
             if (IsMultiSelecet(this.flpLoadedPlayers.Controls))
