@@ -43,10 +43,10 @@ namespace WindowsForms.Forms
         {
             if (String.IsNullOrEmpty(this.cbLanguage.Text) || String.IsNullOrEmpty(this.cbLanguage.Text))
             {
-                FormUtils.DisplayErrorMessageBox("Please choose with options", "Error");                
+                FormUtils.DisplayErrorMessageBox(Properties.Resources.selectBothValues, "Error");                
                 return;
             }
-            if (MessageBox.Show("Do you want to change settings?", "Settings change", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(Properties.Resources.settingsChange, Properties.Resources.change, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeamType.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text));
                 this.lblCurrentSettings.Text = DataProvider.GetConfigInfo();

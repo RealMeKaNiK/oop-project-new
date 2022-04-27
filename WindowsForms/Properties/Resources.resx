@@ -120,6 +120,9 @@
   <data name="alreadySelected" xml:space="preserve">
     <value>Already selected</value>
   </data>
+  <data name="change" xml:space="preserve">
+    <value>Change</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="loadingAnimation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loadingAnimation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -129,5 +132,14 @@
   </data>
   <data name="maxPlayersError" xml:space="preserve">
     <value>You can only have 3 selected players</value>
+  </data>
+  <data name="selectBothValues" xml:space="preserve">
+    <value>Please choose both options</value>
+  </data>
+  <data name="settingsChange" xml:space="preserve">
+    <value>Do you want to change settings?</value>
+  </data>
+  <data name="successTeam" xml:space="preserve">
+    <value>Succesfuly selected favorite team</value>
   </data>
 </root>

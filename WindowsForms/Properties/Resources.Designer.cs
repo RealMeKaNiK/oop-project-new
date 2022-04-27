@@ -70,6 +70,15 @@ namespace WindowsForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change.
+        /// </summary>
+        internal static string change {
+            get {
+                return ResourceManager.GetString("change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap loadingAnimation {
@@ -94,6 +103,33 @@ namespace WindowsForms.Properties {
         internal static string maxPlayersError {
             get {
                 return ResourceManager.GetString("maxPlayersError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose both options.
+        /// </summary>
+        internal static string selectBothValues {
+            get {
+                return ResourceManager.GetString("selectBothValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to change settings?.
+        /// </summary>
+        internal static string settingsChange {
+            get {
+                return ResourceManager.GetString("settingsChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Succesfuly selected favorite team.
+        /// </summary>
+        internal static string successTeam {
+            get {
+                return ResourceManager.GetString("successTeam", resourceCulture);
             }
         }
     }
