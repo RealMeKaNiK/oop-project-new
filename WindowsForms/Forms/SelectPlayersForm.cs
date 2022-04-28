@@ -27,6 +27,7 @@ namespace WindowsForms.Forms
         {
             if (!(control is PlayerUserControl)) { return; }                           
             control.Hide();
+            control.isCheckedForTransfer = false;
             DataProvider.InsertFavoritePlayer(control.GetUserControlPlayer());
             this.flpFavoritePlayers.Controls.Add(new PlayerUserControl(control.GetUserControlPlayer()));
         }
@@ -55,8 +56,13 @@ namespace WindowsForms.Forms
             }
             if (IsMultiSelecet(this.flpLoadedPlayers.Controls))
             {
-                this.flpLoadedPlayers.Controls.Cast<PlayerUserControl>().ToList().FindAll(singleControl => singleControl.isCheckedForTransfer).ForEach(singleControl => InsertControlInPanel(singleControl));              
-                return;
+                List<PlayerUserControl> selectedPlayers = this.flpLoadedPlayers.Controls.Cast<PlayerUserControl>().ToList().FindAll(singleControl => singleControl.isCheckedForTransfer);
+                if (selectedPlayers.Count > 3)
+                {
+                    FormUtils.DisplayErrorMessageBox(Properties.Resources.maxPlayer, Properties.Resources.maxPlayer);
+                    return;
+                }
+                selectedPlayers.ForEach(singleControl => InsertControlInPanel(singleControl));
             }
             else
             {
