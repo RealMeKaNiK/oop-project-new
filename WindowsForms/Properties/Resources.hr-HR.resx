@@ -117,70 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>492, 151</value>
+  <data name="alreadySelected" xml:space="preserve">
+    <value>Player je izabran vec</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>Promjena</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+  <data name="loadingAnimation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loadingAnimation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dgvEventStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 263</value>
+  <data name="maxPlayer" xml:space="preserve">
+    <value>Maksimalno 3 fav igraca</value>
   </data>
-  <data name="dgvEventStats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+  <data name="maxPlayersError" xml:space="preserve">
+    <value>Mozete samo 3 favorite igraca imat</value>
   </data>
-  <data name="dgvEventStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1440, 686</value>
+  <data name="sChange" xml:space="preserve">
+    <value />
   </data>
-  <data name="locationDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Lokacija</value>
+  <data name="selectBothValues" xml:space="preserve">
+    <value>Izaberite sve opcije</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="locationDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>103</value>
+  <data name="settingsChange" xml:space="preserve">
+    <value>Da li zelite promijeniti postavke ?</value>
   </data>
-  <data name="attendanceDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Broj gostiju</value>
-  </data>
-  <data name="attendanceDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>123</value>
-  </data>
-  <data name="hometeamcountryDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Domacin</value>
-  </data>
-  <data name="hometeamcountryDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>108</value>
-  </data>
-  <data name="awayteamcountryDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Gost</value>
-  </data>
-  <data name="awayteamcountryDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="btnPrint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1228, 134</value>
-  </data>
-  <data name="btnPrint.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="btnPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 88</value>
-  </data>
-  <data name="pbLoadingAnim.Location" type="System.Drawing.Point, System.Drawing">
-    <value>660, 526</value>
-  </data>
-  <data name="pbLoadingAnim.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="pbLoadingAnim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 140</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1476, 1106</value>
+  <data name="successTeam" xml:space="preserve">
+    <value>Uspjesno ste odabrali favorit team:</value>
   </data>
 </root>

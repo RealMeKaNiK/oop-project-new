@@ -63,7 +63,12 @@ namespace WindowsForms.User_Controls
         }
         
         private void addToFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
+        {
+            if (this.favoritePanelRef.Controls.Count >= 3)
+            {
+                FormUtils.DisplayErrorMessageBox(Properties.Resources.maxPlayersError, Properties.Resources.maxPlayer);
+                return;
+            }
             this.favoritePanelRef.Controls.Add(this);
             DataProvider.InsertFavoritePlayer(Player);
             SetAsFavorite();

@@ -39,7 +39,7 @@ namespace WindowsForms.Forms
         private void btnSaveFavoriteTeam_Click(object sender, EventArgs e)
         {
             DataProvider.SaveFavoriteTeam(this.cbAllTeams.SelectedValue as Team);
-            FormUtils.DisplaySuccessMessageBox($"Uspjesno ste odabrali favorit team: {this.cbAllTeams.SelectedValue}", "Promjena");
+            FormUtils.DisplaySuccessMessageBox(Properties.Resources.successTeam + $" {this.cbAllTeams.SelectedValue}", Properties.Resources.change);
             this.lblCurrentTeam.Text = DataProvider.GetFavoriteTeam().ToString();
         }
     }

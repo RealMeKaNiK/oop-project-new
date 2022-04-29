@@ -117,19 +117,96 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnOpenSetPicutres.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 420</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnOpenSetPicutres.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="btnOpenSetPicutres.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 54</value>
+  </data>
+  <data name="btnOpenEventsRang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 474</value>
+  </data>
+  <data name="btnOpenEventsRang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="btnOpenEventsRang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 54</value>
+  </data>
   <data name="btnOpenEventsRang.Text" xml:space="preserve">
     <value>Rang List of Event-s</value>
+  </data>
+  <data name="btnOpenPlayersRang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 528</value>
+  </data>
+  <data name="btnOpenPlayersRang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="btnOpenPlayersRang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 54</value>
   </data>
   <data name="btnOpenPlayersRang.Text" xml:space="preserve">
     <value>Rang List of Players</value>
   </data>
+  <data name="btnOpenPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 582</value>
+  </data>
+  <data name="btnOpenPlayers.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="btnOpenPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 54</value>
+  </data>
   <data name="btnOpenPlayers.Text" xml:space="preserve">
     <value>Choose Players</value>
+  </data>
+  <data name="btnOpenTeams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 636</value>
+  </data>
+  <data name="btnOpenTeams.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="btnOpenTeams.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 54</value>
   </data>
   <data name="btnOpenTeams.Text" xml:space="preserve">
     <value>Choose Team</value>
   </data>
+  <data name="btnOpenSettingsForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 690</value>
+  </data>
+  <data name="btnOpenSettingsForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="btnOpenSettingsForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 54</value>
+  </data>
   <data name="btnOpenSettingsForm.Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="pnlNavigation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="pnlNavigation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 744</value>
+  </data>
+  <data name="pnlMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 0</value>
+  </data>
+  <data name="pnlMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="pnlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1078, 744</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1378, 744</value>
   </data>
 </root>

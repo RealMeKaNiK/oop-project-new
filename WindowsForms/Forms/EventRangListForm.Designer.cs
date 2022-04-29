@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventRangListForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEventStats = new System.Windows.Forms.DataGridView();
-            this.matchBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.pbLoadingAnim = new System.Windows.Forms.PictureBox();
             this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attendanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hometeamcountryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.awayteamcountryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matchBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.pbLoadingAnim = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventStats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoadingAnim)).BeginInit();
@@ -69,6 +69,46 @@
             this.dgvEventStats.Name = "dgvEventStats";
             this.dgvEventStats.ReadOnly = true;
             // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.locationDataGridViewTextBoxColumn, "locationDataGridViewTextBoxColumn");
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // attendanceDataGridViewTextBoxColumn
+            // 
+            this.attendanceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.attendanceDataGridViewTextBoxColumn.DataPropertyName = "attendance";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            resources.ApplyResources(this.attendanceDataGridViewTextBoxColumn, "attendanceDataGridViewTextBoxColumn");
+            this.attendanceDataGridViewTextBoxColumn.Name = "attendanceDataGridViewTextBoxColumn";
+            this.attendanceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hometeamcountryDataGridViewTextBoxColumn
+            // 
+            this.hometeamcountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.hometeamcountryDataGridViewTextBoxColumn.DataPropertyName = "home_team_country";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hometeamcountryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            resources.ApplyResources(this.hometeamcountryDataGridViewTextBoxColumn, "hometeamcountryDataGridViewTextBoxColumn");
+            this.hometeamcountryDataGridViewTextBoxColumn.Name = "hometeamcountryDataGridViewTextBoxColumn";
+            this.hometeamcountryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // awayteamcountryDataGridViewTextBoxColumn
+            // 
+            this.awayteamcountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.awayteamcountryDataGridViewTextBoxColumn.DataPropertyName = "away_team_country";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.awayteamcountryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            resources.ApplyResources(this.awayteamcountryDataGridViewTextBoxColumn, "awayteamcountryDataGridViewTextBoxColumn");
+            this.awayteamcountryDataGridViewTextBoxColumn.Name = "awayteamcountryDataGridViewTextBoxColumn";
+            this.awayteamcountryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // matchBindingSource
             // 
             this.matchBindingSource.DataSource = typeof(DataAccessLayer.Model.Match);
@@ -86,46 +126,6 @@
             this.pbLoadingAnim.Image = global::WindowsForms.Properties.Resources.loadingAnimation;
             this.pbLoadingAnim.Name = "pbLoadingAnim";
             this.pbLoadingAnim.TabStop = false;
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.locationDataGridViewTextBoxColumn, "locationDataGridViewTextBoxColumn");
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // attendanceDataGridViewTextBoxColumn
-            // 
-            this.attendanceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.attendanceDataGridViewTextBoxColumn.DataPropertyName = "attendance";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attendanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.attendanceDataGridViewTextBoxColumn, "attendanceDataGridViewTextBoxColumn");
-            this.attendanceDataGridViewTextBoxColumn.Name = "attendanceDataGridViewTextBoxColumn";
-            this.attendanceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hometeamcountryDataGridViewTextBoxColumn
-            // 
-            this.hometeamcountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.hometeamcountryDataGridViewTextBoxColumn.DataPropertyName = "home_team_country";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hometeamcountryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            resources.ApplyResources(this.hometeamcountryDataGridViewTextBoxColumn, "hometeamcountryDataGridViewTextBoxColumn");
-            this.hometeamcountryDataGridViewTextBoxColumn.Name = "hometeamcountryDataGridViewTextBoxColumn";
-            this.hometeamcountryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // awayteamcountryDataGridViewTextBoxColumn
-            // 
-            this.awayteamcountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.awayteamcountryDataGridViewTextBoxColumn.DataPropertyName = "away_team_country";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awayteamcountryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            resources.ApplyResources(this.awayteamcountryDataGridViewTextBoxColumn, "awayteamcountryDataGridViewTextBoxColumn");
-            this.awayteamcountryDataGridViewTextBoxColumn.Name = "awayteamcountryDataGridViewTextBoxColumn";
-            this.awayteamcountryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // EventRangListForm
             // 
