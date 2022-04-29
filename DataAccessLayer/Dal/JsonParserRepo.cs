@@ -28,7 +28,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
-                    if (AreParamsMissing(type)) { throw new ConfigMissingException("Please setup your config and favorite teams in settings"); }
+                    if (AreParamsMissing(type)) { throw new ConfigMissingException(Utilities.ErrorMessage()); }
                     return JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
                 }
                 catch (Exception err)
@@ -44,7 +44,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
-                    if (AreParamsMissing(type)) { throw new ConfigMissingException("Please setup your config and favorite teams in settings"); }
+                    if (AreParamsMissing(type)) { throw new ConfigMissingException(Utilities.ErrorMessage()); }
                     return JsonConvert.DeserializeObject<List<Team>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_RESULTS : WOMEN_FILE_RESULTS));
                 }
                 catch (Exception)
@@ -58,7 +58,7 @@ namespace DataAccessLayer.Dal
         {
             try
             {
-                if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup your config and favorite teams in settings"); }
+                if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException(Utilities.ErrorMessage()); }
                 List<Match> allTeamMatches = await GetTeamMatches(type, fifaCode);
                 List<Team> allTeamsInTournument = await GetAllResults(type);
                 List<string> opponentsFifaCode = new List<string>();
@@ -90,7 +90,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
-                    if (AreParamsMissing(type)) { throw new ConfigMissingException("Please setup your config and favorite teams in settings"); }
+                    if (AreParamsMissing(type)) { throw new ConfigMissingException(Utilities.ErrorMessage()); }
                     List<Match> allMatches = JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
                     return allMatches.Find(match => (match.home_team.code == firstFifaCode && match.away_team.code == secondFifaCode) || match.away_team.code == firstFifaCode && match.home_team.code == secondFifaCode);
                 }
@@ -107,7 +107,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
-                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup your config and favorite teams in settings"); }
+                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException(Utilities.ErrorMessage()); }
                     List<Match> allMatches = JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
                     return new List<Match>(allMatches.FindAll(match => match.home_team.code == fifaCode || match.away_team.code == fifaCode));
                 }
@@ -124,7 +124,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
-                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup config in settings"); }
+                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException(Utilities.ErrorMessage()); }
                     List<Match> allMatches = JsonConvert.DeserializeObject<List<Match>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_ALL_MATCHES : WOMEN_FILE_ALL_MATCHES));
 
                     List<Match> allTeamMatches = allMatches.FindAll(match => match.home_team.code == fifaCode || match.away_team.code == fifaCode);
@@ -151,7 +151,7 @@ namespace DataAccessLayer.Dal
             {
                 try
                 {
-                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException("Please setup your config and favorite teams in settings"); }                    
+                    if (AreParamsMissing(type, fifaCode)) { throw new ConfigMissingException(Utilities.ErrorMessage()); }                    
                     List<Team> parsedTeams = JsonConvert.DeserializeObject<List<Team>>(File.ReadAllText(type == TeamType.Men ? MEN_FILE_RESULTS : WOMEN_FILE_RESULTS));
                     return new List<Team> { parsedTeams.Find(x => x.Fifa_Code == fifaCode) };
                 }

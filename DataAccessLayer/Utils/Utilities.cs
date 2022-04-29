@@ -112,5 +112,11 @@ namespace DataAccessLayer.Utils
 
             return result;
         }
+
+        public static string ErrorMessage()
+        {
+            return System.Threading.Thread.CurrentThread.CurrentCulture.Name == "en" ?
+                "Please setup your config and favorite teams in settings" : "Molimo postavie konfiguraciju i favorit team u postavkama";
+        }
     }
 }
