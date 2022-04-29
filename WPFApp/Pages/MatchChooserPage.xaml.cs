@@ -39,7 +39,7 @@ namespace WPFApp.Pages
                 List<Team> allTeams = await DataProvider.GetTeams();
                 allTeams.Sort((x,y) => x.Id.CompareTo(y.Id));
                 this.cbSelectedTeam.ItemsSource = allTeams;
-                this.cbSelectedTeam.SelectedIndex = allTeams.Find(x => x.Fifa_Code == DataProvider.GetFavoriteTeam().Fifa_Code).Id - 1;
+                this.cbSelectedTeam.SelectedIndex = allTeams.Find(x => x.Fifa_Code == DataProvider.GetFavoriteTeam()?.Fifa_Code).Id - 1;
             }
             catch (Exception err)
             {
