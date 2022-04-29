@@ -32,10 +32,11 @@ namespace WPFApp.Pages
         {
             if (String.IsNullOrEmpty(this.cbTeam.Text) || String.IsNullOrEmpty(this.cbLanguage.Text) || String.IsNullOrEmpty(this.cbResolution.Text))
             {
-                MessageBox.Show("Please select all settings before saving", "Choose All Settings", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Properties.Resources.allSettingsError, Properties.Resources.allSettingsTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (MessageBox.Show("Are you sure you want to change settings?", "Settings Change", MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show(Properties.Resources.confirmationDialogSettings, Properties.Resources.settingsChangeTitle, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) 
+                == MessageBoxResult.Yes)
             {
                 DataProvider.UpdateConfig((TeamType)Enum.Parse(typeof(TeamType), this.cbTeam.Text), (Language)Enum.Parse(typeof(Language), this.cbLanguage.Text), (ResolutionType)Enum.Parse(typeof(ResolutionType), this.cbResolution.Text));
                 WpfUtils.ChangeResolution((ResolutionType)Enum.Parse(typeof(ResolutionType), this.cbResolution.Text));

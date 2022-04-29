@@ -53,7 +53,7 @@ namespace WPFApp.Pages
         {
             if (this.cbSelectedTeam.SelectedItem == null || this.cbSelectedTeamOpponents.SelectedItem == null)
             {
-                MessageBox.Show("Please select both options before getting result", "Select Two Teams", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Properties.Resources.selectBothComboBoxError, Properties.Resources.selectBothComboBoxTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             this.imgLoadingAnimation.Visibility = Visibility.Visible;
@@ -136,8 +136,8 @@ namespace WPFApp.Pages
         private async void ShowInformationAboutTeam(Team team)
         {
             if (team == null)
-            {
-                MessageBox.Show("Please select a team first, before showing statisctics", "TEAM SELECT", MessageBoxButton.OK, MessageBoxImage.Error);
+            {                
+                MessageBox.Show(Properties.Resources.selectTeamError, Properties.Resources.selectTeamTitle, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             List<Team> tim = await DataProvider.GetTeamStatistics(team.Fifa_Code);

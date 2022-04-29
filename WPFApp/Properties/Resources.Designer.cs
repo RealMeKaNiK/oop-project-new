@@ -61,6 +61,24 @@ namespace WPFApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select all settings before saving.
+        /// </summary>
+        public static string allSettingsError {
+            get {
+                return ResourceManager.GetString("allSettingsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose All Settings.
+        /// </summary>
+        public static string allSettingsTitle {
+            get {
+                return ResourceManager.GetString("allSettingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close this.
         /// </summary>
         public static string CloseButtonPlayer {
@@ -75,6 +93,15 @@ namespace WPFApp.Properties {
         public static string CloseButtonTeam {
             get {
                 return ResourceManager.GetString("CloseButtonTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to change settings?.
+        /// </summary>
+        public static string confirmationDialogSettings {
+            get {
+                return ResourceManager.GetString("confirmationDialogSettings", resourceCulture);
             }
         }
         
@@ -126,11 +153,56 @@ namespace WPFApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select both options before getting result.
+        /// </summary>
+        public static string selectBothComboBoxError {
+            get {
+                return ResourceManager.GetString("selectBothComboBoxError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Two Teams.
+        /// </summary>
+        public static string selectBothComboBoxTitle {
+            get {
+                return ResourceManager.GetString("selectBothComboBoxTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a team first, before showing statisctics.
+        /// </summary>
+        public static string selectTeamError {
+            get {
+                return ResourceManager.GetString("selectTeamError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TEAM SELECT.
+        /// </summary>
+        public static string selectTeamTitle {
+            get {
+                return ResourceManager.GetString("selectTeamTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save Config.
         /// </summary>
         public static string SettingsButton {
             get {
                 return ResourceManager.GetString("SettingsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings Change.
+        /// </summary>
+        public static string settingsChangeTitle {
+            get {
+                return ResourceManager.GetString("settingsChangeTitle", resourceCulture);
             }
         }
         

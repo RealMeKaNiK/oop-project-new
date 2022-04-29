@@ -195,9 +195,6 @@
   <data name="btnOpenSetPicutres.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 35</value>
   </data>
-  <data name="pnlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 761</value>
-  </data>
   <data name="btnOpenEventsRang.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -224,6 +221,9 @@
   </data>
   <data name="&gt;&gt;btnOpenSetPicutres.Parent" xml:space="preserve">
     <value>pnlNavigation</value>
+  </data>
+  <data name="btnOpenSetPicutres.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 551</value>
   </data>
   <data name="btnOpenPlayersRang.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -306,8 +306,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1184, 761</value>
   </data>
-  <data name="btnOpenSetPicutres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 551</value>
+  <data name="pnlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 761</value>
   </data>
   <data name="&gt;&gt;btnOpenSetPicutres.Name" xml:space="preserve">
     <value>btnOpenSetPicutres</value>
@@ -315,11 +315,11 @@
   <data name="&gt;&gt;btnOpenPlayers.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pnlMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnOpenPlayers.Parent" xml:space="preserve">
+    <value>pnlNavigation</value>
   </data>
-  <data name="&gt;&gt;btnOpenSettingsForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnOpenPlayers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
   <data name="&gt;&gt;btnOpenPlayersRang.Parent" xml:space="preserve">
     <value>pnlNavigation</value>
@@ -339,8 +339,8 @@
   <data name="btnOpenPlayers.Text" xml:space="preserve">
     <value>Odaberi Igrace</value>
   </data>
-  <data name="&gt;&gt;btnOpenPlayers.Parent" xml:space="preserve">
-    <value>pnlNavigation</value>
+  <data name="&gt;&gt;pnlMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pnlMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -348,8 +348,8 @@
   <data name="btnOpenPlayersRang.Text" xml:space="preserve">
     <value>Rang Lista Igraca</value>
   </data>
-  <data name="btnOpenPlayers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;btnOpenSettingsForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

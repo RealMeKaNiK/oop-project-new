@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="allSettingsError" xml:space="preserve">
+    <value>Odaberite sve postavke prije spremanja</value>
+  </data>
+  <data name="allSettingsTitle" xml:space="preserve">
+    <value>Odaberite sve postavke</value>
+  </data>
   <data name="CloseButtonPlayer" xml:space="preserve">
     <value>Zatvori</value>
   </data>
   <data name="CloseButtonTeam" xml:space="preserve">
     <value>Zatvori</value>
+  </data>
+  <data name="confirmationDialogSettings" xml:space="preserve">
+    <value>Jeste li sigurni za promjenu postavki?</value>
   </data>
   <data name="NavButtonFirst" xml:space="preserve">
     <value>Odaberi momcad</value>
@@ -132,8 +141,23 @@
   <data name="NavButtonThird" xml:space="preserve">
     <value>Zatvori Aplikaciju</value>
   </data>
+  <data name="selectBothComboBoxError" xml:space="preserve">
+    <value>Odaberite dve momcadi za prikaz rezultata</value>
+  </data>
+  <data name="selectBothComboBoxTitle" xml:space="preserve">
+    <value>Odaberite dve momcadi</value>
+  </data>
+  <data name="selectTeamError" xml:space="preserve">
+    <value>Odaberite prvo team za prikaz statistike</value>
+  </data>
+  <data name="selectTeamTitle" xml:space="preserve">
+    <value>Odabir team-a</value>
+  </data>
   <data name="SettingsButton" xml:space="preserve">
     <value>Spremi Konfiguraciju</value>
+  </data>
+  <data name="settingsChangeTitle" xml:space="preserve">
+    <value>Promjena postavki</value>
   </data>
   <data name="SettingsChooseLanguage" xml:space="preserve">
     <value>Izaberi jezik</value>
