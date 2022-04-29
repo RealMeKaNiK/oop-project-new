@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Model;
+﻿using DataAccessLayer.Exceptions;
+using DataAccessLayer.Model;
 using DataAccessLayer.Utils;
 using Newtonsoft.Json;
 using System;
@@ -38,7 +39,7 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return new List<Match>();
+                throw new ConfigMissingException("Please setup your config and favorite teams in settings");
             }
         }
         public async Task<List<Team>> GetAllResults(TeamType type)
@@ -49,7 +50,7 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return new List<Team>();                
+                throw new ConfigMissingException("Please setup your config and favorite teams in settings");
             }
         }      
 
@@ -61,7 +62,7 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return new List<Match>();                
+                throw new ConfigMissingException("Please setup your config and favorite teams in settings");
             }
         } 
 
@@ -80,7 +81,7 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return new List<Player>();             
+                throw new ConfigMissingException("Please setup your config and favorite teams in settings");
             }
         }
 
@@ -109,7 +110,7 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return new List<Team>();
+                throw new ConfigMissingException("Please setup your config and favorite teams in settings");
             }
         }
         public async Task<Match> GetSpecificMatch(string firstFifaCode, string secondFifaCode, TeamType type)
@@ -121,7 +122,7 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return new Match();
+                throw new ConfigMissingException("Please setup your config and favorite teams in settings");
             }
         }
         public async Task<List<Team>> GetTeamResult(TeamType type, string fifaCode)
@@ -132,7 +133,7 @@ namespace DataAccessLayer.Dal
             }
             catch (Exception)
             {
-                return new List<Team>();
+                throw new ConfigMissingException("Please setup your config and favorite teams in settings");
             }
         }       
     }
