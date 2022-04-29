@@ -39,12 +39,22 @@ namespace WPFApp.Pages
                 List<Team> allTeams = await DataProvider.GetTeams();
                 allTeams.Sort((x,y) => x.Id.CompareTo(y.Id));
                 this.cbSelectedTeam.ItemsSource = allTeams;
-                this.cbSelectedTeam.SelectedIndex = allTeams.Find(x => x.Fifa_Code == DataProvider.GetFavoriteTeam()?.Fifa_Code).Id - 1;
+                SetFavoriteTeamAsSelectedIndex(allTeams);
+                
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message, "Error");                
             }
+        }
+
+        private void SetFavoriteTeamAsSelectedIndex(List<Team> allTeams)
+        {
+            if (DataProvider.GetFavoriteTeam() == null ||String.IsNullOrEmpty(DataProvider.GetFavoriteTeam().Fifa_Code))            
+                return;            
+            Team selectedTeam = allTeams.Find(x => x.Fifa_Code == DataProvider.GetFavoriteTeam()?.Fifa_Code);
+            if (selectedTeam != null)
+                this.cbSelectedTeam.SelectedIndex = selectedTeam.Id - 1;
         }
 
         private async void cbSelectedTeam_SelectionChanged(object sender, SelectionChangedEventArgs e)

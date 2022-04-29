@@ -117,20 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="allSettingsError" xml:space="preserve">
-    <value>Please select all settings before saving</value>
-  </data>
-  <data name="allSettingsTitle" xml:space="preserve">
-    <value>Choose All Settings</value>
-  </data>
   <data name="CloseButtonPlayer" xml:space="preserve">
     <value>Close this</value>
   </data>
   <data name="CloseButtonTeam" xml:space="preserve">
     <value>Close this</value>
-  </data>
-  <data name="confirmationDialogSettings" xml:space="preserve">
-    <value>Are you sure you want to change settings?</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="FootballField" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -148,23 +139,8 @@
   <data name="NavButtonThird" xml:space="preserve">
     <value>Quit Application</value>
   </data>
-  <data name="selectBothComboBoxError" xml:space="preserve">
-    <value>Please select both options before getting result</value>
-  </data>
-  <data name="selectBothComboBoxTitle" xml:space="preserve">
-    <value>Select Two Teams</value>
-  </data>
-  <data name="selectTeamError" xml:space="preserve">
-    <value>Please select a team first, before showing statisctics</value>
-  </data>
-  <data name="selectTeamTitle" xml:space="preserve">
-    <value>TEAM SELECT</value>
-  </data>
   <data name="SettingsButton" xml:space="preserve">
     <value>Save Config</value>
-  </data>
-  <data name="settingsChangeTitle" xml:space="preserve">
-    <value>Settings Change</value>
   </data>
   <data name="SettingsChooseLanguage" xml:space="preserve">
     <value>Choose Language</value>
